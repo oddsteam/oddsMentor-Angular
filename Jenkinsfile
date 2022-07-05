@@ -4,7 +4,7 @@ pipeline{
 
     environment{
 
-        ORGANIZATION = "odds-mentor"
+        ORGANIZATION = "odds-booking"
         REGISTRY = "swr.ap-southeast-2.myhuaweicloud.com"
         TAG = "web-mentor:${BRANCH_NAME}"
         WEB_BUILD_TAG = "${REGISTRY}/${ORGANIZATION}/${TAG}"
