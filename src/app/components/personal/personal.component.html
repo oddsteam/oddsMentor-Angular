@@ -3,19 +3,19 @@
         <div class="profile-box">
             <img src="https://images.unsplash.com/photo-1656954261081-93c805b386b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                 class="profile-image" />
-            <p class="header">
+            <p class="header margin-bottom">
                 About
             </p>
-            <p class="text">
+            <p class="text margin-bottom" >
                 Hello, I'm Nuntapong Siripanyawong. I'm a software developer. I'm currently working at Odd-e (Thailand)
                 in Mola Mola team.
             </p>
         </div>
         <div>
-            <p style="font-size: 40px; font-weight:600;">
+            <p class="margin-bottom" style="font-size: 40px; font-weight:600;">
                 Nuntapong Siripanyawong (Pat)
             </p>
-            <p style="font-size: 26px; font-weight:500; color: #708090;">
+            <p class="margin-bottom" style="font-size: 26px; font-weight:500; color: #708090;">
                 นันทพงศ์ ศิริปัญญาวงศ์
             </p>
             <p style="font-size: 20px; font-weight:500;">
@@ -28,14 +28,20 @@
                 Expertise
             </p>
             <div>
-                .............
+                <p-chip class="margin" label="TypeScript | 99"></p-chip>
+                <p-chip class="margin" label="JavaScript | 112"></p-chip>
+                <p-chip class="margin" label="PHP | 47"></p-chip>
+                <p-chip class="margin" label="SQL | 69"></p-chip>
+                <p-chip class="margin" label="React | 12"></p-chip>
+                <p-chip class="margin" label="Next | 3"></p-chip>
             </div>
 
-            <div>
-                <p> Available Time</p>
-                <p>09.30 - 11.30, Mon - Fri</p>
+            <div  class="margin">
+                <span class="margin"> Available Time</span> <span>09.30 - 11.30, Mon - Fri</span>
             </div>
-            <button>Book A Session</button>
+            
+            <button pButton type="button"  class="margin" icon="pi pi-calendar" label="Book A Session"></button>
+            
         </div>
     </div>
 </div>

@@ -32,8 +32,16 @@
 }
 
 .text{
-    font-size: 20pt;
+    font-size: 14pt;
     font-weight: 500;
+}
+.margin{
+    margin-right: 8px;
+    margin-top: 20px;
+}
+.margin-bottom{
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 
@@ -68,3 +76,6 @@
 .tbg4 {
     background-color: rgba(255, 166, 0, 0.369);
 }
+.ui-button.orange-button {
+    background-color: orange;
+ }
