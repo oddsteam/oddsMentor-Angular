@@ -1,4 +1,4 @@
-FROM trion/ng-cli-karma:latest AS base
+FROM trion/ng-cli-karma:14.0.0 AS base
 WORKDIR /usr/src/app
 COPY package.json ./
 RUN npm install
