@@ -3,6 +3,7 @@ FROM trion/ng-cli-karma:13.2.0 AS base
 WORKDIR /usr/src/app
 COPY package.json ./
 RUN npm install -g npm@8.13.2
+RUN npm config set legacy-peer-deps true
 RUN npm install
 
 FROM base AS builder
