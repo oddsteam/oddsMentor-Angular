@@ -1,25 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { BookingPreviewComponent } from './booking-preview.component';
+import { BookingPreviewComponent } from './booking-preview.component'
 
 describe('BookingPreviewComponent', () => {
-  let component: BookingPreviewComponent;
-  let fixture: ComponentFixture<BookingPreviewComponent>;
+    let component: BookingPreviewComponent
+    let fixture: ComponentFixture<BookingPreviewComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ BookingPreviewComponent ]
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [BookingPreviewComponent],
+        }).compileComponents()
     })
-    .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(BookingPreviewComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(BookingPreviewComponent)
+        component = fixture.componentInstance
+        fixture.detectChanges()
+    })
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    it('should create', () => {
+        expect(component).toBeTruthy()
+    })
+})
