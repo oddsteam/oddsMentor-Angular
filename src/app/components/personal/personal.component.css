@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 36px 108px 36px 108px;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.profile-box {
+    width: 350px;
+}
+
+.profile-image {
+    object-fit: cover;
+    width: 350px;
+    height: 350px;
+    border-radius: 12px;
+}
+
+.header{
+    font-size: 24pt;
+    font-weight: 600;
+}
+
+.text{
+    font-size: 20pt;
+    font-weight: 500;
+}
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tbg1 {
+    background-color: rgba(0, 0, 255, 0.372);
+}
+
+.tbg2 {
+    background-color: rgba(255, 0, 157, 0.296);
+}
+
+.tbg3 {
+    background-color: rgba(0, 255, 38, 0.369);
+}
+
+.tbg4 {
+    background-color: rgba(255, 166, 0, 0.369);
+}
