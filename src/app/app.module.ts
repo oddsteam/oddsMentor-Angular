@@ -9,6 +9,10 @@ import { BookingComponent } from './components/booking/booking.component'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component'
 import { BookingPreviewComponent } from './components/booking-preview/booking-preview.component'
 import { SignInComponent } from './components/sign-in/sign-in.component'
+import { MentorCardComponent } from './components/mentor-card/mentor-card.component'
+
+import { AccordionModule } from 'primeng/accordion'
+import { ButtonModule } from 'primeng/button'
 
 @NgModule({
     declarations: [
@@ -19,8 +23,9 @@ import { SignInComponent } from './components/sign-in/sign-in.component'
         NavBarComponent,
         BookingPreviewComponent,
         SignInComponent,
+        MentorCardComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule],
+    imports: [BrowserModule, AppRoutingModule, AccordionModule, ButtonModule],
     providers: [],
     bootstrap: [AppComponent],
 })
