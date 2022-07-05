@@ -2,18 +2,27 @@
     --gray-color: #39485B;
 }
 
+.container {
+    margin-top: 52px;
+}
+
 .landing {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 36px;
     overflow: hidden;
 }
 
+.landing-col {
+    flex-direction: column;
+}
+
 .landing-first {
     height: calc(100vh - 52px);
-    background-color: dodgerblue;
+    background: url('/assets/vectors/background.svg') center center / cover no-repeat white;
+    background-attachment: scroll;
 }
 
 .landing-block {
@@ -47,4 +56,8 @@ footer {
     width: 260px;
     height: 400px;
     background-color: black;
+}
+
+.half {
+    width: 50%;
 }
