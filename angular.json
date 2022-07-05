@@ -105,5 +105,8 @@
             }
         }
     },
-    "defaultProject": "oddsMentor-Angular"
+    "defaultProject": "oddsMentor-Angular",
+    "cli": {
+      "analytics": false
+    }
 }
