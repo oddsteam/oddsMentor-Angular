@@ -30,8 +30,8 @@
             <p-dropdown class="second" [options]="duration" [(ngModel)]="durationTime" placeholder="Duration" optionLabel="times"></p-dropdown>
         </div>
         <div class="flex-row">
-            <p-button label="CANCEL" icon="pi pi-times" iconPos="left" styleClass="button-cancel"></p-button>
-            <p-button label="NEXT" icon="pi pi-angle-right" iconPos="right" styleClass="button-next"></p-button>
+            <p-button label="CANCEL" icon="pi pi-times" iconPos="left" styleClass="button-cancel" (onClick)="handleBack()"></p-button>
+            <p-button label="NEXT" icon="pi pi-angle-right" iconPos="right" styleClass="button-next" (onClick)="handleNext()"></p-button>
         </div>
     </div>
 </div>

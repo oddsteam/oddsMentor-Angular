@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
+
 
 @Component({
     selector: 'app-personal',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core'
     styleUrls: ['./personal.component.css'],
 })
 export class PersonalComponent implements OnInit {
-    constructor() {}
+    constructor(private router: Router) {}
 
     ngOnInit(): void {}
+    handleClick() {
+        this.router.navigateByUrl('booking')
+    }
+   
 }

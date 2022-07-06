@@ -1,6 +1,7 @@
 import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core'
 import { MentorsService } from 'src/app/services/mentors.service'
+import { Router } from '@angular/router'
 
 interface Times{
     times: number
@@ -13,7 +14,7 @@ interface Times{
 })
 
 export class BookingComponent implements OnInit {
-
+    
     expertises: any[] = [
         {
             skill: 'web wireframe',
@@ -48,15 +49,23 @@ export class BookingComponent implements OnInit {
     duration: Times[];
     durationTime: Times[] = [];
 
-    constructor() {
+    constructor(private router: Router) {
         this.duration = [
             {times:30},
             {times:45},
             {times:60},
         ];
+        
     }
 
     ngOnInit(): void {
+    }
+    
+    handleNext() {
+        this.router.navigateByUrl('preview')
+    }
+    handleBack() {
+        this.router.navigateByUrl('personal')
     }
 
 }
