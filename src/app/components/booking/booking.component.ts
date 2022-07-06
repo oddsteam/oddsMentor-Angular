@@ -44,7 +44,7 @@ export class BookingComponent implements OnInit {
     selectedExpertises: any[] = []
     
     date: Date = new Date();
-    time: Date = new Date();
+    time: any;
     duration: Times[];
     durationTime: Times[] = [];
 
