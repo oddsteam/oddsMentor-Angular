@@ -50,7 +50,7 @@
     color: #1498d5;
     font-weight: 500;
 }
-::ng-deep.button {
+::ng-deep.button-personal {
     background-color: #1498d5;
     color: white;
     border-color: transparent;
