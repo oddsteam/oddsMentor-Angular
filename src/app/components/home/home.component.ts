@@ -179,6 +179,6 @@ export class HomeComponent implements OnInit {
             ],
             createdAt: new Date('2022-04-20T04:21'),
             updatedAt: new Date('2022-04-21T04:21'),
-        }
+        },
     ]
 }

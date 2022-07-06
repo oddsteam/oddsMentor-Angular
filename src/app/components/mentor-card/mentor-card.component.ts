@@ -7,7 +7,6 @@ import { Expertise, MentorDetail } from 'src/app/mentor'
     styleUrls: ['./mentor-card.component.css'],
 })
 export class MentorCardComponent implements OnInit {
-
     @Input()
     mentor!: MentorDetail
 

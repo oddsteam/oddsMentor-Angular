@@ -27,57 +27,38 @@
     border-radius: 12px;
 }
 
-.header{
+.header {
     font-size: 24pt;
     font-weight: 600;
 }
 
-.text{
+.text {
     font-size: 16pt;
     font-weight: 300;
-    color: #39485B;
-
+    color: #39485b;
 }
-.margin{
+.margin {
     margin-right: 8px;
     margin-top: 20px;
 }
-.margin-text{
+.margin-text {
     margin-top: 0px;
     margin-bottom: 0px;
 }
-::ng-deep.chip{
-    border: 1px solid #39485B;
+::ng-deep.chip {
+    border: 1px solid #39485b;
     background-color: white;
-    color: #1498D5;
+    color: #1498d5;
     font-weight: 500;
 }
-::ng-deep.button{
-    background-color: #1498D5;
+::ng-deep.button {
+    background-color: #1498d5;
     color: white;
     border-color: transparent;
     border-radius: 12px;
 }
-.proflie-detail-box{
-    
+.proflie-detail-box {
 }
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .tbg1 {
     background-color: rgba(0, 0, 255, 0.372);
@@ -96,4 +77,4 @@
 }
 .ui-button.orange-button {
     background-color: orange;
- }
+}
