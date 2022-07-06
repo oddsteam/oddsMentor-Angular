@@ -1,37 +1,76 @@
 <div class="container">
     <div class="landing landing-first">
-        <div class="half">
+        <div class="half" style="color: white">
             <h1>Want to know something?</h1>
             <h1>Odds always have answer.</h1>
             <p>
                 Ask us a question privately.<br />
                 ** for odds members only **
             </p>
-            <button pButton pRipple label="Book A Session" icon="pi pi-search" class="button"></button>
+            <p-button
+                pRipple
+                label="Book A Session"
+                icon="pi pi-search"
+                styleClass="button"
+            ></p-button>
         </div>
-        <div class="half">
-            <img class="img-landing" src="https://images.unsplash.com/photo-1526948531399-320e7e40f0ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="1">
-            <img class="img-landing" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="2">
-            <img class="img-landing" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80" alt="3">
+        <div class="half img-container">
+            <img
+                class="img-landing img-1"
+                src="https://images.unsplash.com/photo-1526948531399-320e7e40f0ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                alt="1"
+            />
+            <img
+                class="img-landing img-2"
+                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                alt="2"
+            />
+            <img
+                class="img-landing img-3"
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80"
+                alt="3"
+            />
         </div>
     </div>
-    <div class="landing landing-block landing-col" style="background-color: gold">
+    <div class="landing landing-block landing-col">
         <h1>Top Mentors</h1>
         <div class="mentors-row">
             <app-mentor-card *ngFor="let mentor of mentors" [mentor]="mentor"></app-mentor-card>
         </div>
     </div>
-    <div class="landing landing-block" style="background-color: seagreen">
+    <div class="landing landing-section">
         <div class="half">
             <h2>พบกับผู้เชี่ยวชาญเพื่อคลายข้อสงสัย..</h2>
-            <p>จะดีกว่าไหม? ถ้าข้อสงสัยของคุณ สามารถถูกแก้ไขได้ด้วยผู้ที่เชี่ยวชาญในเรื่องนั้นๆ</p>
+            <p>จะดีกว่าไหม? ถ้าข้อสงสัยของคุณ สามารถถูกแก้ไขได้ด้วยผู้ที่เชี่ยวชาญในเรื่องนั้น ๆ</p>
         </div>
         <div class="half">
-            <img src="/assets/vectors/consulting-rafiki.svg" alt="consulting-rafiki">
+            <img src="/assets/vectors/consulting-rafiki.svg" alt="consulting-rafiki" />
         </div>
     </div>
-    <!-- <div class="landing-block" style="background-color: slateblue"></div> -->
-    <!-- <div class="landing-block" style="background-color: tomato"></div> -->
+    <div class="landing landing-section">
+        <div class="half">
+            <img src="/assets/images/rectangle-14.png" alt="consulting-rafiki" />
+        </div>
+        <div class="half">
+            <h2>สอบถามได้ทุกที่ ไม่ว่าคุณจะอยู่ที่ไหน</h2>
+            <p>
+                ODDS Mentor จะช่วยให้คุณสามารถนัดหมายเวลากับคนที่คุณต้องการปรึกษา
+                พูดคุยเพื่อคลายปัญหา ข้อสงสัยต่างๆของคุณได้ ทุกที่
+            </p>
+        </div>
+    </div>
+    <div class="landing landing-section">
+        <div class="half">
+            <h2>จองได้ง่าย ๆ เพียงปลายนิ้ว</h2>
+            <p>
+                คุณสามารถนัดหมายเพื่อปรึกษากับผู้เชี่ยวชาญที่คุณต้องการได้ง่ายๆ
+                เพียงเข้าสู่ระบบการจองของเราแล้วทำการบันทึกข้อมูล
+            </p>
+        </div>
+        <div class="half">
+            <img src="/assets/images/rectangle-15.png" alt="consulting-rafiki" />
+        </div>
+    </div>
     <footer>
         <img src="/assets/images/odds-logo-white-blue.png" alt="ODDS_Logo" height="36px" />
         <p class="footer-param">
