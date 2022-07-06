@@ -1,9 +1,19 @@
-<h5>User Information</h5>
-<input type="text" pInputText placeholder="Firstname" />
-<input type="text" pInputText placeholder="Lastname" />
-<input type="text" pInputText placeholder="Email" />
-<h5>Bookin Information</h5>
-<input type="text" pInputText placeholder="Firstname(mentor)" />
-<input type="text" pInputText placeholder="Lastname(mentor)" />
-<input type="text" pInputText placeholder="Expertise(autocomplete)" />
-<input type="text" pInputText placeholder="Reason" />
+<div class="container">
+    <div class="container-card">
+        <p>User Information</p>
+        <div class="flex-row">
+            <input type="text" class="firstname" pInputText placeholder="Firstname">
+            <input type="text" class="lastname" pInputText placeholder="Lastname">
+        </div>
+        <div class="emailInput">
+            <input  type="text" pInputText placeholder="Email"> 
+        </div>
+        <p>Booking Information</p>
+        <div class="flex-row">
+            <input type="text" class="firstname" pInputText placeholder="Firstname(mentor)">
+            <input type="text" class="lastname" pInputText placeholder="Lastname(mentor)">
+        </div>
+        <input type="text" pInputText placeholder="Expertise(autocomplete)">
+        <textarea placeholder="Reason" rows="5" cols="30" pInputTextarea></textarea>
+    </div>
+</div>

@@ -17,6 +17,7 @@ import { ChipModule } from 'primeng/chip'
 import { RippleModule } from 'primeng/ripple'
 import {CalendarModule} from 'primeng/calendar';
 import {AutoCompleteModule} from 'primeng/autocomplete';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 @NgModule({
     declarations: [
@@ -39,6 +40,7 @@ import {AutoCompleteModule} from 'primeng/autocomplete';
         RippleModule,
         CalendarModule,
         AutoCompleteModule,
+        InputTextareaModule
     ],
     providers: [],
     bootstrap: [AppComponent],

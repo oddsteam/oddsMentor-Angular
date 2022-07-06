@@ -1,0 +1,46 @@
+.container{
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-card{
+    width: 60%;
+    height: auto;
+    box-shadow: 0px 0px 10px 0px rgba(204, 204, 204, 0.75);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 24px;
+    border-radius: 12px;
+    padding: 36px 108px 44px;
+}
+p{
+    margin: 0;
+    color: black;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 36px;
+}
+.firstname{
+    flex: 1;
+}
+.lastname{
+    flex: 1;
+}
+.emailInput{
+    width:50%;
+    padding-right: 18px;
+}
+.emailInput input{
+    width:100%;
+}
+
+
+
