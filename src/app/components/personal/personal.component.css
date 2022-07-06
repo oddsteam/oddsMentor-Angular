@@ -44,36 +44,19 @@
     margin-top: 0px;
     margin-bottom: 0px;
 }
-::ng-deep.chip {
+:host:ng-deep.chip {
     border: 1px solid #39485b;
     background-color: white;
     color: #1498d5;
     font-weight: 500;
 }
-::ng-deep.button-personal {
+:host:ng-deep.button-personal {
     background-color: #1498d5;
     color: white;
     border-color: transparent;
     border-radius: 12px;
 }
-.proflie-detail-box {
-}
+:host:ng-deep.button-personal:hover {
+    background-color: #0c78aa !important;
 
-.tbg1 {
-    background-color: rgba(0, 0, 255, 0.372);
-}
-
-.tbg2 {
-    background-color: rgba(255, 0, 157, 0.296);
-}
-
-.tbg3 {
-    background-color: rgba(0, 255, 38, 0.369);
-}
-
-.tbg4 {
-    background-color: rgba(255, 166, 0, 0.369);
-}
-.ui-button.orange-button {
-    background-color: orange;
 }
