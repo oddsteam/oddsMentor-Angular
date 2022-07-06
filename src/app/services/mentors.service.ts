@@ -1,17 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class MentorsService {
+    constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getData() {
-  return this.http.get<any>('assets/expertise.json')
-    .toPromise()
-    .then(res => <any[]>res.data)
-    .then(data => { return data; });
-  }
+    getData() {
+        return this.http
+            .get<any>('assets/expertise.json')
+            .toPromise()
+            .then((res) => <any[]>res.data)
+            .then((data) => {
+                return data
+            })
+    }
 }

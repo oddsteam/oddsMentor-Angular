@@ -1,4 +1,4 @@
-.container{
+.container {
     overflow-y: auto;
     overflow-x: hidden;
     width: 100vw;
@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
 }
-.container-card{
+.container-card {
     width: 60%;
     height: auto;
     box-shadow: 0px 0px 10px 0px rgba(204, 204, 204, 0.75);
@@ -18,29 +18,26 @@
     border-radius: 12px;
     padding: 36px 108px 44px;
 }
-p{
+p {
     margin: 0;
     color: black;
 }
-.flex-row{
+.flex-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 36px;
 }
-.firstname{
+.firstname {
     flex: 1;
 }
-.lastname{
+.lastname {
     flex: 1;
 }
-.emailInput{
-    width:50%;
+.emailInput {
+    width: 50%;
     padding-right: 18px;
 }
-.emailInput input{
-    width:100%;
+.emailInput input {
+    width: 100%;
 }
-
-
-

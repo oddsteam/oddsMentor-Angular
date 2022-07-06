@@ -12,6 +12,7 @@
                 label="Book A Session"
                 icon="pi pi-search"
                 styleClass="button"
+                (onClick)="handleClick($event)"
             ></p-button>
         </div>
         <div class="half img-container">
@@ -74,8 +75,12 @@
     <footer>
         <img src="/assets/images/odds-logo-white-blue.png" alt="ODDS_Logo" height="36px" />
         <p class="footer-param">
-            2549/41-43 Phahonyothin Road, Ladyao, Chatuchak, Bangkok 10900<br />Tel.: 020110684
-            Email: th@odd-e.com
+            <a href="https://goo.gl/maps/jf9yKAdmL8TrSkjw5"
+                >2549/41-43 Phahonyothin Road, Ladyao, Chatuchak, Bangkok 10900</a
+            >
+            <br />
+            <a href="tel:+6620110684">Tel.: 020110684 </a>
+            <a href="mailto:th@odd-e.com">Email: th@odd-e.com</a>
         </p>
     </footer>
 </div>

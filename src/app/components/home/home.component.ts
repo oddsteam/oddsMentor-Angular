@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { MentorDetail } from 'src/app/mentor'
+import { Router } from '@angular/router'
 
 @Component({
     selector: 'app-home',
@@ -7,7 +8,7 @@ import { MentorDetail } from 'src/app/mentor'
     styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-    constructor() {}
+    constructor(private router: Router) {}
 
     ngOnInit(): void {}
 
@@ -181,4 +182,9 @@ export class HomeComponent implements OnInit {
             updatedAt: new Date('2022-04-21T04:21'),
         },
     ]
+
+    handleClick(event: any) {
+        console.log(event)
+        this.router.navigateByUrl('booking')
+    }
 }

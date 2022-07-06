@@ -2,18 +2,35 @@
     <div class="container-card">
         <p>User Information</p>
         <div class="flex-row">
-            <input type="text" class="firstname" pInputText placeholder="Firstname">
-            <input type="text" class="lastname" pInputText placeholder="Lastname">
+            <input type="text" class="firstname" pInputText placeholder="Firstname" />
+            <input type="text" class="lastname" pInputText placeholder="Lastname" />
         </div>
         <div class="emailInput">
-            <input  type="text" pInputText placeholder="Email"> 
+            <input type="text" pInputText placeholder="Email" />
         </div>
         <p>Booking Information</p>
         <div class="flex-row">
-            <input type="text" class="firstname" pInputText placeholder="Firstname(mentor)">
-            <input type="text" class="lastname" pInputText placeholder="Lastname(mentor)">
+            <input type="text" class="firstname" pInputText placeholder="Firstname(mentor)" />
+            <input type="text" class="lastname" pInputText placeholder="Lastname(mentor)" />
         </div>
-        <input type="text" pInputText placeholder="Expertise(autocomplete)">
+        <span class="p-fluid">
+            <!-- <p-autoComplete
+                [(ngModel)]="selectedExpertises"
+                [suggestions]="filteredExpertises"
+                (completeMethod)="filterExpertises($event)"
+                field="skill"
+                [multiple]="true"
+                placeholder="Expertise(autocomplete)"
+            ></p-autoComplete> -->
+            <p-multiSelect
+                [options]="expertises"
+                [(ngModel)]="selectedExpertises"
+                defaultLabel="Expertise(autocomplete)"
+                optionLabel="skill"
+                [selectionLimit]=3
+                display="chip"
+            ></p-multiSelect>
+        </span>
         <textarea placeholder="Reason" rows="5" cols="30" pInputTextarea></textarea>
     </div>
 </div>

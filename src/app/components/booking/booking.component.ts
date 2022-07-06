@@ -7,32 +7,48 @@ import { MentorsService } from 'src/app/services/mentors.service'
     styleUrls: ['./booking.component.css'],
 })
 export class BookingComponent implements OnInit {
-  expertises: any[] = [];
-  filteredExpertises: any[] = [];
-  selectedExpertises: any[] = [];
+    expertises: any[] = [
+        {
+            skill: 'web wireframe',
+            endorsed: 20,
+        },
+        {
+            skill: 'prototype',
+            endorsed: 20,
+        },
+        {
+            skill: 'figma',
+            endorsed: 14,
+        },
+        {
+            skill: 'Spring Boot',
+            endorsed: 20,
+        },
+        {
+            skill: 'Express',
+            endorsed: 20,
+        },
+        {
+            skill: 'Fastify',
+            endorsed: 14,
+        },
+    ]
+    // filteredExpertises: any[] = this.expertises
+    selectedExpertises: any[] = []
 
-    constructor(
-      private mentorsService: MentorsService
-    ) { }
+    constructor() {}
 
-    ngOnInit(): void {
-      this.mentorsService.getData().then(expertises => {
-        this.expertises = expertises;
-      });
-    }
+    ngOnInit(): void {}
 
-    filterExpertises(event: any) {
-        //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
-        let filtered: any[] = [];
-        let query = event.query;
-        for (let i = 0; i < this.expertises.length; i++) {
-          let country = this.expertises[i];
-          if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-            filtered.push(country);
-          }
-        }
-    
-        this.filteredExpertises = filtered;
-      }
-
+    // filterExpertises(event: any) {
+    //     let filtered: any[] = []
+    //     let query = event.query
+    //     for (let i = 0; i < this.expertises.length; i++) {
+    //         let expertise = this.expertises[i]
+    //         if (expertise.skill.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+    //             filtered.push(expertise)
+    //         }
+    //     }
+    //     this.filteredExpertises = filtered
+    // }
 }

@@ -3,10 +3,6 @@
     --radius: 24px;
 }
 
-.container {
-    margin-top: 52px;
-}
-
 .landing {
     display: flex;
     flex-direction: row;
@@ -135,3 +131,8 @@ footer {
         width: 100%;
     }
 } */
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}

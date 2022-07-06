@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
-
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { HomeComponent } from './components/home/home.component'
@@ -15,9 +14,12 @@ import { AccordionModule } from 'primeng/accordion'
 import { ButtonModule } from 'primeng/button'
 import { ChipModule } from 'primeng/chip'
 import { RippleModule } from 'primeng/ripple'
-import {CalendarModule} from 'primeng/calendar';
-import {AutoCompleteModule} from 'primeng/autocomplete';
-import {InputTextareaModule} from 'primeng/inputtextarea';
+import { CalendarModule } from 'primeng/calendar'
+import { AutoCompleteModule } from 'primeng/autocomplete'
+import { InputTextareaModule } from 'primeng/inputtextarea'
+import { FormsModule } from '@angular/forms'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {MultiSelectModule} from 'primeng/multiselect';
 
 @NgModule({
     declarations: [
@@ -40,7 +42,10 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
         RippleModule,
         CalendarModule,
         AutoCompleteModule,
-        InputTextareaModule
+        InputTextareaModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MultiSelectModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
