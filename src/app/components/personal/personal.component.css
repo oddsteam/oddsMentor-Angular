@@ -5,12 +5,13 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding: 36px 108px 36px 108px;
+    margin-top: 52px;
 }
 
 .box {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     gap: 40px;
 }
@@ -32,16 +33,33 @@
 }
 
 .text{
-    font-size: 14pt;
-    font-weight: 500;
+    font-size: 16pt;
+    font-weight: 300;
+    color: #39485B;
+
 }
 .margin{
     margin-right: 8px;
     margin-top: 20px;
 }
-.margin-bottom{
+.margin-text{
     margin-top: 0px;
     margin-bottom: 0px;
+}
+::ng-deep.chip{
+    border: 1px solid #39485B;
+    background-color: white;
+    color: #1498D5;
+    font-weight: 500;
+}
+::ng-deep.button{
+    background-color: #1498D5;
+    color: white;
+    border-color: transparent;
+    border-radius: 12px;
+}
+.proflie-detail-box{
+    
 }
 
 
