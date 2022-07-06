@@ -1,1 +1,36 @@
-<p>mentor-card works!</p>
+<!-- <div class="container">
+    <h1>Mentor Card</h1>
+    <div class="card">
+        <img src="/assets/images/dome.jpeg" alt="" class="card-img" />
+        <div class="card-score">
+            <p-chip label="25" icon="pi pi-heart"></p-chip>
+        </div>
+        <div class="card-body">
+            <p>Nuntapong Siripanyawong</p>
+            <p>Software Developer</p>
+            <div class="card-expertise">
+                <p-chip label="Text Only"></p-chip>
+                <p-chip label="Text Only"></p-chip>
+                <p-chip label="Text Only"></p-chip>
+                <p-chip label="Text Only"></p-chip>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="card">
+    <img src="{{ mentor.profileImageUrl }}" alt="{{ mentor.fullNameEN }}'s Image" class="card-img" />
+    <div class="card-score">
+        <p-chip label="{{ mentor.totalEndorsed }}" icon="pi pi-heart"></p-chip>
+    </div>
+    <div class="card-body">
+        <p>{{ mentor.fullNameEN }}</p>
+        <p>{{ mentor.position }}</p>
+        <div class="card-expertise">
+            <p-chip label="{{ mentorExpertises[0].skill }}"></p-chip>
+            <p-chip label="{{ mentorExpertises[1].skill }}"></p-chip>
+            <p-chip label="{{ mentorExpertises[2].skill }}"></p-chip>
+            <p-chip label="{{ mentorExpertises[3].skill }}"></p-chip>
+        </div>
+    </div>
+</div>

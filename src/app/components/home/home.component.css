@@ -13,6 +13,7 @@
     justify-content: center;
     gap: 36px;
     overflow: hidden;
+    padding: 0 128px;
 }
 
 .landing-col {
@@ -26,7 +27,7 @@
 }
 
 .landing-block {
-    height: 100vh;
+    height: calc(100vh - 52px);
 }
 
 .mentors-row {
@@ -35,6 +36,7 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
+    overflow: hidden;
 }
 
 footer {
@@ -60,4 +62,17 @@ footer {
 
 .half {
     width: 50%;
+    color: white;
+}
+
+.button {
+    background-color: white !important;
+    color: #39485B !important;
+}
+
+.img-landing {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius);
 }

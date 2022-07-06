@@ -108,8 +108,12 @@
             }
         }
     },
+<<<<<<< Updated upstream
     "defaultProject": "oddsMentor-Angular",
     "cli": {
       "analytics": false
     }
+=======
+    "defaultProject": "oddsMentor-Angular"
+>>>>>>> Stashed changes
 }

@@ -10,11 +10,11 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component'
 import { BookingPreviewComponent } from './components/booking-preview/booking-preview.component'
 import { SignInComponent } from './components/sign-in/sign-in.component'
 import { MentorCardComponent } from './components/mentor-card/mentor-card.component'
-import {InputTextModule} from 'primeng/inputtext';
+import { InputTextModule } from 'primeng/inputtext'
 import { AccordionModule } from 'primeng/accordion'
 import { ButtonModule } from 'primeng/button'
-import { ChipModule } from 'primeng/chip';
-
+import { ChipModule } from 'primeng/chip'
+import { RippleModule } from 'primeng/ripple'
 @NgModule({
     declarations: [
         AppComponent,
@@ -26,7 +26,15 @@ import { ChipModule } from 'primeng/chip';
         SignInComponent,
         MentorCardComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule, AccordionModule, ButtonModule,InputTextModule,ChipModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AccordionModule,
+        ButtonModule,
+        InputTextModule,
+        ChipModule,
+        RippleModule,
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })
