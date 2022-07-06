@@ -14,17 +14,9 @@
             <input type="text" class="second" pInputText placeholder="Lastname(mentor)" />
         </div>
         <span class="p-fluid">
-            <!-- <p-autoComplete
-                [(ngModel)]="selectedExpertises"
-                [suggestions]="filteredExpertises"
-                (completeMethod)="filterExpertises($event)"
-                field="skill"
-                [multiple]="true"
-                placeholder="Expertise(autocomplete)"
-            ></p-autoComplete> -->
             <p-multiSelect
                 [options]="expertises"
-                [(ngModel)]="selectedExpertises"
+                [(ngModel)]="selectedExpertises" 
                 defaultLabel="Expertise(autocomplete)"
                 optionLabel="skill"
                 [selectionLimit]=3
@@ -36,6 +28,10 @@
         <div class="flex-row">
             <p-calendar class="first" [(ngModel)]="time" [timeOnly]="true" inputId="timeonly" placeholder="Time"></p-calendar>
             <p-dropdown class="second" [options]="duration" [(ngModel)]="durationTime" placeholder="Duration" optionLabel="times"></p-dropdown>
+        </div>
+        <div class="flex-row">
+            <p-button label="CANCEL" icon="pi pi-times" iconPos="left" styleClass="button-cancel"></p-button>
+            <p-button label="NEXT" icon="pi pi-angle-right" iconPos="right" styleClass="button-next"></p-button>
         </div>
     </div>
 </div>

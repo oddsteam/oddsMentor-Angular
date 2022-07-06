@@ -40,7 +40,7 @@ export class BookingComponent implements OnInit {
             endorsed: 14,
         },
     ]
-    // filteredExpertises: any[] = this.expertises
+    
     selectedExpertises: any[] = []
     
     date: Date = new Date();
@@ -59,15 +59,4 @@ export class BookingComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    // filterExpertises(event: any) {
-    //     let filtered: any[] = []
-    //     let query = event.query
-    //     for (let i = 0; i < this.expertises.length; i++) {
-    //         let expertise = this.expertises[i]
-    //         if (expertise.skill.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-    //             filtered.push(expertise)
-    //         }
-    //     }
-    //     this.filteredExpertises = filtered
-    // }
 }

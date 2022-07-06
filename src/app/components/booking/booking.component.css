@@ -28,6 +28,7 @@ p {
     justify-content: space-between;
     gap: 36px;
 }
+
 .first {
     flex: 1;
 }
@@ -45,10 +46,31 @@ p {
     width: 100%;
 }
 
-:host:ng-deep .p-datepicker {
+:host::ng-deep .p-datepicker {
     width: 100% !important;
 }
 
 :host::ng-deep .p-dropdown{
     width: 100% !important;
+}
+
+:host::ng-deep .button-next{
+    background-color: #1498D5;
+    color: white;
+    border:transparent;
+}
+
+:host::ng-deep.button-next:hover{
+    background-color: #0c78aa !important;
+    border:transparent;
+}
+:host::ng-deep .button-cancel{
+    background-color: #85888C;
+    color: white;
+    border:transparent;
+}
+
+:host::ng-deep.button-cancel:hover{
+    background-color: #6a6b6d !important;
+    border:transparent;
 }
