@@ -1,12 +1,19 @@
+import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core'
 import { MentorsService } from 'src/app/services/mentors.service'
+
+interface Times{
+    times: number
+}
 
 @Component({
     selector: 'app-booking',
     templateUrl: './booking.component.html',
     styleUrls: ['./booking.component.css'],
 })
+
 export class BookingComponent implements OnInit {
+
     expertises: any[] = [
         {
             skill: 'web wireframe',
@@ -35,10 +42,22 @@ export class BookingComponent implements OnInit {
     ]
     // filteredExpertises: any[] = this.expertises
     selectedExpertises: any[] = []
+    
+    date: Date = new Date();
+    time: Date = new Date();
+    duration: Times[];
+    durationTime: Times[] = [];
 
-    constructor() {}
+    constructor() {
+        this.duration = [
+            {times:30},
+            {times:45},
+            {times:60},
+        ];
+    }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+    }
 
     // filterExpertises(event: any) {
     //     let filtered: any[] = []

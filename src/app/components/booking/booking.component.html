@@ -1,17 +1,17 @@
-<div class="container">
+<div class="container-booking">
     <div class="container-card">
         <p>User Information</p>
         <div class="flex-row">
-            <input type="text" class="firstname" pInputText placeholder="Firstname" />
-            <input type="text" class="lastname" pInputText placeholder="Lastname" />
+            <input type="text" class="first" pInputText placeholder="Firstname" />
+            <input type="text" class="second" pInputText placeholder="Lastname" />
         </div>
         <div class="emailInput">
             <input type="text" pInputText placeholder="Email" />
         </div>
         <p>Booking Information</p>
         <div class="flex-row">
-            <input type="text" class="firstname" pInputText placeholder="Firstname(mentor)" />
-            <input type="text" class="lastname" pInputText placeholder="Lastname(mentor)" />
+            <input type="text" class="first" pInputText placeholder="Firstname(mentor)" />
+            <input type="text" class="second" pInputText placeholder="Lastname(mentor)" />
         </div>
         <span class="p-fluid">
             <!-- <p-autoComplete
@@ -32,5 +32,10 @@
             ></p-multiSelect>
         </span>
         <textarea placeholder="Reason" rows="5" cols="30" pInputTextarea></textarea>
+        <p-calendar [(ngModel)]="date" [inline]="true" [showWeek]="false"></p-calendar>
+        <div class="flex-row">
+            <p-calendar class="first" [(ngModel)]="time" [timeOnly]="true" inputId="timeonly" placeholder="Time"></p-calendar>
+            <p-dropdown class="second" [options]="duration" [(ngModel)]="durationTime" placeholder="Duration" optionLabel="times"></p-dropdown>
+        </div>
     </div>
 </div>

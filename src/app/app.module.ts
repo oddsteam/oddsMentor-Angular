@@ -20,6 +20,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea'
 import { FormsModule } from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MultiSelectModule} from 'primeng/multiselect';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
     declarations: [
@@ -46,6 +47,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
         FormsModule,
         BrowserAnimationsModule,
         MultiSelectModule,
+        DropdownModule
     ],
     providers: [],
     bootstrap: [AppComponent],
