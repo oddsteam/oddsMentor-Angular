@@ -74,7 +74,7 @@ footer {
     align-items: center;
 }
 
-::ng-deep.button {
+::ng-deep.home-button {
     background-color: white !important;
     color: #39485b !important;
     border-color: transparent;

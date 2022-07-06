@@ -18,8 +18,7 @@ export class HomeComponent implements OnInit {
             fullNameEN: 'Nuntapong Siripanyawong',
             fullNameTH: 'นันทพงศ์ ศิริปัญญาวงศ์',
             nickname: 'pat1',
-            profileImageUrl:
-                'https://drive.google.com/uc?export=view&id=18SM8TbikJQt-RH2LdS_MbzGGod-dXHgx',
+            profileImageUrl: '/assets/images/pat.jpeg',
             biography:
                 "Hello, I'm Nantapong Siripanyawong. I'm a software developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
             type: 'Cooperative Education 2022',
@@ -60,8 +59,7 @@ export class HomeComponent implements OnInit {
             fullNameEN: 'Nuntapong Siripanyawong',
             fullNameTH: 'นันทพงศ์ ศิริปัญญาวงศ์',
             nickname: 'pat2',
-            profileImageUrl:
-                'https://drive.google.com/uc?export=view&id=18SM8TbikJQt-RH2LdS_MbzGGod-dXHgx',
+            profileImageUrl: '/assets/images/pat.jpeg',
             biography:
                 "Hello, I'm Nantapong Siripanyawong. I'm a software developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
             type: 'Cooperative Education 2022',
@@ -102,8 +100,7 @@ export class HomeComponent implements OnInit {
             fullNameEN: 'Nuntapong Siripanyawong',
             fullNameTH: 'นันทพงศ์ ศิริปัญญาวงศ์',
             nickname: 'pat3',
-            profileImageUrl:
-                'https://drive.google.com/uc?export=view&id=18SM8TbikJQt-RH2LdS_MbzGGod-dXHgx',
+            profileImageUrl: '/assets/images/pat.jpeg',
             biography:
                 "Hello, I'm Nantapong Siripanyawong. I'm a software developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
             type: 'Cooperative Education 2022',
@@ -144,8 +141,7 @@ export class HomeComponent implements OnInit {
             fullNameEN: 'Nuntapong Siripanyawong',
             fullNameTH: 'นันทพงศ์ ศิริปัญญาวงศ์',
             nickname: 'pat4',
-            profileImageUrl:
-                'https://drive.google.com/uc?export=view&id=18SM8TbikJQt-RH2LdS_MbzGGod-dXHgx',
+            profileImageUrl: '/assets/images/pat.jpeg',
             biography:
                 "Hello, I'm Nantapong Siripanyawong. I'm a software developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
             type: 'Cooperative Education 2022',
@@ -183,8 +179,7 @@ export class HomeComponent implements OnInit {
         },
     ]
 
-    handleClick(event: any) {
-        console.log(event)
+    handleClick() {
         this.router.navigateByUrl('booking')
     }
 }
