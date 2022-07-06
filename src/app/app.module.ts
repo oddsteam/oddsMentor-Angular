@@ -15,6 +15,9 @@ import { AccordionModule } from 'primeng/accordion'
 import { ButtonModule } from 'primeng/button'
 import { ChipModule } from 'primeng/chip'
 import { RippleModule } from 'primeng/ripple'
+import {CalendarModule} from 'primeng/calendar';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -34,6 +37,8 @@ import { RippleModule } from 'primeng/ripple'
         InputTextModule,
         ChipModule,
         RippleModule,
+        CalendarModule,
+        AutoCompleteModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

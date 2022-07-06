@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "skill": "web wireframe",
+            "endorsed": 20
+        },
+        {
+            "skill": "prototype",
+            "endorsed": 20
+        },
+        {
+            "skill": "figma",
+            "endorsed": 14
+        },
+        {
+            "skill": "Spring Boot",
+            "endorsed": 20
+        },
+        {
+            "skill": "Express",
+            "endorsed": 20
+        },
+        {
+            "skill": "Fastify",
+            "endorsed": 14
+        }
+    ]
+}
