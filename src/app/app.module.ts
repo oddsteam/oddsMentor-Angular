@@ -19,8 +19,9 @@ import { AutoCompleteModule } from 'primeng/autocomplete'
 import { InputTextareaModule } from 'primeng/inputtextarea'
 import { FormsModule } from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import {MultiSelectModule} from 'primeng/multiselect';
-import {DropdownModule} from 'primeng/dropdown';
+import { MultiSelectModule } from 'primeng/multiselect'
+import { DropdownModule } from 'primeng/dropdown'
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
 
 @NgModule({
     declarations: [
@@ -47,7 +48,8 @@ import {DropdownModule} from 'primeng/dropdown';
         FormsModule,
         BrowserAnimationsModule,
         MultiSelectModule,
-        DropdownModule
+        DropdownModule,
+        SweetAlert2Module,
     ],
     providers: [],
     bootstrap: [AppComponent],
