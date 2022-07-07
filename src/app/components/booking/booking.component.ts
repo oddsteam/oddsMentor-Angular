@@ -83,6 +83,6 @@ export class BookingComponent implements OnInit {
 
     onSubmit() {
         this.mentorService.saveBooking(this.bookingForm.value)
-        this.router.navigateByUrl("preview")
+        this.router.navigateByUrl('preview')
     }
 }

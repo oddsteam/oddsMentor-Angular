@@ -9,7 +9,7 @@ export class MentorsService {
 
     currentBooking?: BookingDetail
 
-    saveBooking(booking: BookingDetail|any) {
+    saveBooking(booking: BookingDetail | any) {
         this.currentBooking = booking
     }
 
@@ -20,5 +20,4 @@ export class MentorsService {
     clearCurrentBooking() {
         this.currentBooking = undefined
     }
-    
 }

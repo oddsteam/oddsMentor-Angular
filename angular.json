@@ -30,9 +30,7 @@
                             "node_modules/primeng/resources/primeng.min.css",
                             "node_modules/sweetalert2/dist/sweetalert2.css"
                         ],
-                        "scripts": [
-                            "node_modules/sweetalert2/dist/sweetalert2.js"
-                        ]
+                        "scripts": ["node_modules/sweetalert2/dist/sweetalert2.js"]
                     },
                     "configurations": {
                         "production": {

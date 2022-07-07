@@ -20,18 +20,18 @@ export interface Expertise {
 }
 
 export interface BookingDetail {
-    firstNameUser:string
-    lastNameUser:string
-    emailUser : string
-    firstNameMentor : string
-    lastNameMentor : string
-    expertise : Expertise[]
-    reason : string
-    bookingDate : Date
-    bookingTime : Date
-    duration : Time
+    firstNameUser: string
+    lastNameUser: string
+    emailUser: string
+    firstNameMentor: string
+    lastNameMentor: string
+    expertise: Expertise[]
+    reason: string
+    bookingDate: Date
+    bookingTime: Date
+    duration: Time
 }
 
 export interface Time {
-    time : number
+    time: number
 }

@@ -1,12 +1,14 @@
 <div class="container">
     <div class="container-card">
-        <h3 style="text-align: center;">Confirmation</h3>
+        <h3 style="text-align: center">Confirmation</h3>
 
         <p class="header">User Information</p>
 
         <div>
             <p class="title">Name</p>
-            <p class="sub-title">{{ bookingDetail.firstNameUser }} {{ bookingDetail.lastNameUser }}</p>
+            <p class="sub-title">
+                {{ bookingDetail.firstNameUser }} {{ bookingDetail.lastNameUser }}
+            </p>
         </div>
 
         <div>
@@ -18,7 +20,9 @@
 
         <div>
             <p class="title">Mentor name</p>
-            <p class="sub-title">{{ bookingDetail.firstNameMentor }} {{ bookingDetail.lastNameMentor }}</p>
+            <p class="sub-title">
+                {{ bookingDetail.firstNameMentor }} {{ bookingDetail.lastNameMentor }}
+            </p>
         </div>
 
         <div>
@@ -33,7 +37,14 @@
 
         <div>
             <p class="title">Date and Time</p>
-            <p class="sub-title">{{ bookingDetail.bookingDate.getDate() }} {{ bookingDetail.bookingDate.getMonth() }} {{ bookingDetail.bookingDate.getFullYear() }} {{ bookingDetail.bookingTime.getHours() }}:{{ bookingDetail.bookingTime.getMinutes() }}</p>
+            <p class="sub-title">
+                {{ bookingDetail.bookingDate.getDate() }}
+                {{ bookingDetail.bookingDate.getMonth() }}
+                {{ bookingDetail.bookingDate.getFullYear() }}
+                {{ bookingDetail.bookingTime.getHours() }}:{{
+                    bookingDetail.bookingTime.getMinutes()
+                }}
+            </p>
         </div>
 
         <div>
@@ -42,8 +53,19 @@
         </div>
 
         <div class="flex-row">
-            <p-button label="RETURN" icon="pi pi-angle-left" iconPos="left" styleClass="button-return"></p-button>
-            <p-button (onClick)="on_submit()" label="SUBMIT" icon="pi pi-check" iconPos="right" styleClass="button-submit"></p-button>
+            <p-button
+                label="RETURN"
+                icon="pi pi-angle-left"
+                iconPos="left"
+                styleClass="button-return"
+            ></p-button>
+            <p-button
+                (onClick)="on_submit()"
+                label="SUBMIT"
+                icon="pi pi-check"
+                iconPos="right"
+                styleClass="button-submit"
+            ></p-button>
         </div>
     </div>
 </div>

@@ -20,7 +20,7 @@
     padding: 36px 108px 44px;
 }
 
-.flex-row{
+.flex-row {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -30,41 +30,40 @@
 p {
     margin: 0px;
     color: black;
-
 }
 
-.header{
-    color: #85888C;
+.header {
+    color: #85888c;
     font-size: 20px;
     font-weight: 500;
 }
 
-.title{
+.title {
     font-size: 16px;
-    font-weight:400;
+    font-weight: 400;
 }
 
-.sub-title{
+.sub-title {
     font-size: 16px;
     font-weight: 600;
 }
 
-:host::ng-deep.button-return{
+:host::ng-deep.button-return {
     background-color: #ffc107;
     color: white;
-    border:transparent;
+    border: transparent;
 }
 
-:host::ng-deep.button-submit{
+:host::ng-deep.button-submit {
     background-color: #28a745;
     color: white;
-    border:transparent;
+    border: transparent;
 }
 
-:host::ng-deep.button-return:hover{
+:host::ng-deep.button-return:hover {
     background-color: #e0a800 !important;
 }
 
-:host::ng-deep.button-submit:hover{
+:host::ng-deep.button-submit:hover {
     background-color: #218838 !important;
 }

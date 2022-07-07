@@ -78,7 +78,7 @@ a {
 }
 
 :host::ng-deep .home-chip {
-    background-color: #1498D5;
+    background-color: #1498d5;
     width: max-content;
 }
 
@@ -87,6 +87,6 @@ a {
 }
 
 :host::ng-deep .score-chip {
-    background-color: #39485B;
-    border: 2px solid #1498D5;
+    background-color: #39485b;
+    border: 2px solid #1498d5;
 }

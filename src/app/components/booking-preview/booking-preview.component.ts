@@ -82,7 +82,16 @@ export class BookingPreviewComponent implements OnInit {
                         },
                         {
                             name: 'Date and Time',
-                            value: [booking.bookingDate.getDate(), booking.bookingDate.getMonth() + 1, booking.bookingDate.getFullYear()].join('/') + ' ' + booking.bookingTime.getHours() + ':' + booking.bookingTime.getMinutes(),
+                            value:
+                                [
+                                    booking.bookingDate.getDate(),
+                                    booking.bookingDate.getMonth() + 1,
+                                    booking.bookingDate.getFullYear(),
+                                ].join('/') +
+                                ' ' +
+                                booking.bookingTime.getHours() +
+                                ':' +
+                                booking.bookingTime.getMinutes(),
                         },
                         {
                             name: 'Duration',

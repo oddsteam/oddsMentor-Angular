@@ -6,13 +6,21 @@
             class="card-img"
         />
         <div class="card-score">
-            <p-chip label="{{ mentor.totalEndorsed }}" icon="pi pi-heart-fill" styleClass="score-chip"></p-chip>
+            <p-chip
+                label="{{ mentor.totalEndorsed }}"
+                icon="pi pi-heart-fill"
+                styleClass="score-chip"
+            ></p-chip>
         </div>
         <div class="card-body">
             <p class="card-title">{{ mentor.fullNameEN }}</p>
             <p class="card-subtitle">{{ mentor.position }}</p>
             <div class="card-expertise">
-                <p-chip *ngFor="let skill of skills" label="{{ skill }}" styleClass="home-chip"></p-chip>
+                <p-chip
+                    *ngFor="let skill of skills"
+                    label="{{ skill }}"
+                    styleClass="home-chip"
+                ></p-chip>
             </div>
         </div>
     </a>
