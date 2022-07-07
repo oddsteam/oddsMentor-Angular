@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MultiSelectModule } from 'primeng/multiselect'
 import { DropdownModule } from 'primeng/dropdown'
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
     declarations: [
@@ -50,7 +51,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
         MultiSelectModule,
         DropdownModule,
         SweetAlert2Module,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

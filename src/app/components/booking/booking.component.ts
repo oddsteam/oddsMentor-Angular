@@ -1,17 +1,15 @@
-
 import { Component, OnInit } from '@angular/core'
 import { MentorsService } from 'src/app/services/mentors.service'
 import { Router } from '@angular/router'
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Time } from 'src/app/mentor';
+import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { BookingDetail, Time, Expertise } from 'src/app/mentor'
+
 @Component({
     selector: 'app-booking',
     templateUrl: './booking.component.html',
     styleUrls: ['./booking.component.css'],
 })
-
 export class BookingComponent implements OnInit {
-    
     expertises: any[] = [
         {
             skill: 'web wireframe',
@@ -38,32 +36,44 @@ export class BookingComponent implements OnInit {
             endorsed: 14,
         },
     ]
-    
+
     selectedExpertises: any[] = []
-    
-    duration: Time[] = [
-        {time:30},
-        {time:45},
-        {time:60},
-    ];
 
-    bookingForm = new FormGroup({
-        firstNameUser : new FormControl('', [Validators.required]),
-        lastNameUser : new FormControl('', [Validators.required]),
-        emailUser : new FormControl('', [Validators.required]),
-        firstNameMentor: new FormControl('', [Validators.required]),
-        lastNameMentor : new FormControl('', [Validators.required]),
-        expertise : new FormControl([], [Validators.required]),
-        reason : new FormControl('', [Validators.required]),
-        bookingDate : new FormControl('', [Validators.required]),
-        bookingTime : new FormControl('', [Validators.required]),
-        duration : new FormControl('', [Validators.required])
-    }, Validators.required)
+    duration: Time[] = [{ time: 30 }, { time: 45 }, { time: 60 }]
 
-    constructor(private router: Router, private mentorService : MentorsService) {}
+    bookingForm = new FormGroup(
+        {
+            firstNameUser: new FormControl('', [Validators.required]),
+            lastNameUser: new FormControl('', [Validators.required]),
+            emailUser: new FormControl('', [Validators.required]),
+            firstNameMentor: new FormControl('', [Validators.required]),
+            lastNameMentor: new FormControl('', [Validators.required]),
+            expertise: new FormControl([], [Validators.required]),
+            reason: new FormControl('', [Validators.required]),
+            bookingDate: new FormControl('', [Validators.required]),
+            bookingTime: new FormControl('', [Validators.required]),
+            duration: new FormControl('', [Validators.required]),
+        },
+        Validators.required
+    )
 
-    ngOnInit(): void { }
-    
+    constructor(private router: Router, private mentorService: MentorsService) {}
+
+    ngOnInit(): void {
+        // this.bookingForm.setValue({
+        //     firstNameUser: 'Kelvin',
+        //     lastNameUser: 'Mola',
+        //     emailUser: 'kelvin@odds.team',
+        //     firstNameMentor: 'Nuntapong',
+        //     lastNameMentor: 'Siripantawong',
+        //     expertise: [],
+        //     reason: 'Development ODDS Menter',
+        //     bookingDate: '',
+        //     bookingTime: '',
+        //     duration: '',
+        // })
+    }
+
     handleNext() {
         this.router.navigateByUrl('preview')
     }
@@ -71,9 +81,8 @@ export class BookingComponent implements OnInit {
         this.router.navigateByUrl('personal')
     }
 
-    onSubmit(){
+    onSubmit() {
         this.mentorService.saveBooking(this.bookingForm.value)
         this.router.navigateByUrl("preview")
     }
-
 }

@@ -6,39 +6,39 @@
 
         <div>
             <p class="title">Name</p>
-            <p class="sub-title">Kelvin Mola</p>
+            <p class="sub-title">{{ bookingDetail.firstNameUser }} {{ bookingDetail.lastNameUser }}</p>
         </div>
 
         <div>
             <p class="title">Email</p>
-            <p class="sub-title">kelvin@odds</p>
+            <p class="sub-title">{{ bookingDetail.emailUser }}</p>
         </div>
 
         <p class="header">Booking Information</p>
 
         <div>
             <p class="title">Mentor name</p>
-            <p class="sub-title">Nuntapong Siripantawong</p>
+            <p class="sub-title">{{ bookingDetail.firstNameMentor }} {{ bookingDetail.lastNameMentor }}</p>
         </div>
 
         <div>
             <p class="title">Expertise</p>
-            <p class="sub-title">Angular, Java and Spring Boot</p>
+            <p class="sub-title">{{ expertise }}</p>
         </div>
 
         <div>
             <p class="title">Reason</p>
-            <p class="sub-title">Development ODDS Menter</p>
+            <p class="sub-title">{{ bookingDetail.reason }}</p>
         </div>
 
         <div>
             <p class="title">Date and Time</p>
-            <p class="sub-title">1 January 2023 00:00</p>
+            <p class="sub-title">{{ bookingDetail.bookingDate.getDate() }} {{ bookingDetail.bookingDate.getMonth() }} {{ bookingDetail.bookingDate.getFullYear() }} {{ bookingDetail.bookingTime.getHours() }}:{{ bookingDetail.bookingTime.getMinutes() }}</p>
         </div>
 
         <div>
             <p class="title">Duration</p>
-            <p class="sub-title">60 mins</p>
+            <p class="sub-title">{{ bookingDetail.duration.time }} mins</p>
         </div>
 
         <div class="flex-row">

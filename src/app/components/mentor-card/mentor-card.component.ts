@@ -27,7 +27,5 @@ export class MentorCardComponent implements OnInit {
                 this.skills.push(expertise.skill)
             })
         }
-        console.log(this.skills);
-        
     }
 }
