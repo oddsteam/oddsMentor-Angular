@@ -1,19 +1,24 @@
 import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
+import { BookingDetail } from '../mentor'
 
 @Injectable({
     providedIn: 'root',
 })
 export class MentorsService {
-    constructor(private http: HttpClient) {}
+    constructor() {}
 
-    getData() {
-        return this.http
-            .get<any>('assets/expertise.json')
-            .toPromise()
-            .then((res) => <any[]>res.data)
-            .then((data) => {
-                return data
-            })
+    currentBooking?: BookingDetail
+
+    saveBooking(booking: BookingDetail|any) {
+        this.currentBooking = booking
     }
+
+    getCurrentBooking(): BookingDetail | undefined {
+        return this.currentBooking
+    }
+
+    clearCurrentBooking() {
+        this.currentBooking = undefined
+    }
+    
 }

@@ -74,6 +74,7 @@ a {
 :host::ng-deep .p-chip .p-chip-text {
     margin: 0 !important;
     color: white;
+    text-transform: capitalize;
 }
 
 :host::ng-deep .home-chip {

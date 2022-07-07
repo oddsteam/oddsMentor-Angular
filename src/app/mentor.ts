@@ -18,3 +18,20 @@ export interface Expertise {
     skill: string
     endorsed: number
 }
+
+export interface BookingDetail {
+    firstNameUser:string
+    lastNameUser:string
+    emailUser : string
+    firstNameMentor : string
+    lastNameMentor : string
+    expertise : Expertise[]
+    reason : string
+    bookingDate : Date
+    bookingTime : Date
+    duration : Time
+}
+
+export interface Time {
+    time : number
+}

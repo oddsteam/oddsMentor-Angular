@@ -17,7 +17,7 @@ import { RippleModule } from 'primeng/ripple'
 import { CalendarModule } from 'primeng/calendar'
 import { AutoCompleteModule } from 'primeng/autocomplete'
 import { InputTextareaModule } from 'primeng/inputtextarea'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MultiSelectModule } from 'primeng/multiselect'
 import { DropdownModule } from 'primeng/dropdown'
@@ -50,6 +50,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
         MultiSelectModule,
         DropdownModule,
         SweetAlert2Module,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent],

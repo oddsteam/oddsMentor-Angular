@@ -1,12 +1,9 @@
-import { Time } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core'
 import { MentorsService } from 'src/app/services/mentors.service'
 import { Router } from '@angular/router'
-
-interface Times{
-    times: number
-}
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Time } from 'src/app/mentor';
 @Component({
     selector: 'app-booking',
     templateUrl: './booking.component.html',
@@ -44,28 +41,39 @@ export class BookingComponent implements OnInit {
     
     selectedExpertises: any[] = []
     
-    date: Date = new Date();
-    time: any;
-    duration: Times[];
-    durationTime: Times[] = [];
+    duration: Time[] = [
+        {time:30},
+        {time:45},
+        {time:60},
+    ];
 
-    constructor(private router: Router) {
-        this.duration = [
-            {times:30},
-            {times:45},
-            {times:60},
-        ];
-        
-    }
+    bookingForm = new FormGroup({
+        firstNameUser : new FormControl('', [Validators.required]),
+        lastNameUser : new FormControl('', [Validators.required]),
+        emailUser : new FormControl('', [Validators.required]),
+        firstNameMentor: new FormControl('', [Validators.required]),
+        lastNameMentor : new FormControl('', [Validators.required]),
+        expertise : new FormControl([], [Validators.required]),
+        reason : new FormControl('', [Validators.required]),
+        bookingDate : new FormControl('', [Validators.required]),
+        bookingTime : new FormControl('', [Validators.required]),
+        duration : new FormControl('', [Validators.required])
+    }, Validators.required)
 
-    ngOnInit(): void {
-    }
+    constructor(private router: Router, private mentorService : MentorsService) {}
+
+    ngOnInit(): void { }
     
     handleNext() {
         this.router.navigateByUrl('preview')
     }
     handleBack() {
         this.router.navigateByUrl('personal')
+    }
+
+    onSubmit(){
+        this.mentorService.saveBooking(this.bookingForm.value)
+        this.router.navigateByUrl("preview")
     }
 
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router'
+import { MentorsService } from 'src/app/services/mentors.service'
+import { BookingDetail } from 'src/app/mentor'
 
 @Component({
     selector: 'app-booking-preview',
@@ -8,7 +10,21 @@ import { Router } from '@angular/router'
     styleUrls: ['./booking-preview.component.css'],
 })
 export class BookingPreviewComponent implements OnInit {
-    constructor(private router: Router) {}
+    bookingDetail!: BookingDetail
+    
+    constructor(private router: Router, private mentorsService: MentorsService) { }
+
+    ngOnInit(): void {
+        this.onLoading()
+    }
+
+    onLoading() {
+        const serviceData = this.mentorsService.getCurrentBooking()
+        if (!serviceData) this.router.navigateByUrl('')
+        this.bookingDetail = this.mentorsService.getCurrentBooking()!
+        console.log(this.bookingDetail)
+    }
+
     //alert
     async on_submit() {
         await Swal.fire({
@@ -17,5 +33,4 @@ export class BookingPreviewComponent implements OnInit {
         })
         this.router.navigateByUrl('personal')
     }
-    ngOnInit(): void {}
 }
