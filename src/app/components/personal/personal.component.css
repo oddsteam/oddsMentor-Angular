@@ -44,18 +44,18 @@
     margin-top: 0px;
     margin-bottom: 0px;
 }
-:host:ng-deep.chip {
+:host::ng-deep.chip {
     border: 1px solid #39485b;
     background-color: white;
     color: #1498d5;
     font-weight: 500;
 }
-:host:ng-deep.button-personal {
+:host::ng-deep.button-personal {
     background-color: #1498d5;
     color: white;
     border-color: transparent;
     border-radius: 12px;
 }
-:host:ng-deep.button-personal:hover {
+:host::ng-deep.button-personal:hover {
     background-color: #0c78aa !important;
 }

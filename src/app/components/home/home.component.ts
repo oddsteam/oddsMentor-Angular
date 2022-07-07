@@ -19,36 +19,42 @@ export class HomeComponent implements OnInit {
             id: '3ca5697e-ffd4-47cd-abc4-cf1d00dcd6cb',
             fullNameEN: 'Nuntapong Siripanyawong',
             fullNameTH: 'นันทพงศ์ ศิริปัญญาวงศ์',
-            nickname: 'pat1',
-            profileImageUrl: '/assets/images/pat.jpeg',
+            nickname: 'Pat1',
+            profileImageUrl: '/assets/images/dome.jpeg',
             biography:
                 "Hello, I'm Nantapong Siripanyawong. I'm a software developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
             type: 'Cooperative Education 2022',
-            team: 'Molamola',
+            team: 'Mola Mola',
             position: 'Backend Developer',
             totalEndorsed: 108,
-            expertises: [
+            expertise: [
                 {
+                    id: '1',
                     skill: 'web wireframe',
                     endorsed: 20,
                 },
                 {
+                    id: '2',
                     skill: 'prototype',
                     endorsed: 20,
                 },
                 {
+                    id: '3',
                     skill: 'figma',
                     endorsed: 14,
                 },
                 {
+                    id: '4',
                     skill: 'Spring Boot',
                     endorsed: 20,
                 },
                 {
+                    id: '5',
                     skill: 'Express',
                     endorsed: 20,
                 },
                 {
+                    id: '6',
                     skill: 'Fastify',
                     endorsed: 14,
                 },
@@ -60,36 +66,42 @@ export class HomeComponent implements OnInit {
             id: '3ca5697e-ffd4-47cd-abc4-cf1d00dcd6cb',
             fullNameEN: 'Nuntapong Siripanyawong',
             fullNameTH: 'นันทพงศ์ ศิริปัญญาวงศ์',
-            nickname: 'pat2',
-            profileImageUrl: '/assets/images/pat.jpeg',
+            nickname: 'Pat2',
+            profileImageUrl: '/assets/images/dome.jpeg',
             biography:
                 "Hello, I'm Nantapong Siripanyawong. I'm a software developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
             type: 'Cooperative Education 2022',
-            team: 'Molamola',
+            team: 'Mola Mola',
             position: 'Backend Developer',
             totalEndorsed: 108,
-            expertises: [
+            expertise: [
                 {
+                    id: '1',
                     skill: 'web wireframe',
                     endorsed: 20,
                 },
                 {
+                    id: '2',
                     skill: 'prototype',
                     endorsed: 20,
                 },
                 {
+                    id: '3',
                     skill: 'figma',
                     endorsed: 14,
                 },
                 {
+                    id: '4',
                     skill: 'Spring Boot',
                     endorsed: 20,
                 },
                 {
+                    id: '5',
                     skill: 'Express',
                     endorsed: 20,
                 },
                 {
+                    id: '6',
                     skill: 'Fastify',
                     endorsed: 14,
                 },
@@ -101,36 +113,42 @@ export class HomeComponent implements OnInit {
             id: '3ca5697e-ffd4-47cd-abc4-cf1d00dcd6cb',
             fullNameEN: 'Nuntapong Siripanyawong',
             fullNameTH: 'นันทพงศ์ ศิริปัญญาวงศ์',
-            nickname: 'pat3',
-            profileImageUrl: '/assets/images/pat.jpeg',
+            nickname: 'Pat3',
+            profileImageUrl: '/assets/images/dome.jpeg',
             biography:
                 "Hello, I'm Nantapong Siripanyawong. I'm a software developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
             type: 'Cooperative Education 2022',
-            team: 'Molamola',
+            team: 'Mola Mola',
             position: 'Backend Developer',
             totalEndorsed: 108,
-            expertises: [
+            expertise: [
                 {
+                    id: '1',
                     skill: 'web wireframe',
                     endorsed: 20,
                 },
                 {
+                    id: '2',
                     skill: 'prototype',
                     endorsed: 20,
                 },
                 {
+                    id: '3',
                     skill: 'figma',
                     endorsed: 14,
                 },
                 {
+                    id: '4',
                     skill: 'Spring Boot',
                     endorsed: 20,
                 },
                 {
+                    id: '5',
                     skill: 'Express',
                     endorsed: 20,
                 },
                 {
+                    id: '6',
                     skill: 'Fastify',
                     endorsed: 14,
                 },
@@ -142,36 +160,42 @@ export class HomeComponent implements OnInit {
             id: '3ca5697e-ffd4-47cd-abc4-cf1d00dcd6cb',
             fullNameEN: 'Nuntapong Siripanyawong',
             fullNameTH: 'นันทพงศ์ ศิริปัญญาวงศ์',
-            nickname: 'pat4',
-            profileImageUrl: '/assets/images/pat.jpeg',
+            nickname: 'Pat4',
+            profileImageUrl: '/assets/images/dome.jpeg',
             biography:
                 "Hello, I'm Nantapong Siripanyawong. I'm a software developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
             type: 'Cooperative Education 2022',
-            team: 'Molamola',
+            team: 'Mola Mola',
             position: 'Backend Developer',
             totalEndorsed: 108,
-            expertises: [
+            expertise: [
                 {
+                    id: '1',
                     skill: 'web wireframe',
                     endorsed: 20,
                 },
                 {
+                    id: '2',
                     skill: 'prototype',
                     endorsed: 20,
                 },
                 {
+                    id: '3',
                     skill: 'figma',
                     endorsed: 14,
                 },
                 {
+                    id: '4',
                     skill: 'Spring Boot',
                     endorsed: 20,
                 },
                 {
+                    id: '5',
                     skill: 'Express',
                     endorsed: 20,
                 },
                 {
+                    id: '6',
                     skill: 'Fastify',
                     endorsed: 14,
                 },
@@ -181,7 +205,7 @@ export class HomeComponent implements OnInit {
         },
     ]
 
-    handleClick() {
-        this.router.navigateByUrl('booking')
-    }
+    // handleClick() {
+    //     this.router.navigateByUrl('home#TopMentors')
+    // }
 }

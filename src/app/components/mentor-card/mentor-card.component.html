@@ -1,27 +1,29 @@
-<div class="card">
-    <a routerLink="../personal">
-        <img
-            src="{{ mentor.profileImageUrl }}"
-            alt="{{ mentor.fullNameEN }}'s Image"
-            class="card-img"
-        />
-        <div class="card-score">
-            <p-chip
-                label="{{ mentor.totalEndorsed }}"
-                icon="pi pi-heart-fill"
-                styleClass="score-chip"
-            ></p-chip>
-        </div>
-        <div class="card-body">
-            <p class="card-title">{{ mentor.fullNameEN }}</p>
-            <p class="card-subtitle">{{ mentor.position }}</p>
-            <div class="card-expertise">
+<p-button pRipple (onClick)="onMentor()">
+    <ng-template pTemplate="content">
+        <div class="card">
+            <img
+                src="{{ mentorDetail.profileImageUrl }}"
+                alt="{{ mentorDetail.fullNameEN }}'s Image"
+                class="card-img"
+            />
+            <div class="card-score">
                 <p-chip
-                    *ngFor="let skill of skills"
-                    label="{{ skill }}"
-                    styleClass="home-chip"
+                    label="{{ mentorDetail.totalEndorsed }}"
+                    icon="pi pi-heart-fill"
+                    styleClass="score-chip"
                 ></p-chip>
             </div>
+            <div class="card-body">
+                <p class="card-title">{{ mentorDetail.fullNameEN }}</p>
+                <p class="card-subtitle">{{ mentorDetail.position }}</p>
+                <div class="card-expertise">
+                    <p-chip
+                        *ngFor="let skill of skills"
+                        label="{{ skill }}"
+                        styleClass="home-chip"
+                    ></p-chip>
+                </div>
+            </div>
         </div>
-    </a>
-</div>
+    </ng-template>
+</p-button>

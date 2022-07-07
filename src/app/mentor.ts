@@ -9,12 +9,13 @@ export interface MentorDetail {
     team: string
     position: string
     totalEndorsed: number
-    expertises: Expertise[]
+    expertise: Expertise[]
     createdAt: Date
     updatedAt: Date
 }
 
 export interface Expertise {
+    id: string
     skill: string
     endorsed: number
 }

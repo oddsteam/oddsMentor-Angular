@@ -7,13 +7,14 @@
                 Ask us a question privately.<br />
                 ** for ODDS members only **
             </p>
-            <p-button
+            <a href="home#TopMentors">
+                <p-button
                 pRipple
                 label="Book A Session"
                 icon="pi pi-search"
                 styleClass="home-button"
-                (onClick)="handleClick()"
             ></p-button>
+            </a>
         </div>
         <div class="half img-container">
             <img
@@ -33,10 +34,13 @@
             />
         </div>
     </div>
-    <div class="landing landing-block landing-col">
+    <div class="landing landing-block landing-col" id="TopMentors">
         <h1>Top Mentors</h1>
         <div class="mentors-row">
-            <app-mentor-card *ngFor="let mentor of mentors" [mentor]="mentor"></app-mentor-card>
+            <app-mentor-card
+                *ngFor="let mentor of mentors"
+                [mentorDetail]="mentor"
+            ></app-mentor-card>
         </div>
     </div>
     <div class="landing landing-section">

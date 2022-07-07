@@ -3,6 +3,8 @@ import { Router } from '@angular/router'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Location } from '@angular/common'
 import { BookingsService } from 'src/app/services/bookings.service'
+import { MentorsService } from 'src/app/services/mentors.service'
+import { MentorDetail } from 'src/app/mentor'
 
 @Component({
     selector: 'app-booking',
@@ -10,18 +12,9 @@ import { BookingsService } from 'src/app/services/bookings.service'
     styleUrls: ['./booking.component.css'],
 })
 export class BookingComponent implements OnInit {
-    expertises: string[] = [
-        'web wireframe',
-        'prototype',
-        'figma',
-        'Spring Boot',
-        'Express',
-        'Fastify',
-    ]
-
-    selectedExpertises: any[] = []
+    expertises: string[] = []
+    selectedExpertises: string[] = []
     duration: number[] = [30, 45, 60]
-    isConfirm: boolean = false
 
     bookingForm = new FormGroup(
         {
@@ -38,40 +31,61 @@ export class BookingComponent implements OnInit {
         Validators.required
     )
 
+    mentorSelected!: MentorDetail
+
     constructor(
         private router: Router,
         private bookingsService: BookingsService,
-        private location: Location
+        private location: Location,
+        private mentorsService: MentorsService
     ) {}
 
     ngOnInit(): void {
+        const serviceData = this.mentorsService.getCurrentMentor()
+        if (!serviceData) this.router.navigateByUrl('')
+        this.mentorSelected = this.mentorsService.getCurrentMentor()!
+        this.mentorSelected.expertise.forEach((expertise) => {
+            this.expertises.push(expertise.skill)
+        })
+
+        // Data Mockup
+        // this.bookingForm.setValue({
+        //     userId: 'kku-623040140-8',
+        //     userFullName: 'Phanuwat Phoowichai',
+        //     userEmail: 'taliw_phanxz@odds.team',
+        //     mentorId: this.mentorSelected.id,
+        //     mentorFullName: this.mentorSelected.fullNameEN,
+        //     expertise: [],
+        //     reason: 'Developing a new product',
+        //     sessionDate: '',
+        //     sessionDuration: 60,
+        // })
+
+        // Default Data
         this.bookingForm.setValue({
             userId: '',
-            userFullName: 'Phanuwat Phoowichai',
-            userEmail: 'taliw_phanxz@odds.team',
-            mentorId: '',
-            mentorFullName: 'Chandara Sin',
+            userFullName: '',
+            userEmail: '',
+            mentorId: this.mentorSelected.id,
+            mentorFullName: this.mentorSelected.fullNameEN,
             expertise: [],
-            reason: 'Developing a new product',
+            reason: '',
             sessionDate: '',
-            sessionDuration: 60,
+            sessionDuration: null,
         })
     }
 
     handleNext() {
         this.router.navigateByUrl('preview')
     }
+
     handleBack() {
-        if (this.isConfirm) {
-            this.bookingsService.clearCurrentBooking()
-        }
+        this.mentorsService.clearCurrentMentor()
         this.location.back()
     }
 
     onSubmit() {
         this.bookingsService.saveBooking(this.bookingForm.value)
-        console.log('BookingForm in Booking Pg.')
-        console.log(this.bookingForm.value)
         this.router.navigateByUrl('preview')
     }
 }

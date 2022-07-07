@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { Expertise, MentorDetail } from 'src/app/mentor'
+import { Router } from '@angular/router'
+import { MentorDetail } from 'src/app/mentor'
+import { MentorsService } from 'src/app/services/mentors.service'
 
 @Component({
     selector: 'app-mentor-card',
@@ -8,24 +10,28 @@ import { Expertise, MentorDetail } from 'src/app/mentor'
 })
 export class MentorCardComponent implements OnInit {
     @Input()
-    mentor!: MentorDetail
-
+    mentorDetail!: MentorDetail
     skills: string[] = []
 
-    constructor() {}
+    constructor(private router: Router, private mentorsService: MentorsService) {}
 
     ngOnInit(): void {
-        let expertises = this.mentor.expertises
-        expertises.sort((first, second) => second.endorsed - first.endorsed)
-        if (expertises.length > 3) {
+        let expertise = this.mentorDetail.expertise
+        expertise.sort((first, second) => second.endorsed - first.endorsed)
+        if (expertise.length > 3) {
             for (let index = 0; index < 3; index++) {
-                this.skills.push(expertises[index].skill)
+                this.skills.push(expertise[index].skill)
             }
-            this.skills.push(`+${expertises.length - 3}`)
+            this.skills.push(`+${expertise.length - 3}`)
         } else {
-            expertises.forEach((expertise) => {
+            expertise.forEach((expertise) => {
                 this.skills.push(expertise.skill)
             })
         }
+    }
+
+    onMentor() {
+        this.mentorsService.saveMentor(this.mentorDetail)
+        this.router.navigateByUrl('personal')
     }
 }

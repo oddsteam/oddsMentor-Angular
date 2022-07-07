@@ -4,6 +4,8 @@ import { Router } from '@angular/router'
 import { BookingDetail } from 'src/app/mentor'
 import * as dayjs from 'dayjs'
 import { BookingsService } from 'src/app/services/bookings.service'
+import { HttpClient } from '@angular/common/http'
+import { Location } from '@angular/common'
 
 @Component({
     selector: 'app-booking-preview',
@@ -18,6 +20,8 @@ export class BookingPreviewComponent implements OnInit {
     constructor(
         private router: Router,
         private bookingsService: BookingsService,
+        private http: HttpClient,
+        private location: Location
     ) {}
 
     ngOnInit(): void {
@@ -31,6 +35,8 @@ export class BookingPreviewComponent implements OnInit {
 
         this.onLoadExpertise()
         this.onLoadDateTime()
+
+        console.log(this.bookingDetail)
     }
 
     onLoadExpertise() {
@@ -44,11 +50,16 @@ export class BookingPreviewComponent implements OnInit {
         this.dateTime = dayjs(sessionDate).format('D MMMM YYYY H:mm')
     }
 
+    onReturn() {
+        this.location.back()
+    }
+
     //alert
     async on_submit() {
         await this.bookingsService.addBooking(this.bookingDetail).subscribe((data) => {
             this.bookingsService.clearCurrentBooking()
         })
+        // this.send2Discord(this.bookingDetail)
         await Swal.fire({
             icon: 'success',
             title: 'Thank you for your booking!',

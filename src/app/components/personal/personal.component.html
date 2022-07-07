@@ -1,41 +1,38 @@
 <div class="container">
     <div class="box">
         <div class="profile-box">
-            <img src="../../../assets/images/dome.jpeg" class="profile-image" />
+            <img src="{{ mentorDetail.profileImageUrl }}" class="profile-image" />
             <p class="header margin-text">About</p>
-            <p class="text margin-text">
-                Hello, I'm Nuntapong Siripanyawong. I'm a software developer. I'm currently working
-                at Odd-e (Thailand) in Mola Mola team.
-            </p>
+            <p class="text margin-text">{{ mentorDetail.biography }}</p>
         </div>
         <div class="profile-detail-box">
             <p class="margin-text" style="font-size: 40px; font-weight: 600">
-                Nuntapong Siripanyawong (Pat)
+                {{ mentorDetail.fullNameEN }} ({{ mentorDetail.nickname }})
             </p>
             <p class="margin-text" style="font-size: 26px; font-weight: 500; color: #708090">
-                นันทพงศ์ ศิริปัญญาวงศ์
+                {{ mentorDetail.fullNameTH }}
             </p>
             <br />
             <p style="font-size: 20px; font-weight: 500" class="margin-text">
-                Software Developer @ Mola Mola Team
+                {{ mentorDetail.position }} @ {{ mentorDetail.team }}
             </p>
             <p style="font-size: 16px; font-weight: 500; color: #85888c" class="margin-text">
-                Cooperative Education 2022
+                {{ mentorDetail.type }}
             </p>
             <br />
             <p style="font-size: 24px; font-weight: 00" class="margin-text">Expertise</p>
             <div>
-                <p-chip class="margin" styleClass="chip" label="TypeScript | 99"></p-chip>
-                <p-chip class="margin" styleClass="chip" label="JavaScript | 112"></p-chip>
-                <p-chip class="margin" styleClass="chip" label="PHP | 47"></p-chip>
-                <p-chip class="margin" styleClass="chip" label="SQL | 69"></p-chip>
-                <p-chip class="margin" styleClass="chip" label="React | 12"></p-chip>
-                <p-chip class="margin" styleClass="chip" label="Next | 3"></p-chip>
+                <p-chip
+                    class="margin"
+                    styleClass="chip"
+                    *ngFor="let expertise of mentorDetail.expertise"
+                    label="{{ expertise.skill }} | {{ expertise.endorsed }}"
+                ></p-chip>
             </div>
 
             <div class="margin">
-                <span class="margin"> Available Time</span>
-                <span style="font-weight: 300">09.30 - 11.30, Mon - Fri</span>
+                <span class="margin">Available Time</span>
+                <span style="font-weight: 300; color: red">09.30 - 11.30, Mon - Fri</span>
             </div>
             <br />
 
