@@ -42,9 +42,10 @@ p {
 .emailInput input {
     width: 100%;
 }
-:host::ng-deep .p-calendar {
+
+/* :host::ng-deep .p-calendar {
     width: 100%;
-}
+} */
 
 :host::ng-deep .p-datepicker {
     width: 100% !important;

@@ -1,48 +1,27 @@
 <div class="container-booking">
     <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="container-card">
         <p>User Information</p>
-        <div class="flex-row">
-            <input
-                type="text"
-                class="first"
-                pInputText
-                placeholder="Firstname"
-                formControlName="firstNameUser"
-            />
-            <input
-                type="text"
-                class="second"
-                pInputText
-                placeholder="Lastname"
-                formControlName="lastNameUser"
-            />
-        </div>
-        <div class="emailInput">
-            <input type="text" pInputText placeholder="Email" formControlName="emailUser" />
-        </div>
+        <input
+            type="text"
+            class="first"
+            pInputText
+            placeholder="Name (User)"
+            formControlName="userFullName"
+        />
+        <input type="text" pInputText placeholder="Email (User)" formControlName="userEmail" />
         <p>Booking Information</p>
-        <div class="flex-row">
-            <input
-                type="text"
-                class="first"
-                pInputText
-                placeholder="Firstname(mentor)"
-                formControlName="firstNameMentor"
-            />
-            <input
-                type="text"
-                class="second"
-                pInputText
-                placeholder="Lastname(mentor)"
-                formControlName="lastNameMentor"
-            />
-        </div>
+        <input
+            type="text"
+            class="first"
+            pInputText
+            placeholder="Name (Mentor)"
+            formControlName="mentorFullName"
+        />
         <span class="p-fluid">
             <p-multiSelect
                 [options]="expertises"
                 formControlName="expertise"
                 defaultLabel="Expertise(autocomplete)"
-                optionLabel="skill"
                 [selectionLimit]="3"
                 display="chip"
             >
@@ -55,24 +34,21 @@
             pInputTextarea
             formControlName="reason"
         ></textarea>
-        <p-calendar [inline]="true" [showWeek]="false" formControlName="bookingDate"></p-calendar>
-        <div class="flex-row">
+        <span class="p-fluid">
             <p-calendar
-                class="first"
-                [timeOnly]="true"
-                inputId="timeonly"
-                placeholder="Time"
-                formControlName="bookingTime"
-            >
-            </p-calendar>
-            <p-dropdown
-                class="second"
-                [options]="duration"
-                placeholder="Duration"
-                optionLabel="time"
-                formControlName="duration"
-            ></p-dropdown>
-        </div>
+                [showTime]="true"
+                inputId="time"
+                placeholder="Date and Time"
+                formControlName="sessionDate"
+                dateFormat="d MM yy"
+            ></p-calendar
+        ></span>
+        <p-dropdown
+            class="second"
+            [options]="duration"
+            placeholder="Duration"
+            formControlName="sessionDuration"
+        ></p-dropdown>
         <div class="flex-row">
             <p-button
                 label="CANCEL"

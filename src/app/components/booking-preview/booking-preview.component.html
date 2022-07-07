@@ -7,13 +7,13 @@
         <div>
             <p class="title">Name</p>
             <p class="sub-title">
-                {{ bookingDetail.firstNameUser }} {{ bookingDetail.lastNameUser }}
+                {{ bookingDetail.userFullName }}
             </p>
         </div>
 
         <div>
             <p class="title">Email</p>
-            <p class="sub-title">{{ bookingDetail.emailUser }}</p>
+            <p class="sub-title">{{ bookingDetail.userEmail }}</p>
         </div>
 
         <p class="header">Booking Information</p>
@@ -21,7 +21,7 @@
         <div>
             <p class="title">Mentor name</p>
             <p class="sub-title">
-                {{ bookingDetail.firstNameMentor }} {{ bookingDetail.lastNameMentor }}
+                {{ bookingDetail.mentorFullName }}
             </p>
         </div>
 
@@ -38,18 +38,13 @@
         <div>
             <p class="title">Date and Time</p>
             <p class="sub-title">
-                {{ bookingDetail.bookingDate.getDate() }}
-                {{ bookingDetail.bookingDate.getMonth() }}
-                {{ bookingDetail.bookingDate.getFullYear() }}
-                {{ bookingDetail.bookingTime.getHours() }}:{{
-                    bookingDetail.bookingTime.getMinutes()
-                }}
+                {{ dateTime }}
             </p>
         </div>
 
         <div>
             <p class="title">Duration</p>
-            <p class="sub-title">{{ bookingDetail.duration.time }} mins</p>
+            <p class="sub-title">{{ bookingDetail.sessionDuration }} mins</p>
         </div>
 
         <div class="flex-row">

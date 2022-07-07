@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router'
-import { MentorsService } from 'src/app/services/mentors.service'
 import { BookingDetail } from 'src/app/mentor'
-import { HttpClient } from '@angular/common/http'
+import * as dayjs from 'dayjs'
+import { BookingsService } from 'src/app/services/bookings.service'
 
 @Component({
     selector: 'app-booking-preview',
@@ -13,11 +13,11 @@ import { HttpClient } from '@angular/common/http'
 export class BookingPreviewComponent implements OnInit {
     bookingDetail!: BookingDetail
     expertise: string = ''
+    dateTime: string = ''
 
     constructor(
         private router: Router,
-        private mentorsService: MentorsService,
-        private http: HttpClient
+        private bookingsService: BookingsService,
     ) {}
 
     ngOnInit(): void {
@@ -25,27 +25,34 @@ export class BookingPreviewComponent implements OnInit {
     }
 
     onLoading() {
-        const serviceData = this.mentorsService.getCurrentBooking()
+        const serviceData = this.bookingsService.getCurrentBooking()
         if (!serviceData) this.router.navigateByUrl('')
-        this.bookingDetail = this.mentorsService.getCurrentBooking()!
-        console.log(this.bookingDetail)
+        this.bookingDetail = this.bookingsService.getCurrentBooking()!
 
-        let expertiseList: string[] = []
-        this.bookingDetail.expertise.forEach((expertise) => {
-            expertiseList.push(expertise.skill)
-        })
+        this.onLoadExpertise()
+        this.onLoadDateTime()
+    }
+
+    onLoadExpertise() {
+        let expertiseList = this.bookingDetail.expertise
         let lastExpertise = expertiseList.pop()
         this.expertise = expertiseList.join(', ') + ' and ' + lastExpertise
-        console.log(this.expertise)
+    }
+
+    onLoadDateTime() {
+        let sessionDate = this.bookingDetail.sessionDate
+        this.dateTime = dayjs(sessionDate).format('D MMMM YYYY H:mm')
     }
 
     //alert
     async on_submit() {
-        // this.send2Discord(this.bookingDetail)
+        await this.bookingsService.addBooking(this.bookingDetail).subscribe((data) => {
+            this.bookingsService.clearCurrentBooking()
+        })
         await Swal.fire({
             icon: 'success',
             title: 'Thank you for your booking!',
         })
-        this.router.navigateByUrl('personal')
+        this.router.navigateByUrl('home')
     }
 }

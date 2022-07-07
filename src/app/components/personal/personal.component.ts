@@ -10,6 +10,7 @@ export class PersonalComponent implements OnInit {
     constructor(private router: Router) {}
 
     ngOnInit(): void {}
+    
     handleClick() {
         this.router.navigateByUrl('booking')
     }

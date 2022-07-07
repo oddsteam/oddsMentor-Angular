@@ -20,18 +20,28 @@ export interface Expertise {
 }
 
 export interface BookingDetail {
-    firstNameUser: string
-    lastNameUser: string
-    emailUser: string
-    firstNameMentor: string
-    lastNameMentor: string
-    expertise: Expertise[]
+    userId: string
+    userFullName: string
+    userEmail: string
+    mentorId: string
+    mentorFullName: string
+    expertise: string[]
     reason: string
-    bookingDate: Date
-    bookingTime: Date
-    duration: Time
+    sessionDate: Date
+    sessionDuration: number
 }
 
-export interface Time {
-    time: number
+export interface BookingRes {
+    id: string
+    userId: string
+    userFullName: string
+    userEmail: string
+    mentorId: string
+    mentorFullName: string
+    expertise: string[]
+    reason: string
+    sessionDate: Date
+    sessionDuration: number
+    createdAt: Date
+    updatedAt: Date
 }

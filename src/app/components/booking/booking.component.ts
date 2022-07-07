@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core'
-import { MentorsService } from 'src/app/services/mentors.service'
 import { Router } from '@angular/router'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
-import { BookingDetail, Time, Expertise } from 'src/app/mentor'
+import { Location } from '@angular/common'
+import { BookingsService } from 'src/app/services/bookings.service'
 
 @Component({
     selector: 'app-booking',
@@ -10,79 +10,68 @@ import { BookingDetail, Time, Expertise } from 'src/app/mentor'
     styleUrls: ['./booking.component.css'],
 })
 export class BookingComponent implements OnInit {
-    expertises: any[] = [
-        {
-            skill: 'web wireframe',
-            endorsed: 20,
-        },
-        {
-            skill: 'prototype',
-            endorsed: 20,
-        },
-        {
-            skill: 'figma',
-            endorsed: 14,
-        },
-        {
-            skill: 'Spring Boot',
-            endorsed: 20,
-        },
-        {
-            skill: 'Express',
-            endorsed: 20,
-        },
-        {
-            skill: 'Fastify',
-            endorsed: 14,
-        },
+    expertises: string[] = [
+        'web wireframe',
+        'prototype',
+        'figma',
+        'Spring Boot',
+        'Express',
+        'Fastify',
     ]
 
     selectedExpertises: any[] = []
-
-    duration: Time[] = [{ time: 30 }, { time: 45 }, { time: 60 }]
+    duration: number[] = [30, 45, 60]
+    isConfirm: boolean = false
 
     bookingForm = new FormGroup(
         {
-            firstNameUser: new FormControl('', [Validators.required]),
-            lastNameUser: new FormControl('', [Validators.required]),
-            emailUser: new FormControl('', [Validators.required]),
-            firstNameMentor: new FormControl('', [Validators.required]),
-            lastNameMentor: new FormControl('', [Validators.required]),
+            userId: new FormControl('', [Validators.required]),
+            userFullName: new FormControl('', [Validators.required]),
+            userEmail: new FormControl('', [Validators.required]),
+            mentorId: new FormControl('', [Validators.required]),
+            mentorFullName: new FormControl('', [Validators.required]),
             expertise: new FormControl([], [Validators.required]),
             reason: new FormControl('', [Validators.required]),
-            bookingDate: new FormControl('', [Validators.required]),
-            bookingTime: new FormControl('', [Validators.required]),
-            duration: new FormControl('', [Validators.required]),
+            sessionDate: new FormControl('', [Validators.required]),
+            sessionDuration: new FormControl(0, [Validators.required]),
         },
         Validators.required
     )
 
-    constructor(private router: Router, private mentorService: MentorsService) {}
+    constructor(
+        private router: Router,
+        private bookingsService: BookingsService,
+        private location: Location
+    ) {}
 
     ngOnInit(): void {
-        // this.bookingForm.setValue({
-        //     firstNameUser: 'Kelvin',
-        //     lastNameUser: 'Mola',
-        //     emailUser: 'kelvin@odds.team',
-        //     firstNameMentor: 'Nuntapong',
-        //     lastNameMentor: 'Siripantawong',
-        //     expertise: [],
-        //     reason: 'Development ODDS Menter',
-        //     bookingDate: '',
-        //     bookingTime: '',
-        //     duration: '',
-        // })
+        this.bookingForm.setValue({
+            userId: '',
+            userFullName: 'Phanuwat Phoowichai',
+            userEmail: 'taliw_phanxz@odds.team',
+            mentorId: '',
+            mentorFullName: 'Chandara Sin',
+            expertise: [],
+            reason: 'Developing a new product',
+            sessionDate: '',
+            sessionDuration: 60,
+        })
     }
 
     handleNext() {
         this.router.navigateByUrl('preview')
     }
     handleBack() {
-        this.router.navigateByUrl('personal')
+        if (this.isConfirm) {
+            this.bookingsService.clearCurrentBooking()
+        }
+        this.location.back()
     }
 
     onSubmit() {
-        this.mentorService.saveBooking(this.bookingForm.value)
+        this.bookingsService.saveBooking(this.bookingForm.value)
+        console.log('BookingForm in Booking Pg.')
+        console.log(this.bookingForm.value)
         this.router.navigateByUrl('preview')
     }
 }
