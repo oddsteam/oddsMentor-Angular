@@ -33,6 +33,7 @@ pipeline{
             steps{
                 sh  """
                     ssh -oStrictHostKeyChecking=no -t oddsbooking@159.138.240.167 \"
+                            +chmod +x ./Mentor/deploy-script-web.sh
                             REGISTRY=${REGISTRY} \
                             BRANCH_NAME=${BRANCH_NAME} \
                             ./Mentor/deploy-script-web.sh
