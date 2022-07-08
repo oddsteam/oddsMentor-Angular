@@ -63,7 +63,7 @@ export class BookingPreviewComponent implements OnInit {
     async on_submit() {
         let date = this.bookingDetail.sessionDate
         this.bookingDetail.sessionDate = dayjs(date).format('YYYY-MM-DDTHH:mm')
-        await this.bookingsService.addBooking(this.bookingDetail).subscribe((data) => {
+        this.bookingsService.addBooking(this.bookingDetail).subscribe((data) => {
             this.bookingsService.clearCurrentBooking()
             this.mentorsService.clearCurrentMentor()
         })
@@ -75,7 +75,7 @@ export class BookingPreviewComponent implements OnInit {
         this.router.navigateByUrl('home')
     }
 
-    async send2Discord(booking: BookingDetail) {
+    send2Discord(booking: BookingDetail) {
         let body1 = {
             content: null,
             embeds: [
@@ -144,11 +144,7 @@ export class BookingPreviewComponent implements OnInit {
             'Content-Type': 'application/json',
         }
 
-        await this.http.post<any>(environment.discordUrl, body1, { headers }).subscribe((data) => {
-            console.log(data)
-        })
-        await this.http.post<any>(environment.discordUrl, body2, { headers }).subscribe((data) => {
-            console.log(data)
-        })
+        this.http.post<any>(environment.discordUrl, body1, { headers }).subscribe((data) => {})
+        this.http.post<any>(environment.discordUrl, body2, { headers }).subscribe((data) => {})
     }
 }
