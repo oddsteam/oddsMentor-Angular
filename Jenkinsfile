@@ -31,14 +31,19 @@ pipeline{
         }
         stage("deploy") {
             steps{
-                sh  """
-                    ssh -oStrictHostKeyChecking=no -t oddsbooking@159.138.240.167 \"
-                            +chmod +x ./Mentor/deploy-script-web.sh
-                            REGISTRY=${REGISTRY} \
-                            BRANCH_NAME=${BRANCH_NAME} \
-                            ./Mentor/deploy-script-web.sh
-                  \"
-                """
+                withCredentials([string(credentialsId: 'SENDINBLUE_TOKEN', variable: 'SENDINBLUE_TOKEN_JENKINS'),
+                    string(credentialsId: 'MONGO_HOST', variable: 'MONGO_HOST_JENKINS')]) {
+                    sh """
+                       ssh -oStrictHostKeyChecking=no -t oddsbooking@159.138.240.167 \"
+                           chmod +x ./Mentor/deploy-script.sh
+                           REGISTRY=${REGISTRY} \
+                           SENDINBLUE_TOKEN=${SENDINBLUE_TOKEN_JENKINS} \
+                           MONGO_DB=${MONGO_HOST_JENKINS} \
+                           BRANCH_NAME=${BRANCH_NAME} \
+                           ./Mentor/deploy-script.sh
+                       \"
+                    """
+                }
             }
         }
     }
