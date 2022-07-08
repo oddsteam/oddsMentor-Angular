@@ -6,6 +6,8 @@ import * as dayjs from 'dayjs'
 import { BookingsService } from 'src/app/services/bookings.service'
 import { HttpClient } from '@angular/common/http'
 import { Location } from '@angular/common'
+import { MentorsService } from 'src/app/services/mentors.service'
+import { environment } from 'src/environments/environment'
 
 @Component({
     selector: 'app-booking-preview',
@@ -21,7 +23,8 @@ export class BookingPreviewComponent implements OnInit {
         private router: Router,
         private bookingsService: BookingsService,
         private http: HttpClient,
-        private location: Location
+        private location: Location,
+        private mentorsService: MentorsService
     ) {}
 
     ngOnInit(): void {
@@ -35,12 +38,10 @@ export class BookingPreviewComponent implements OnInit {
 
         this.onLoadExpertise()
         this.onLoadDateTime()
-
-        console.log(this.bookingDetail)
     }
 
     onLoadExpertise() {
-        let expertiseList = this.bookingDetail.expertise
+        let expertiseList = this.bookingDetail.expertise.slice()
         let lastExpertise = expertiseList.pop()
         this.expertise = expertiseList.join(', ') + ' and ' + lastExpertise
     }
@@ -56,14 +57,90 @@ export class BookingPreviewComponent implements OnInit {
 
     //alert
     async on_submit() {
+        let date = this.bookingDetail.sessionDate
+        this.bookingDetail.sessionDate = dayjs(date).format('YYYY-MM-DDTHH:mm')
         await this.bookingsService.addBooking(this.bookingDetail).subscribe((data) => {
             this.bookingsService.clearCurrentBooking()
+            this.mentorsService.clearCurrentMentor()
         })
-        // this.send2Discord(this.bookingDetail)
+        this.send2Discord(this.bookingDetail)
         await Swal.fire({
             icon: 'success',
             title: 'Thank you for your booking!',
         })
         this.router.navigateByUrl('home')
+    }
+
+    send2Discord(booking: BookingDetail) {
+        let body1 = {
+            content: null,
+            embeds: [
+                {
+                    title: 'ODDS Mentor',
+                    url: 'http://159.138.240.167:8089/',
+                    color: 1349845,
+                    fields: [
+                        {
+                            name: 'Name',
+                            value: booking.userFullName,
+                        },
+                        {
+                            name: 'Email',
+                            value: booking.userEmail,
+                        },
+                        {
+                            name: 'Mentor Name',
+                            value: booking.mentorFullName,
+                        },
+                        {
+                            name: 'Expertise',
+                            value: this.expertise,
+                        },
+                        {
+                            name: 'Reason',
+                            value: booking.reason,
+                        },
+                        {
+                            name: 'Date and Time',
+                            value: this.dateTime,
+                        },
+                        {
+                            name: 'Duration',
+                            value: booking.sessionDuration + ' mins',
+                        },
+                    ],
+                    footer: {
+                        text: 'from ODDS Mentor',
+                        icon_url:
+                            'https://cdn.discordapp.com/avatars/994429221705351338/e7a311c3d23bd94d1abcf22511a60089.png',
+                    },
+                    timestamp: new Date(),
+                },
+            ],
+        }
+
+        let body2 = {
+            content: null,
+            embeds: [
+                {
+                    title: 'ODDS Mentor',
+                    url: 'http://159.138.240.167:8089/',
+                    color: 1349845,
+                    fields: [
+                        {
+                            name: 'Booking',
+                            value: JSON.stringify(booking),
+                        },
+                    ],
+                },
+            ],
+        }
+
+        let headers = {
+            'Content-Type': 'application/json',
+        }
+
+        this.http.post<any>(environment.discordUrl, body1, { headers })
+        this.http.post<any>(environment.discordUrl, body2, { headers })
     }
 }

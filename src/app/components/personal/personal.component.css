@@ -49,6 +49,7 @@
     background-color: white;
     color: #1498d5;
     font-weight: 500;
+    text-transform: capitalize;
 }
 :host::ng-deep.button-personal {
     background-color: #1498d5;

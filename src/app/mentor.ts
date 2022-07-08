@@ -28,7 +28,7 @@ export interface BookingDetail {
     mentorFullName: string
     expertise: string[]
     reason: string
-    sessionDate: Date
+    sessionDate: string
     sessionDuration: number
 }
 
@@ -41,7 +41,7 @@ export interface BookingRes {
     mentorFullName: string
     expertise: string[]
     reason: string
-    sessionDate: Date
+    sessionDate: string
     sessionDuration: number
     createdAt: Date
     updatedAt: Date

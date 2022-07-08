@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Location } from '@angular/common'
 import { BookingsService } from 'src/app/services/bookings.service'
 import { MentorsService } from 'src/app/services/mentors.service'
-import { MentorDetail } from 'src/app/mentor'
+import { BookingDetail, MentorDetail } from 'src/app/mentor'
 
 @Component({
     selector: 'app-booking',
@@ -20,10 +20,10 @@ export class BookingComponent implements OnInit {
         {
             userId: new FormControl('', [Validators.required]),
             userFullName: new FormControl('', [Validators.required]),
-            userEmail: new FormControl('', [Validators.required]),
+            userEmail: new FormControl('', [Validators.required, Validators.email]),
             mentorId: new FormControl('', [Validators.required]),
             mentorFullName: new FormControl('', [Validators.required]),
-            expertise: new FormControl([], [Validators.required]),
+            expertise: new FormControl([''], [Validators.required]),
             reason: new FormControl('', [Validators.required]),
             sessionDate: new FormControl('', [Validators.required]),
             sessionDuration: new FormControl(0, [Validators.required]),
@@ -41,38 +41,55 @@ export class BookingComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
+        // get mentor data
         const serviceData = this.mentorsService.getCurrentMentor()
         if (!serviceData) this.router.navigateByUrl('')
         this.mentorSelected = this.mentorsService.getCurrentMentor()!
         this.mentorSelected.expertise.forEach((expertise) => {
             this.expertises.push(expertise.skill)
         })
+        this.expertises.sort((a, b) => a.localeCompare(b))
 
-        // Data Mockup
-        // this.bookingForm.setValue({
-        //     userId: 'kku-623040140-8',
-        //     userFullName: 'Phanuwat Phoowichai',
-        //     userEmail: 'taliw_phanxz@odds.team',
-        //     mentorId: this.mentorSelected.id,
-        //     mentorFullName: this.mentorSelected.fullNameEN,
-        //     expertise: [],
-        //     reason: 'Developing a new product',
-        //     sessionDate: '',
-        //     sessionDuration: 60,
-        // })
+        const currentBooking = this.bookingsService.getCurrentBooking()
+        if (currentBooking) {
+            this.bookingForm.setValue({
+                userId: currentBooking.userId,
+                userFullName: currentBooking.userFullName,
+                userEmail: currentBooking.userEmail,
+                mentorId: currentBooking.mentorId,
+                mentorFullName: currentBooking.mentorFullName,
+                expertise: currentBooking.expertise,
+                reason: currentBooking.reason,
+                sessionDate: currentBooking.sessionDate,
+                sessionDuration: currentBooking.sessionDuration,
+            })
+        } else {
+            // Data Mockup
+            // this.bookingForm.setValue({
+            //     userId: '62c6ecc318a930d4ec607c39',
+            //     userFullName: 'Phanuwat Phoowichai',
+            //     userEmail: 'taliw_phanxz@odds.team',
+            //     mentorId: this.mentorSelected.id,
+            //     mentorFullName: this.mentorSelected.fullNameEN,
+            //     expertise: [],
+            //     reason: 'Developing a new product',
+            //     sessionDate: '',
+            //     sessionDuration: 60,
+            // })
 
-        // Default Data
-        this.bookingForm.setValue({
-            userId: '',
-            userFullName: '',
-            userEmail: '',
-            mentorId: this.mentorSelected.id,
-            mentorFullName: this.mentorSelected.fullNameEN,
-            expertise: [],
-            reason: '',
-            sessionDate: '',
-            sessionDuration: null,
-        })
+            // Default Data
+            this.bookingForm.setValue({
+                userId: '62c6ecc318a930d4ec607c39',
+                userFullName: '',
+                userEmail: '',
+                mentorId: this.mentorSelected.id,
+                mentorFullName: this.mentorSelected.fullNameEN,
+                expertise: [],
+                reason: '',
+                sessionDate: '',
+                sessionDuration: null,
+            })
+        }
     }
 
     handleNext() {
@@ -85,7 +102,9 @@ export class BookingComponent implements OnInit {
     }
 
     onSubmit() {
-        this.bookingsService.saveBooking(this.bookingForm.value)
+        let booking: BookingDetail = this.bookingForm.value as unknown as BookingDetail
+        this.bookingsService.saveBooking(booking)
+        // this.bookingsService.saveBooking(this.bookingForm.value)
         this.router.navigateByUrl('preview')
     }
 }

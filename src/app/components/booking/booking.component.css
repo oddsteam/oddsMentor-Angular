@@ -75,3 +75,7 @@ p {
     background-color: #6a6b6d !important;
     border: transparent;
 }
+:host::ng-deep.p-multiselect-panel .p-multiselect-items .p-multiselect-item,
+:host::ng-deep.p-multiselect.p-multiselect-chip .p-multiselect-token {
+    text-transform: capitalize;
+}
