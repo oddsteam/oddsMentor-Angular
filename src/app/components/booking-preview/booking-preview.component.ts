@@ -43,7 +43,11 @@ export class BookingPreviewComponent implements OnInit {
     onLoadExpertise() {
         let expertiseList = this.bookingDetail.expertise.slice()
         let lastExpertise = expertiseList.pop()
-        this.expertise = expertiseList.join(', ') + ' and ' + lastExpertise
+        if (expertiseList.length > 0) {
+            this.expertise = expertiseList.join(', ') + ' and ' + lastExpertise
+        } else {
+            this.expertise = lastExpertise!
+        }
     }
 
     onLoadDateTime() {
@@ -71,7 +75,7 @@ export class BookingPreviewComponent implements OnInit {
         this.router.navigateByUrl('home')
     }
 
-    send2Discord(booking: BookingDetail) {
+    async send2Discord(booking: BookingDetail) {
         let body1 = {
             content: null,
             embeds: [
@@ -140,7 +144,11 @@ export class BookingPreviewComponent implements OnInit {
             'Content-Type': 'application/json',
         }
 
-        this.http.post<any>(environment.discordUrl, body1, { headers })
-        this.http.post<any>(environment.discordUrl, body2, { headers })
+        await this.http.post<any>(environment.discordUrl, body1, { headers }).subscribe((data) => {
+            console.log(data)
+        })
+        await this.http.post<any>(environment.discordUrl, body2, { headers }).subscribe((data) => {
+            console.log(data)
+        })
     }
 }
