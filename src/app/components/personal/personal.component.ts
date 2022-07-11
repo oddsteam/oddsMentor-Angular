@@ -19,20 +19,18 @@ export class PersonalComponent implements OnInit {
         private mentorsService: MentorsService,
         private usersService: UsersService,
         private meta: Meta
-    ) {}
-
-    ngOnInit(): void {
+    ) {
         const id = this.route.snapshot.paramMap.get('id')
         const serviceData = this.mentorsService.getCurrentMentor()
         !serviceData
             ? this.usersService.getUser(id!).subscribe((res) => {
                 this.mentorDetail = res
                
-                this.meta.updateTag({
+                this.meta.addTag({
                     property: 'og:title',
                     content: this.mentorDetail.fullNameEN,
                 })
-                this.meta.updateTag({
+                this.meta.addTag({
                     property: 'og:image',
                     content: `https://og-image-jade-nine.vercel.app/**${
                         this.mentorDetail.fullNameEN.slice().split(' ')[0]
@@ -42,7 +40,7 @@ export class PersonalComponent implements OnInit {
                         this.mentorDetail.profileImageUrl
                     }`,
                 })
-                this.meta.updateTag({
+                this.meta.addTag({
                     property: 'og:description',
                     content: this.mentorDetail.biography,
                 })
@@ -51,6 +49,10 @@ export class PersonalComponent implements OnInit {
                 this.router.navigateByUrl('home')
             })
             : (this.mentorDetail = this.mentorsService.getCurrentMentor()!)
+    }
+
+    ngOnInit(): void {
+        
     }
 
     onLoading() {
