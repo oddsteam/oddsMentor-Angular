@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
+import { BrowserModule, Meta } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { HomeComponent } from './components/home/home.component'
@@ -56,7 +56,7 @@ import { CardModule } from 'primeng/card'
         HttpClientModule,
         CardModule,
     ],
-    providers: [],
+    providers: [Meta],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

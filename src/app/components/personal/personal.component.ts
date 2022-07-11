@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { MentorDetail } from 'src/app/mentor'
-import { MentorsService } from 'src/app/services/mentors.service'
-import { Meta } from '@angular/platform-browser'
 import { UsersService } from 'src/app/services/users.service'
+import { SEOService } from 'src/app/services/seo.service'
 
 @Component({
     selector: 'app-personal',
@@ -16,9 +15,8 @@ export class PersonalComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private mentorsService: MentorsService,
+        private seoService: SEOService,
         private usersService: UsersService,
-        private meta: Meta
     ) {}
 
     ngOnInit(): void {
@@ -27,7 +25,7 @@ export class PersonalComponent implements OnInit {
             (res) => {
                 this.mentorDetail = res
 
-                this.meta.addTags([
+                this.seoService.updateMetaTags([
                     {
                         name: 'description',
                         content: this.mentorDetail.biography,
