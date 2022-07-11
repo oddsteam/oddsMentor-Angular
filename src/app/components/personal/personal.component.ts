@@ -32,6 +32,14 @@ export class PersonalComponent implements OnInit {
                     content: this.mentorDetail.biography,
                 })
                 this.meta.updateTag({
+                    property: 'og:url',
+                    content: `http://159.138.240.167:8089/personal/${this.mentorDetail.id}`,
+                })
+                this.meta.updateTag({
+                    property: 'og:type',
+                    content: 'website',
+                })
+                this.meta.updateTag({
                     property: 'og:title',
                     content: `ODDS Mentor - ${this.mentorDetail.fullNameEN}`,
                 })
@@ -48,15 +56,27 @@ export class PersonalComponent implements OnInit {
                     }.png?theme=light&md=1&fontSize=100px&images=${this.mentorDetail.profileImageUrl}`,
                 })
                 this.meta.updateTag({
-                    property: 'og:url',
-                    content: `http://159.138.240.167:8089/personal/${this.mentorDetail.id}`,
-                })
-                this.meta.updateTag({
                     name: 'twitter:card',
                     content: 'summary_large_image',
                 })
                 this.meta.updateTag({
-                    name: 'twitter:card',
+                    property: 'twitter:domain',
+                    content: '159.138.240.167:8089',
+                })
+                this.meta.updateTag({
+                    property: 'twitter:url',
+                    content: `http://159.138.240.167:8089/personal/${this.mentorDetail.id}`,
+                })
+                this.meta.updateTag({
+                    name: 'twitter:title',
+                    content: `ODDS Mentor - ${this.mentorDetail.fullNameEN}`,
+                })
+                this.meta.updateTag({
+                    property: 'twitter:description',
+                    content: this.mentorDetail.biography,
+                })
+                this.meta.updateTag({
+                    name: 'twitter:image',
                     content: `https://og-image-jade-nine.vercel.app/**${
                         this.mentorDetail.fullNameEN.slice().split(' ')[0]
                     }**%20${
