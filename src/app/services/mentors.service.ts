@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment'
     providedIn: 'root',
 })
 export class MentorsService {
-    private mentorsUrl = `${environment.apiUrl}/mentors`
+    private mentorsUrl = `${environment.apiUrl}/odds-api/v1/mentors`
     currentMentor?: MentorDetail
 
     constructor(private httpClient: HttpClient) {}
@@ -18,11 +18,15 @@ export class MentorsService {
     }
 
     getMentor(id: string): Observable<MentorDetail> {
-        return this.httpClient.get<MentorDetail>(this.mentorsUrl + '/' + id, this.httpOption).pipe(map((res) => res))
+        return this.httpClient
+            .get<MentorDetail>(this.mentorsUrl + '/' + id, this.httpOption)
+            .pipe(map((res) => res))
     }
 
     getMentorsList(): Observable<MentorDetail[]> {
-        return this.httpClient.get<MentorDetail[]>(this.mentorsUrl, this.httpOption).pipe(map((res) => res))
+        return this.httpClient
+            .get<MentorDetail[]>(this.mentorsUrl, this.httpOption)
+            .pipe(map((res) => res))
     }
 
     saveMentor(mentor: MentorDetail) {
