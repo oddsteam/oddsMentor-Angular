@@ -13,8 +13,12 @@ export class BookingsService {
 
     constructor(private httpClient: HttpClient) {}
 
+    httpOption = {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    }
+
     addBooking(booking: BookingDetail): Observable<string> {
-        return this.httpClient.post<BookingRes>(this.bookingUrl, booking).pipe(map((res) => res.id))
+        return this.httpClient.post<BookingRes>(this.bookingUrl, booking, this.httpOption).pipe(map((res) => res.id))
     }
 
     saveBooking(booking: BookingDetail) {

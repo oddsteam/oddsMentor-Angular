@@ -32,6 +32,6 @@ export class MentorCardComponent implements OnInit {
 
     onMentor() {
         this.mentorsService.saveMentor(this.mentorDetail)
-        this.router.navigateByUrl('personal')
+        this.router.navigateByUrl('personal/' + this.mentorDetail.id)
     }
 }

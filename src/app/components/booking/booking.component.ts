@@ -42,9 +42,36 @@ export class BookingComponent implements OnInit {
 
     ngOnInit(): void {
         // get mentor data
-        const serviceData = this.mentorsService.getCurrentMentor()
-        if (!serviceData) this.router.navigateByUrl('')
-        this.mentorSelected = this.mentorsService.getCurrentMentor()!
+        // const serviceData = this.mentorsService.getCurrentMentor()
+        // if (!serviceData) this.router.navigateByUrl('')
+        // this.mentorSelected = this.mentorsService.getCurrentMentor()!
+
+        this.mentorSelected = {
+            id: '62c70dedf9c68f9f4d00cf40',
+            fullNameEN: 'Chandara Sin',
+            fullNameTH: 'จันทร์ดารา ซิน',
+            nickname: 'โดม',
+            type: 'Cooperative Education 2022',
+            biography:
+                "Hello, I'm Chandara Sin. I'm a software developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
+            team: 'Molamola',
+            position: 'Software Developer',
+            profileImageUrl: 'http://159.138.240.167:8089/assets/images/dome.jpeg',
+            totalEndorsed: 0,
+            expertise: [
+                {
+                    id: '62c5b2004743e83ab91f2a26',
+                    skill: 'JavaScript',
+                    endorsed: 0,
+                },
+                {
+                    id: '62c65c85020d0f6ecbdc58a5',
+                    skill: 'Java',
+                    endorsed: 0,
+                },
+            ],
+        }
+
         this.mentorSelected.expertise.forEach((expertise) => {
             this.expertises.push(expertise.skill)
         })
@@ -65,30 +92,30 @@ export class BookingComponent implements OnInit {
             })
         } else {
             // Data Mockup
-            // this.bookingForm.setValue({
-            //     userId: '62c6ecc318a930d4ec607c39',
-            //     userFullName: 'Phanuwat Phoowichai',
-            //     userEmail: 'taliw_phanxz@odds.team',
-            //     mentorId: this.mentorSelected.id,
-            //     mentorFullName: this.mentorSelected.fullNameEN,
-            //     expertise: [],
-            //     reason: 'Developing a new product',
-            //     sessionDate: '',
-            //     sessionDuration: 60,
-            // })
-
-            // Default Data
             this.bookingForm.setValue({
                 userId: '62c6ecc318a930d4ec607c39',
-                userFullName: '',
-                userEmail: '',
+                userFullName: 'Phanuwat Phoowichai',
+                userEmail: 'taliw_phanxz@odds.team',
                 mentorId: this.mentorSelected.id,
                 mentorFullName: this.mentorSelected.fullNameEN,
                 expertise: [],
-                reason: '',
+                reason: 'Developing a new product',
                 sessionDate: '',
-                sessionDuration: null,
+                sessionDuration: 60,
             })
+
+            // Default Data
+            // this.bookingForm.setValue({
+            //     userId: '62c6ecc318a930d4ec607c39',
+            //     userFullName: '',
+            //     userEmail: '',
+            //     mentorId: this.mentorSelected.id,
+            //     mentorFullName: this.mentorSelected.fullNameEN,
+            //     expertise: [],
+            //     reason: '',
+            //     sessionDate: '',
+            //     sessionDuration: null,
+            // })
         }
     }
 

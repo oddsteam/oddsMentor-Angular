@@ -23,6 +23,7 @@ import { MultiSelectModule } from 'primeng/multiselect'
 import { DropdownModule } from 'primeng/dropdown'
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
 import { HttpClientModule } from '@angular/common/http'
+import { CardModule } from 'primeng/card'
 
 @NgModule({
     declarations: [
@@ -53,6 +54,7 @@ import { HttpClientModule } from '@angular/common/http'
         SweetAlert2Module,
         ReactiveFormsModule,
         HttpClientModule,
+        CardModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

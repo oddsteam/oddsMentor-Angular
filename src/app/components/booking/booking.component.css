@@ -79,3 +79,34 @@ p {
 :host::ng-deep.p-multiselect.p-multiselect-chip .p-multiselect-token {
     text-transform: capitalize;
 }
+
+:host::ng-deep.p-card .p-card-body {
+    padding: 16px 20px;
+}
+
+:host::ng-deep.p-card .p-card-content {
+    padding: 0;
+}
+
+.mentor-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.mentor-image {
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.mentor-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.margin-text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
