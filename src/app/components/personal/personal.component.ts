@@ -31,14 +31,6 @@ export class PersonalComponent implements OnInit {
                         content: this.mentorDetail.biography,
                     },
                     {
-                        property: 'og:url',
-                        content: `http://159.138.240.167:8089/personal/${this.mentorDetail.id}`,
-                    },
-                    {
-                        property: 'og:type',
-                        content: 'website',
-                    },
-                    {
                         property: 'og:title',
                         content: `ODDS Mentor - ${this.mentorDetail.fullNameEN}`,
                     },
@@ -57,34 +49,12 @@ export class PersonalComponent implements OnInit {
                         }`,
                     },
                     {
-                        name: 'twitter:card',
-                        content: 'summary_large_image',
-                    },
-                    {
-                        property: 'twitter:domain',
-                        content: '159.138.240.167:8089',
-                    },
-                    {
-                        property: 'twitter:url',
+                        property: 'og:url',
                         content: `http://159.138.240.167:8089/personal/${this.mentorDetail.id}`,
                     },
                     {
-                        name: 'twitter:title',
-                        content: `ODDS Mentor - ${this.mentorDetail.fullNameEN}`,
-                    },
-                    {
-                        property: 'twitter:description',
-                        content: this.mentorDetail.biography,
-                    },
-                    {
-                        name: 'twitter:image',
-                        content: `https://og-image-jade-nine.vercel.app/**${
-                            this.mentorDetail.fullNameEN.slice().split(' ')[0]
-                        }**%20${
-                            this.mentorDetail.fullNameEN.slice().split(' ')[1]
-                        }.png?theme=light&md=1&fontSize=100px&images=${
-                            this.mentorDetail.profileImageUrl
-                        }`,
+                        name: 'twitter:card',
+                        content: 'summary_large_image',
                     },
                 ])
             },
