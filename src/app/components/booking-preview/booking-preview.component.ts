@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router'
-import { BookingDetail } from 'src/app/mentor'
+import { BookingDetail, MentorDetail } from 'src/app/mentor'
 import * as dayjs from 'dayjs'
 import { BookingsService } from 'src/app/services/bookings.service'
 import { HttpClient } from '@angular/common/http'
@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment'
 })
 export class BookingPreviewComponent implements OnInit {
     bookingDetail!: BookingDetail
+    mentorSelected!: MentorDetail
     expertise: string = ''
     dateTime: string = ''
 
@@ -35,6 +36,7 @@ export class BookingPreviewComponent implements OnInit {
         const serviceData = this.bookingsService.getCurrentBooking()
         if (!serviceData) this.router.navigateByUrl('')
         this.bookingDetail = this.bookingsService.getCurrentBooking()!
+        this.mentorSelected = this.mentorsService.getCurrentMentor()!
 
         this.onLoadExpertise()
         this.onLoadDateTime()

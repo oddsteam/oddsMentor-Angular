@@ -18,11 +18,18 @@
 
         <p class="header">Booking Information</p>
 
-        <div>
-            <p class="title">Mentor name</p>
-            <p class="sub-title">
-                {{ bookingDetail.mentorFullName }}
-            </p>
+        <div style="display: flex; flex-direction: row; align-items: center">
+            <img
+                src="{{ mentorSelected.profileImageUrl }}"
+                alt="mentor image"
+                class="mentor-avatar"
+            />
+            <div>
+                <p class="title">Mentor name</p>
+                <p class="sub-title">
+                    {{ bookingDetail.mentorFullName }}
+                </p>
+            </div>
         </div>
 
         <div>

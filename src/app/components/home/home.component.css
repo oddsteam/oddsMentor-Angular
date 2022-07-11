@@ -8,7 +8,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 36px;
+    gap: 16px;
     overflow: hidden;
     padding: 0 128px;
 }
@@ -18,17 +18,13 @@
 }
 
 .landing-first {
-    height: calc(100vh - 52px);
+    height: 70vh;
     background: url("/assets/vectors/background.svg") center center / cover no-repeat white;
     background-attachment: scroll;
 }
 
-.landing-block {
-    height: calc(100vh - 52px);
-}
-
 .landing-section {
-    padding: 0 inherit;
+    padding: 60px 128px !important;
 }
 
 .mentors-row {

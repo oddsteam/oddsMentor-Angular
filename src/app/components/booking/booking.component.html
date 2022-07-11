@@ -12,19 +12,31 @@
         <p>Booking Information</p>
         <p-card styleClass="p-card-shadow">
             <div class="mentor-card">
-                <img src="/assets/images/dome.jpeg" alt="" class="mentor-image" width="120" height="120">
+                <img
+                    src="{{ mentorSelected.profileImageUrl }}"
+                    alt=""
+                    class="mentor-image"
+                    width="120"
+                    height="120"
+                />
                 <div class="mentor-detail">
                     <p class="margin-text" style="font-size: 24px; font-weight: 600">
                         {{ mentorSelected.fullNameEN }} ({{ mentorSelected.nickname }})
                     </p>
-                    <p class="margin-text" style="font-size: 20px; font-weight: 500; color: #708090">
+                    <p
+                        class="margin-text"
+                        style="font-size: 20px; font-weight: 500; color: #708090"
+                    >
                         {{ mentorSelected.fullNameTH }}
                     </p>
                     <br />
                     <p style="font-size: 18px; font-weight: 500" class="margin-text">
                         {{ mentorSelected.position }} @ {{ mentorSelected.team }}
                     </p>
-                    <p style="font-size: 16px; font-weight: 500; color: #85888c" class="margin-text">
+                    <p
+                        style="font-size: 16px; font-weight: 500; color: #85888c"
+                        class="margin-text"
+                    >
                         {{ mentorSelected.type }}
                     </p>
                 </div>

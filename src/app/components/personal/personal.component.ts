@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Meta } from '@angular/platform-browser'
 import { ActivatedRoute, Router } from '@angular/router'
 import { MentorDetail } from 'src/app/mentor'
+import { MentorsService } from 'src/app/services/mentors.service'
 import { UsersService } from 'src/app/services/users.service'
 
 @Component({
@@ -16,6 +17,7 @@ export class PersonalComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private usersService: UsersService,
+        private mentorsService: MentorsService,
         private meta: Meta
     ) {}
 
@@ -63,7 +65,8 @@ export class PersonalComponent implements OnInit {
         )
     }
 
-    handleClick() {
+    onBooking() {
+        this.mentorsService.saveMentor(this.mentorDetail)
         this.router.navigateByUrl('booking')
     }
 }

@@ -67,3 +67,12 @@ p {
 :host::ng-deep.button-submit:hover {
     background-color: #218838 !important;
 }
+
+.mentor-avatar {
+    margin-right: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}

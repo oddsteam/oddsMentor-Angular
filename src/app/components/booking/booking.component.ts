@@ -42,35 +42,9 @@ export class BookingComponent implements OnInit {
 
     ngOnInit(): void {
         // get mentor data
-        // const serviceData = this.mentorsService.getCurrentMentor()
-        // if (!serviceData) this.router.navigateByUrl('')
-        // this.mentorSelected = this.mentorsService.getCurrentMentor()!
-
-        this.mentorSelected = {
-            id: '62c70dedf9c68f9f4d00cf40',
-            fullNameEN: 'Chandara Sin',
-            fullNameTH: 'จันทร์ดารา ซิน',
-            nickname: 'โดม',
-            type: 'Cooperative Education 2022',
-            biography:
-                "Hello, I'm Chandara Sin. I'm a software developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
-            team: 'Molamola',
-            position: 'Software Developer',
-            profileImageUrl: 'http://159.138.240.167:8089/assets/images/dome.jpeg',
-            totalEndorsed: 0,
-            expertise: [
-                {
-                    id: '62c5b2004743e83ab91f2a26',
-                    skill: 'JavaScript',
-                    endorsed: 0,
-                },
-                {
-                    id: '62c65c85020d0f6ecbdc58a5',
-                    skill: 'Java',
-                    endorsed: 0,
-                },
-            ],
-        }
+        const serviceData = this.mentorsService.getCurrentMentor()
+        if (!serviceData) this.router.navigateByUrl('')
+        this.mentorSelected = this.mentorsService.getCurrentMentor()!
 
         this.mentorSelected.expertise.forEach((expertise) => {
             this.expertises.push(expertise.skill)
@@ -117,10 +91,6 @@ export class BookingComponent implements OnInit {
             //     sessionDuration: null,
             // })
         }
-    }
-
-    handleNext() {
-        this.router.navigateByUrl('preview')
     }
 
     handleBack() {
