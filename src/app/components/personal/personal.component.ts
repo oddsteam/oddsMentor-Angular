@@ -19,74 +19,57 @@ export class PersonalComponent implements OnInit {
         private mentorsService: MentorsService,
         private usersService: UsersService,
         private meta: Meta
-    ) {
+    ) {}
+
+    ngOnInit(): void {
         const id = this.route.snapshot.paramMap.get('id')
-        const serviceData = this.mentorsService.getCurrentMentor()
-        !serviceData
-            ? this.usersService.getUser(id!).subscribe((res) => {
+        this.usersService.getUser(id!).subscribe(
+            (res) => {
                 this.mentorDetail = res
-               
-                this.meta.addTag({
-                    property: 'og:title',
-                    content: this.mentorDetail.fullNameEN,
+
+                this.meta.updateTag({
+                    name: 'description',
+                    content: this.mentorDetail.biography,
                 })
-                this.meta.addTag({
+                this.meta.updateTag({
+                    property: 'og:title',
+                    content: `ODDS Mentor - ${this.mentorDetail.fullNameEN}`,
+                })
+                this.meta.updateTag({
+                    property: 'og:description',
+                    content: this.mentorDetail.biography,
+                })
+                this.meta.updateTag({
                     property: 'og:image',
                     content: `https://og-image-jade-nine.vercel.app/**${
                         this.mentorDetail.fullNameEN.slice().split(' ')[0]
                     }**%20${
                         this.mentorDetail.fullNameEN.slice().split(' ')[1]
-                    }.png?theme=light&md=1&fontSize=100px&images=${
-                        this.mentorDetail.profileImageUrl
-                    }`,
+                    }.png?theme=light&md=1&fontSize=100px&images=${this.mentorDetail.profileImageUrl}`,
                 })
-                this.meta.addTag({
-                    property: 'og:description',
-                    content: this.mentorDetail.biography,
+                this.meta.updateTag({
+                    property: 'og:url',
+                    content: `http://159.138.240.167:8089/personal/${this.mentorDetail.id}`,
+                })
+                this.meta.updateTag({
+                    name: 'twitter:card',
+                    content: 'summary_large_image',
+                })
+                this.meta.updateTag({
+                    name: 'twitter:card',
+                    content: `https://og-image-jade-nine.vercel.app/**${
+                        this.mentorDetail.fullNameEN.slice().split(' ')[0]
+                    }**%20${
+                        this.mentorDetail.fullNameEN.slice().split(' ')[1]
+                    }.png?theme=light&md=1&fontSize=100px&images=${this.mentorDetail.profileImageUrl}`,
                 })
             },
             (err) => {
+                console.log(err)
                 this.router.navigateByUrl('home')
-            })
-            : (this.mentorDetail = this.mentorsService.getCurrentMentor()!)
-    }
+            }
+        )
 
-    ngOnInit(): void {
-        
-    }
-
-    onLoading() {
-        try {
-            const id = this.route.snapshot.paramMap.get('id')
-            this.usersService.getUser(id!).subscribe(
-                (res) => {
-                    this.mentorDetail = res
-                    console.log(res)
-
-                    this.meta.updateTag({
-                        property: 'og:title',
-                        content: this.mentorDetail.fullNameEN,
-                    })
-                    this.meta.updateTag({
-                        property: 'og:image',
-                        content: `https://og-image-jade-nine.vercel.app/**${
-                            this.mentorDetail.fullNameEN.slice().split(' ')[0]
-                        }**%20${
-                            this.mentorDetail.fullNameEN.slice().split(' ')[1]
-                        }.png?theme=light&md=1&fontSize=100px&images=${
-                            this.mentorDetail.profileImageUrl
-                        }`,
-                    })
-                    this.meta.updateTag({
-                        property: 'og:description',
-                        content: this.mentorDetail.biography,
-                    })
-                },
-                (err) => {
-                    this.router.navigateByUrl('home')
-                }
-            )
-        } catch (error) {}
     }
 
     handleClick() {
