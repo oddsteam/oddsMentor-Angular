@@ -3,6 +3,11 @@
     --radius: 24px;
 }
 
+.container {
+    background: url("/assets/vectors/background.svg") top center / contain no-repeat white;
+    background-attachment: scroll;
+}
+
 .landing {
     display: flex;
     flex-direction: row;
@@ -19,8 +24,6 @@
 
 .landing-first {
     height: 70vh;
-    background: url("/assets/vectors/background.svg") center center / cover no-repeat white;
-    background-attachment: scroll;
 }
 
 .landing-section {
