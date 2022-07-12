@@ -8,7 +8,7 @@
 }
 .container-card {
     margin: 50px 0;
-    width: 60%;
+    width: min(660px, 90%);
     height: auto;
     box-shadow: 0px 0px 10px 0px rgba(204, 204, 204, 0.75);
     display: flex;
@@ -16,7 +16,7 @@
     flex-wrap: wrap;
     gap: 24px;
     border-radius: 12px;
-    padding: 36px 108px 44px;
+    padding: 24px 64px;
 }
 p {
     margin: 0;
@@ -110,4 +110,18 @@ p {
 .margin-text {
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+.dateTime-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+:host::ng-deep.p-float-label input:focus ~ label, .p-float-label input.p-filled ~ label, .p-float-label textarea:focus ~ label, .p-float-label textarea.p-filled ~ label, .p-float-label .p-inputwrapper-focus ~ label, .p-float-label .p-inputwrapper-filled ~ label {
+    top: -.55rem;
+}
+
+.input-mt {
+    margin-top: 4px;
 }
