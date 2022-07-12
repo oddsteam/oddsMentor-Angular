@@ -38,7 +38,7 @@
         <h1>Top Mentors</h1>
         <div class="mentors-row">
             <app-mentor-card
-                *ngFor="let mentor of mentors"
+                *ngFor="let mentor of mentors.slice(0, 4)"
                 [mentorDetail]="mentor"
             ></app-mentor-card>
         </div>

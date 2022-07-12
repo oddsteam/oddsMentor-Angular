@@ -15,7 +15,7 @@
     justify-content: center;
     gap: 16px;
     overflow: hidden;
-    padding: 0 128px;
+    padding: 0 80px;
 }
 
 .landing-col {
@@ -27,7 +27,7 @@
 }
 
 .landing-section {
-    padding: 60px 128px !important;
+    padding: 60px 80px !important;
 }
 
 .mentors-row {
@@ -35,8 +35,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
     overflow: hidden;
+    flex-wrap: wrap;
 }
 
 footer {
