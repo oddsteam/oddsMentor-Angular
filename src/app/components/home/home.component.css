@@ -107,30 +107,6 @@ footer {
     margin-top: -240px;
 }
 
-/* @media only screen and (max-width: 1100px) {
-    .landing {
-        padding: 0 64px;
-    }
-}
-
-@media only screen and (max-width: 900px) {
-    .landing {
-        flex-direction: column;
-        gap: 36px;
-        overflow: hidden;
-        padding: 0 64px;
-    }
-
-    .landing-first,
-    .landing-block {
-        padding: 0 inherit;
-    }
-
-    .half {
-        width: 100%;
-    }
-} */
-
 a {
     color: inherit;
     text-decoration: inherit;
