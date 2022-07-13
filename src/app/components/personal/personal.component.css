@@ -37,27 +37,32 @@
     font-weight: 300;
     color: #39485b;
 }
+
 .margin {
     margin-right: 8px;
     margin-top: 20px;
 }
+
 .margin-text {
     margin-top: 0px;
     margin-bottom: 0px;
 }
-:host::ng-deep.chip {
+
+:host::ng-deep .chip {
     border: 1px solid #39485b;
     background-color: white;
     color: #1498d5;
     font-weight: 500;
     text-transform: capitalize;
 }
-:host::ng-deep.button-personal {
+
+:host::ng-deep .button-personal {
     background-color: #1498d5;
     color: white;
     border-color: transparent;
     border-radius: 12px;
 }
-:host::ng-deep.button-personal:hover {
+
+:host::ng-deep .button-personal:hover {
     background-color: #0c78aa !important;
 }

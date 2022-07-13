@@ -46,10 +46,11 @@
             <p-multiSelect
                 id="expertiseMultiSelect"
                 [options]="expertises"
+                optionLabel="skill"
+                optionValue="skill"
                 formControlName="expertise"
                 [selectionLimit]="3"
                 display="chip"
-                [showClear]="true"
             >
             </p-multiSelect>
             <label for="expertiseMultiSelect">Expertise</label>
@@ -103,7 +104,6 @@
             <span class="p-float-label p-fluid input-mt">
                 <p-dropdown
                     id="durationDropdown"
-                    class="second"
                     placeholder="&nbsp;"
                     [options]="duration"
                     formControlName="sessionDuration"
@@ -119,6 +119,12 @@
                 iconPos="left"
                 styleClass="button-cancel"
                 (onClick)="handleBack()"
+            ></p-button>
+            <p-button
+                label="LOG"
+                icon="pi pi-exclamation-circle"
+                iconPos="left"
+                (onClick)="log()"
             ></p-button>
             <p-button
                 label="NEXT"

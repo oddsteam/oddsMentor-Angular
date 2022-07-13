@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: flex-start;
 }
+
 .container-card {
     margin: 50px 0;
     width: min(660px, 90%);
@@ -18,10 +19,12 @@
     border-radius: 12px;
     padding: 24px 64px;
 }
+
 p {
     margin: 0;
     color: black;
 }
+
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -29,26 +32,16 @@ p {
     gap: 36px;
 }
 
-.first {
-    flex: 1;
-}
-.second {
-    flex: 1;
-}
-.emailInput {
-    width: 50%;
-    padding-right: 18px;
-}
 .emailInput input {
     width: 100%;
 }
 
-/* :host::ng-deep .p-calendar {
-    width: 100%;
-} */
+:host::ng-deep .p-card .p-card-body {
+    padding: 16px 20px;
+}
 
-:host::ng-deep .p-datepicker {
-    width: 100% !important;
+:host::ng-deep .p-card .p-card-content {
+    padding: 0;
 }
 
 :host::ng-deep .p-dropdown {
@@ -61,31 +54,20 @@ p {
     border: transparent;
 }
 
-:host::ng-deep.button-next:hover {
+:host::ng-deep .button-next:hover {
     background-color: #0c78aa !important;
     border: transparent;
 }
+
 :host::ng-deep .button-cancel {
     background-color: #85888c;
     color: white;
     border: transparent;
 }
 
-:host::ng-deep.button-cancel:hover {
+:host::ng-deep .button-cancel:hover {
     background-color: #6a6b6d !important;
     border: transparent;
-}
-:host::ng-deep.p-multiselect-panel .p-multiselect-items .p-multiselect-item,
-:host::ng-deep.p-multiselect.p-multiselect-chip .p-multiselect-token {
-    text-transform: capitalize;
-}
-
-:host::ng-deep.p-card .p-card-body {
-    padding: 16px 20px;
-}
-
-:host::ng-deep.p-card .p-card-content {
-    padding: 0;
 }
 
 .mentor-card {
@@ -118,8 +100,13 @@ p {
     grid-gap: 20px;
 }
 
-:host::ng-deep.p-float-label input:focus ~ label, .p-float-label input.p-filled ~ label, .p-float-label textarea:focus ~ label, .p-float-label textarea.p-filled ~ label, .p-float-label .p-inputwrapper-focus ~ label, .p-float-label .p-inputwrapper-filled ~ label {
-    top: -.55rem;
+:host::ng-deep.p-float-label input:focus ~ label,
+.p-float-label input.p-filled ~ label,
+.p-float-label textarea:focus ~ label,
+.p-float-label textarea.p-filled ~ label,
+.p-float-label .p-inputwrapper-focus ~ label,
+.p-float-label .p-inputwrapper-filled ~ label {
+    top: -0.55rem;
 }
 
 .input-mt {

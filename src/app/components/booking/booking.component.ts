@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Location } from '@angular/common'
 import { BookingsService } from 'src/app/services/bookings.service'
 import { MentorsService } from 'src/app/services/mentors.service'
-import { BookingDetail, MentorDetail } from 'src/app/mentor'
+import { BookingDetail, Expertise, MentorDetail } from 'src/app/mentor'
 
 interface Time {
     value: string
@@ -16,8 +16,8 @@ interface Time {
     styleUrls: ['./booking.component.css'],
 })
 export class BookingComponent implements OnInit {
-    expertises: string[] = []
-    selectedExpertises: string[] = []
+    expertises: Expertise[] = []
+    selectedExpertises: Expertise[] = []
     duration: string[] = ['15 mins', '30 mins', '45 mins', '1 hour']
     timesArray: Time[] = [
         {
@@ -372,10 +372,8 @@ export class BookingComponent implements OnInit {
             this.mentorSelected = this.mentorsService.getCurrentMentor()!
         }
 
-        this.mentorSelected.expertise.forEach((expertise) => {
-            this.expertises.push(expertise.skill)
-        })
-        this.expertises.sort((a, b) => a.localeCompare(b))
+        this.expertises = this.mentorSelected.expertise.slice()
+        this.expertises.sort((a, b) => (a.skill).localeCompare(b.skill))
 
         const currentBooking = this.bookingsService.getCurrentBooking()
         if (currentBooking) {
@@ -408,11 +406,11 @@ export class BookingComponent implements OnInit {
             // Default Data
             this.bookingForm.setValue({
                 userId: '62c6ecc318a930d4ec607c39',
-                userFullName: 'Pjanuwat Phoowichai',
-                userEmail: 'taliw_phanxz@odds.team',
+                userFullName: null,
+                userEmail: null,
                 mentorId: this.mentorSelected.id,
                 mentorFullName: this.mentorSelected.fullNameEN,
-                expertise: [],
+                expertise: null,
                 reason: null,
                 sessionDate: null,
                 sessionDuration: null,
@@ -430,5 +428,9 @@ export class BookingComponent implements OnInit {
         this.bookingsService.saveBooking(booking)
         // this.bookingsService.saveBooking(this.bookingForm.value)
         this.router.navigateByUrl('preview')
+    }
+
+    log() {
+        console.log(this.bookingForm.value.expertise);
     }
 }

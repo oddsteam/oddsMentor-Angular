@@ -48,23 +48,23 @@ p {
     font-weight: 600;
 }
 
-:host::ng-deep.button-return {
+:host::ng-deep .button-return {
     background-color: #ffc107;
     color: white;
     border: transparent;
 }
 
-:host::ng-deep.button-submit {
+:host::ng-deep .button-submit {
     background-color: #28a745;
     color: white;
     border: transparent;
 }
 
-:host::ng-deep.button-return:hover {
+:host::ng-deep .button-return:hover {
     background-color: #e0a800 !important;
 }
 
-:host::ng-deep.button-submit:hover {
+:host::ng-deep .button-submit:hover {
     background-color: #218838 !important;
 }
 
