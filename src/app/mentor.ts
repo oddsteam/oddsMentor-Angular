@@ -27,6 +27,19 @@ export interface BookingDetail {
     expertise: string[]
     reason: string
     sessionDate: string
+    sessionTime: string
+    sessionDuration: number
+}
+
+export interface BookingForm {
+    userId: string
+    userFullName: string
+    userEmail: string
+    mentorId: string
+    mentorFullName: string
+    expertise: string[]
+    reason: string
+    sessionDate: string
     sessionDuration: number
 }
 

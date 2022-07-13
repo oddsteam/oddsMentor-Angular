@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { BookingDetail, BookingRes } from '../mentor'
+import { BookingDetail, BookingRes, BookingForm } from '../mentor'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { map, Observable } from 'rxjs'
 import { environment } from 'src/environments/environment'
@@ -17,7 +17,7 @@ export class BookingsService {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     }
 
-    addBooking(booking: BookingDetail): Observable<string> {
+    addBooking(booking: BookingForm): Observable<string> {
         return this.httpClient
             .post<BookingRes>(this.bookingUrl, booking, this.httpOption)
             .pipe(map((res) => res.id))

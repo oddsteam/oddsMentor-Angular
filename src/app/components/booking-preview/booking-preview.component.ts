@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router'
-import { BookingDetail, MentorDetail } from 'src/app/mentor'
+import { BookingDetail, MentorDetail, BookingForm } from 'src/app/mentor'
 import * as dayjs from 'dayjs'
 import { BookingsService } from 'src/app/services/bookings.service'
 import { HttpClient } from '@angular/common/http'
@@ -53,8 +53,8 @@ export class BookingPreviewComponent implements OnInit {
     }
 
     onLoadDateTime() {
-        let sessionDate = this.bookingDetail.sessionDate
-        this.dateTime = dayjs(sessionDate).format('D MMMM YYYY H:mm')
+        let sessionDateTime = dayjs(this.bookingDetail.sessionDate).set('hour', dayjs(this.bookingDetail.sessionTime).hour()).set('minute', dayjs(this.bookingDetail.sessionTime).minute())
+        this.dateTime = dayjs(sessionDateTime).format('D MMMM YYYY H:mm')
     }
 
     onReturn() {
@@ -63,13 +63,24 @@ export class BookingPreviewComponent implements OnInit {
 
     //alert
     async on_submit() {
-        let date = this.bookingDetail.sessionDate
+        let date = this.dateTime
         this.bookingDetail.sessionDate = dayjs(date).format('YYYY-MM-DDTHH:mm')
-        this.bookingsService.addBooking(this.bookingDetail).subscribe((data) => {
+        let bookingForm: BookingForm = {
+            userId: this.bookingDetail.userId,
+            userFullName: this.bookingDetail.userFullName,
+            userEmail: this.bookingDetail.userEmail,
+            mentorId: this.bookingDetail.mentorId,
+            mentorFullName: this.bookingDetail.mentorFullName,
+            expertise: this.bookingDetail.expertise,
+            reason: this.bookingDetail.reason,
+            sessionDate: this.bookingDetail.sessionDate,
+            sessionDuration: this.bookingDetail.sessionDuration
+        }
+        this.bookingsService.addBooking(bookingForm).subscribe((data) => {
             this.bookingsService.clearCurrentBooking()
             this.mentorsService.clearCurrentMentor()
         })
-        this.send2Discord(this.bookingDetail)
+        this.send2Discord(bookingForm)
         await Swal.fire({
             icon: 'success',
             title: 'Thank you for your booking!',
@@ -77,7 +88,7 @@ export class BookingPreviewComponent implements OnInit {
         this.router.navigateByUrl('home')
     }
 
-    send2Discord(booking: BookingDetail) {
+    send2Discord(booking: BookingForm) {
         let body1 = {
             content: null,
             embeds: [

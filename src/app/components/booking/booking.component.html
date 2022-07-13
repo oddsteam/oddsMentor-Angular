@@ -71,13 +71,20 @@
                 id="dateCalerdar"
                 formControlName="sessionDate"
                 dateFormat="d MM yy"
-                [showClear]="true"
+                [minDate]="minDate"
             ></p-calendar>
             <label for="dateCalerdar">Date</label>
         </span>
         <div class="dateTime-row">
             <span class="p-float-label p-fluid input-mt">
-                <p-dropdown
+                <p-calendar
+                    id="timeDropdown"
+                    formControlName="sessionTime"
+                    [timeOnly]="true"
+                    [stepMinute]="15"
+                    [defaultDate]="defaultDate"
+                ></p-calendar>
+                <!-- <p-dropdown
                     id="timeDropdown"
                     [options]="timesArray"
                     [(ngModel)]="selectedTime"
@@ -98,7 +105,7 @@
                             <div>{{ time.value }}</div>
                         </div>
                     </ng-template>
-                </p-dropdown>
+                </p-dropdown> -->
                 <label for="timeDropdown">Time</label>
             </span>
             <span class="p-float-label p-fluid input-mt">
