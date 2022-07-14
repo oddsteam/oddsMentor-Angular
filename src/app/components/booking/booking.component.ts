@@ -73,35 +73,33 @@ export class BookingComponent implements OnInit {
             })
         } else {
             // Data Mockup
-            this.bookingForm.setValue({
-                userId: '62c6ecc318a930d4ec607c39',
-                userFullName: 'Phanuwat Phoowichai',
-                userEmail: 'taliw_phanxz@odds.team',
-                mentorId: this.mentorSelected.id,
-                mentorFullName: this.mentorSelected.fullNameEN,
-                expertise: null,
-                reason: 'Developing a new product',
-                sessionDate: null,
-                sessionTime: null,
-                sessionDuration: null,
-            })
-
-            // Default Data
             // this.bookingForm.setValue({
             //     userId: '62c6ecc318a930d4ec607c39',
-            //     userFullName: null,
-            //     userEmail: null,
+            //     userFullName: 'Phanuwat Phoowichai',
+            //     userEmail: 'taliw_phanxz@odds.team',
             //     mentorId: this.mentorSelected.id,
             //     mentorFullName: this.mentorSelected.fullNameEN,
             //     expertise: null,
-            //     reason: null,
+            //     reason: 'Developing a new product',
             //     sessionDate: null,
             //     sessionTime: null,
             //     sessionDuration: null,
             // })
-        }
 
-        console.log(this.minDate);
+            // Default Data
+            this.bookingForm.setValue({
+                userId: '62c6ecc318a930d4ec607c39',
+                userFullName: null,
+                userEmail: null,
+                mentorId: this.mentorSelected.id,
+                mentorFullName: this.mentorSelected.fullNameEN,
+                expertise: null,
+                reason: null,
+                sessionDate: null,
+                sessionTime: null,
+                sessionDuration: null,
+            })
+        }
     }
 
     handleBack() {

@@ -18,7 +18,7 @@ export class MentorCardComponent implements OnInit {
     ngOnInit(): void {
         let expertise = this.mentorDetail.expertise
         expertise.sort((first, second) => second.endorsed - first.endorsed)
-        if (expertise.length > 3) {
+        if (expertise.length > 4) {
             for (let index = 0; index < 3; index++) {
                 this.skills.push(expertise[index].skill)
             }

@@ -8,6 +8,7 @@ export const environment = {
     // apiUrl: 'localhost:8080',
     discordUrl:
         'https://discord.com/api/webhooks/994429221705351338/VJx4TreAciMRFJUH6pG4BRvHXgmKNmaVL51xs8vy77YlLza-k1r3m4YN9bIbAdvF2CY8',
+    jsonUrl: 'https://phanx-web-dev-default-rtdb.asia-southeast1.firebasedatabase.app/mentor/.json',
 }
 
 /*

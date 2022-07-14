@@ -53,7 +53,9 @@ export class BookingPreviewComponent implements OnInit {
     }
 
     onLoadDateTime() {
-        let sessionDateTime = dayjs(this.bookingDetail.sessionDate).set('hour', dayjs(this.bookingDetail.sessionTime).hour()).set('minute', dayjs(this.bookingDetail.sessionTime).minute())
+        let sessionDateTime = dayjs(this.bookingDetail.sessionDate)
+            .set('hour', dayjs(this.bookingDetail.sessionTime).hour())
+            .set('minute', dayjs(this.bookingDetail.sessionTime).minute())
         this.dateTime = dayjs(sessionDateTime).format('D MMMM YYYY H:mm')
     }
 
@@ -74,7 +76,7 @@ export class BookingPreviewComponent implements OnInit {
             expertise: this.bookingDetail.expertise,
             reason: this.bookingDetail.reason,
             sessionDate: this.bookingDetail.sessionDate,
-            sessionDuration: this.bookingDetail.sessionDuration
+            sessionDuration: this.bookingDetail.sessionDuration,
         }
         this.bookingsService.addBooking(bookingForm).subscribe((data) => {
             this.bookingsService.clearCurrentBooking()

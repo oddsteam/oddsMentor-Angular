@@ -29,6 +29,12 @@ export class MentorsService {
             .pipe(map((res) => res))
     }
 
+    getMentorsJson(): Observable<MentorDetail[]> {
+        return this.httpClient
+            .get<MentorDetail[]>(environment.jsonUrl, this.httpOption)
+            .pipe(map((res) => res))
+    }
+
     saveMentor(mentor: MentorDetail) {
         this.currentMentor = mentor
     }
