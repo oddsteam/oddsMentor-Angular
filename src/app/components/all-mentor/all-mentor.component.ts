@@ -14,8 +14,8 @@ export class AllMentorComponent implements OnInit {
 
     ngOnInit(): void {
         this.mentorsService.getMentorsJson().subscribe((res) => {
-            // res.sort((a, b) => a.fullNameEN.localeCompare(b.fullNameEN))
-            this.mentors = res.slice(0, 1)
+            res.sort((a, b) => a.fullNameEN.localeCompare(b.fullNameEN))
+            this.mentors = res
         })
     }
 }
