@@ -113,9 +113,9 @@ export class BookingComponent implements OnInit {
         this.router.navigateByUrl('preview')
     }
 
-    log() {
-        console.log(this.bookingForm.value.expertise)
-    }
+    // log() {
+    //     console.log(this.bookingForm.value.expertise)
+    // }
 
     onTimeLoad(): Date {
         let currentDate = dayjs()
