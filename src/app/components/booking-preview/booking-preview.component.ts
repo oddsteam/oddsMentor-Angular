@@ -76,7 +76,7 @@ export class BookingPreviewComponent implements OnInit {
             expertise: this.bookingDetail.expertise,
             reason: this.bookingDetail.reason,
             sessionDate: this.bookingDetail.sessionDate,
-            sessionDuration: this.bookingDetail.sessionDuration,
+            sessionDuration: parseInt(this.bookingDetail.sessionDuration.split(' ')[0]),
         }
         this.bookingsService.addBooking(bookingForm).subscribe((data) => {
             this.bookingsService.clearCurrentBooking()

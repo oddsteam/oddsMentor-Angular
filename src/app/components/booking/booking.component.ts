@@ -34,7 +34,7 @@ export class BookingComponent implements OnInit {
             reason: new FormControl('', [Validators.required]),
             sessionDate: new FormControl('', [Validators.required]),
             sessionTime: new FormControl('', [Validators.required]),
-            sessionDuration: new FormControl(0, [Validators.required]),
+            sessionDuration: new FormControl('', [Validators.required]),
         },
         Validators.required
     )
@@ -74,7 +74,7 @@ export class BookingComponent implements OnInit {
         } else {
             // Data Mockup
             // this.bookingForm.setValue({
-            //     userId: '62c6ecc318a930d4ec607c39',
+            //     userId: '62c70dedf9c68f9f4d00cf40',
             //     userFullName: 'Phanuwat Phoowichai',
             //     userEmail: 'taliw_phanxz@odds.team',
             //     mentorId: this.mentorSelected.id,
@@ -88,7 +88,7 @@ export class BookingComponent implements OnInit {
 
             // Default Data
             this.bookingForm.setValue({
-                userId: '62c6ecc318a930d4ec607c39',
+                userId: '62c70dedf9c68f9f4d00cf40',
                 userFullName: null,
                 userEmail: null,
                 mentorId: this.mentorSelected.id,

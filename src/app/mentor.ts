@@ -28,7 +28,7 @@ export interface BookingDetail {
     reason: string
     sessionDate: string
     sessionTime: string
-    sessionDuration: number
+    sessionDuration: string
 }
 
 export interface BookingForm {

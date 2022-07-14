@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment'
     providedIn: 'root',
 })
 export class BookingsService {
-    private bookingUrl = `${environment.apiUrl}/bookings`
+    private bookingUrl = `${environment.apiUrl}/odds-api/v1/bookings`
     currentBooking?: BookingDetail
 
     constructor(private httpClient: HttpClient) {}
