@@ -1,95 +1,67 @@
-<div class="container">
-    <div class="landing landing-first">
-        <a href="./mentor"
-            ><img src="../../../assets/vectors/Landing.svg" alt="landing" class="landing-svg"
-        /></a>
+<div class="container-fluid p-0">
+    <div class="landing-1 text-center pt-0">
+        <a href="./mentor">
+            <img src="../../../assets/vectors/Landing.svg" alt="landing" class="landing-svg" />
+        </a>
     </div>
-    <!-- <div class="landing landing-first">
-        <div class="half" style="color: white">
-            <h1>Want to know something?</h1>
-            <h1>Odds always have answer.</h1>
-            <p>
-                Ask us a question privately.<br />
-                ** for ODDS members only **
-            </p>
-            <a href="home#TopMentors">
-                <p-button
-                    pRipple
-                    label="Book A Session"
-                    icon="pi pi-search"
-                    styleClass="home-button"
-                ></p-button>
-            </a>
-        </div>
-        <div class="half img-container">
-            <img
-                class="img-landing img-1"
-                src="https://images.unsplash.com/photo-1526948531399-320e7e40f0ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                alt="1"
-            />
-            <img
-                class="img-landing img-2"
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                alt="2"
-            />
-            <img
-                class="img-landing img-3"
-                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80"
-                alt="3"
-            />
-        </div>
-    </div> -->
-    <div class="landing landing-section landing-col" id="TopMentors">
-        <h1>Top Mentors</h1>
+    <div class="landing-2 text-center pt-5">
+        <h1 class="mb-4">Top Mentors</h1>
         <div class="mentors-row">
-            <app-mentor-card
-                *ngFor="let mentor of mentors.slice(0, 4)"
-                [mentorDetail]="mentor"
-            ></app-mentor-card>
+            <app-mentor-card *ngFor="let mentor of mentors.slice(0, 4)" [mentorDetail]="mentor">
+            </app-mentor-card>
         </div>
     </div>
-    <div class="landing landing-section">
-        <div class="half">
-            <h2>พบกับผู้เชี่ยวชาญเพื่อคลายข้อสงสัย..</h2>
-            <p>จะดีกว่าไหม? ถ้าข้อสงสัยของคุณ สามารถถูกแก้ไขได้ด้วยผู้ที่เชี่ยวชาญในเรื่องนั้น ๆ</p>
-        </div>
-        <div class="half">
-            <img src="/assets/vectors/consulting-rafiki.svg" alt="consulting-rafiki" />
-        </div>
-    </div>
-    <div class="landing landing-section">
-        <div class="half">
-            <img src="/assets/images/rectangle-14.png" alt="consulting-rafiki" />
-        </div>
-        <div class="half">
-            <h2>สอบถามได้ทุกที่ ไม่ว่าคุณจะอยู่ที่ไหน</h2>
-            <p>
-                ODDS Mentor จะช่วยให้คุณสามารถนัดหมายเวลากับคนที่คุณต้องการปรึกษา
-                พูดคุยเพื่อคลายปัญหา ข้อสงสัยต่างๆของคุณได้ ทุกที่
-            </p>
+    <div class="landing-3 pt-5 px-5">
+        <div class="row">
+            <div class="col-6">
+                <h2>พบกับผู้เชี่ยวชาญเพื่อคลายข้อสงสัย..</h2>
+                <p>
+                    จะดีกว่าไหม? ถ้าข้อสงสัยของคุณ สามารถถูกแก้ไขได้ด้วยผู้ที่เชี่ยวชาญในเรื่องนั้น
+                    ๆ
+                </p>
+            </div>
+            <div class="col-6">
+                <img src="/assets/vectors/consulting-rafiki.svg" alt="consulting-rafiki" />
+            </div>
         </div>
     </div>
-    <div class="landing landing-section">
-        <div class="half">
-            <h2>จองได้ง่าย ๆ เพียงปลายนิ้ว</h2>
-            <p>
-                คุณสามารถนัดหมายเพื่อปรึกษากับผู้เชี่ยวชาญที่คุณต้องการได้ง่ายๆ
-                เพียงเข้าสู่ระบบการจองของเราแล้วทำการบันทึกข้อมูล
-            </p>
-        </div>
-        <div class="half">
-            <img src="/assets/images/rectangle-15.png" alt="consulting-rafiki" />
+    <div class="landing-4 pt-5 px-5">
+        <div class="row">
+            <div class="col-6">
+                <img src="/assets/images/rectangle-14.png" alt="consulting-rafiki" />
+            </div>
+            <div class="col-6">
+                <h2>สอบถามได้ทุกที่ ไม่ว่าคุณจะอยู่ที่ไหน</h2>
+                <p>
+                    ODDS Mentor จะช่วยให้คุณสามารถนัดหมายเวลากับคนที่คุณต้องการปรึกษา
+                    พูดคุยเพื่อคลายปัญหา ข้อสงสัยต่างๆของคุณได้ ทุกที่
+                </p>
+            </div>
         </div>
     </div>
-    <footer>
-        <img src="/assets/images/odds-logo-white-blue.png" alt="ODDS_Logo" height="36px" />
-        <p class="footer-param">
-            <a href="https://goo.gl/maps/jf9yKAdmL8TrSkjw5"
-                >2549/41-43 Phahonyothin Road, Ladyao, Chatuchak, Bangkok 10900</a
-            >
-            <br />
-            <a href="tel:+6620110684">Tel.: 020110684 </a>
-            <a href="mailto:th@odd-e.com">Email: th@odd-e.com</a>
-        </p>
-    </footer>
+    <div class="landing-5 py-5 px-5">
+        <div class="row">
+            <div class="col">
+                <h2>จองได้ง่าย ๆ เพียงปลายนิ้ว</h2>
+                <p>
+                    คุณสามารถนัดหมายเพื่อปรึกษากับผู้เชี่ยวชาญที่คุณต้องการได้ง่ายๆ
+                    เพียงเข้าสู่ระบบการจองของเราแล้วทำการบันทึกข้อมูล
+                </p>
+            </div>
+            <div class="col">
+                <img src="/assets/images/rectangle-15.png" alt="consulting-rafiki" />
+            </div>
+        </div>
+    </div>
 </div>
+<footer>
+    <img src="/assets/images/odds-logo-white-blue.png" alt="ODDS_Logo" height="36px" />
+    <p class="footer-param">
+        <a href="https://goo.gl/maps/jf9yKAdmL8TrSkjw5"
+            >2549/41-43 Phahonyothin Road, Ladyao, Chatuchak, Bangkok 10900</a
+        >
+        <br />
+        <a href="tel:+6620110684">Tel.: 020110684 </a>
+        <a href="mailto:th@odd-e.com">Email: th@odd-e.com</a>
+    </p>
+</footer>

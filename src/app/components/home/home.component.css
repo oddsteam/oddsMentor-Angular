@@ -1,6 +1,6 @@
-.container {
-    /* background: url("/assets/vectors/background.svg") top center / contain no-repeat white;
-    background-attachment: scroll; */
+/* .container {
+    background: url("/assets/vectors/background.svg") top center / contain no-repeat white;
+    background-attachment: scroll;
     background-color: white;
 }
 
@@ -35,21 +35,6 @@
     gap: 20px;
     overflow: hidden;
     flex-wrap: wrap;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    padding: 24px 0;
-    background-color: #39485b;
-}
-
-.footer-param {
-    margin: 0;
-    text-align: center;
-    color: white;
 }
 
 .div {
@@ -113,9 +98,28 @@ a {
 .landing-first {
     height: min-content;
     padding: 0;
-}
+} */
 
 .landing-svg {
     width: 100vw;
     height: auto;
+}
+
+.landing-2 {
+    background-color: #f9f9f9;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+    background-color: #39485b;
+}
+
+.footer-param {
+    margin: 0;
+    text-align: center;
+    color: white;
 }
