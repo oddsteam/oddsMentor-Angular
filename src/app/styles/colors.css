@@ -7,13 +7,3 @@
     --yellow-color: #ffc107;
     --smoke-color: #f9f9f9;
 }
-
-.allMentor {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-    padding: 48px 0;
-    background-color: var(--smoke-color);
-}

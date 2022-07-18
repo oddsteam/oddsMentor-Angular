@@ -14,7 +14,7 @@ interface Time {
 @Component({
     selector: 'app-booking',
     templateUrl: './booking.component.html',
-    styleUrls: ['./booking.component.css'],
+    styleUrls: ['./booking.component.css', '../../styles/colors.css'],
 })
 export class BookingComponent implements OnInit {
     expertises: Expertise[] = []

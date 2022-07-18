@@ -1,7 +1,17 @@
-/* .container {
+/* * {
+    --blue-color: #1498d5;
+    --black-color: #000000;
+    --gray-color: #39485b;
+    --white-color: #ffffff;
+    --green-color: #28a745;
+    --yellow-color: #ffc107;
+    --smoke-color: #f9f9f9;
+}
+
+.container {
     background: url("/assets/vectors/background.svg") top center / contain no-repeat white;
     background-attachment: scroll;
-    background-color: white;
+    background-color: var(--smoke-color);
 }
 
 .landing {
@@ -16,7 +26,6 @@
 
 .landing-col {
     flex-direction: column;
-    background-color: #F9F9F9;
 }
 
 .landing-first {
@@ -37,15 +46,30 @@
     flex-wrap: wrap;
 }
 
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+    background-color: var(--gray-color);
+}
+
+.footer-param {
+    margin: 0;
+    text-align: center;
+    color: var(--white-color);
+}
+
 .div {
     width: 260px;
     height: 400px;
-    background-color: black;
+    background-color: var(--black-color);
 }
 
 .half {
     width: 50%;
-    color: black;
+    color: var(--black-color);
 }
 
 .img-container {
@@ -57,8 +81,8 @@
 }
 
 :host::ng-deep .home-button {
-    background-color: white !important;
-    color: #39485b !important;
+    background-color: var(--white-color) !important;
+    color: var(--gray-color) !important;
     border-color: transparent;
 }
 
@@ -98,7 +122,7 @@ a {
 .landing-first {
     height: min-content;
     padding: 0;
-} */
+}
 
 .landing-svg {
     width: 100vw;
@@ -122,4 +146,4 @@ footer {
     margin: 0;
     text-align: center;
     color: white;
-}
+} */

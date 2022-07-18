@@ -1,3 +1,13 @@
+* {
+    --blue-color: #1498d5;
+    --black-color: #000000;
+    --gray-color: #39485b;
+    --white-color: #ffffff;
+    --green-color: #28a745;
+    --yellow-color: #ffc107;
+    --smoke-color: #f9f9f9;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -35,7 +45,7 @@
 .text {
     font-size: 16pt;
     font-weight: 300;
-    color: #39485b;
+    color: var(--gray-color);
 }
 
 .margin {
@@ -49,16 +59,16 @@
 }
 
 :host::ng-deep .chip {
-    border: 1px solid #39485b;
-    background-color: white;
-    color: #1498d5;
+    border: 1px solid var(--gray-color);
+    background-color: var(--white-color);
+    color: var(--blue-color);
     font-weight: 500;
     text-transform: capitalize;
 }
 
 :host::ng-deep .button-personal {
-    background-color: #1498d5;
-    color: white;
+    background-color: var(--blue-color);
+    color: var(--white-color);
     border-color: transparent;
     border-radius: 12px;
 }

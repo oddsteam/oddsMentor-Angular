@@ -1,3 +1,13 @@
+* {
+    --blue-color: #1498d5;
+    --black-color: #000000;
+    --gray-color: #39485b;
+    --white-color: #ffffff;
+    --green-color: #28a745;
+    --yellow-color: #ffc107;
+    --smoke-color: #f9f9f9;
+}
+
 .card {
     width: 300px;
     border-radius: 12px;
@@ -35,6 +45,11 @@
     margin-bottom: 4px;
 }
 
+.card-body p {
+    margin: 0;
+    color: var(--black-color);
+}
+
 .card-type {
     font-size: 16px;
     margin-bottom: 4px;
@@ -67,8 +82,22 @@
 
 :host::ng-deep .p-chip .p-chip-text {
     margin: 0 !important;
-    color: white;
+    color: var(--white-color);
     text-transform: capitalize;
+}
+
+:host::ng-deep .home-chip {
+    background-color: var(--blue-color);
+    width: max-content;
+}
+
+:host::ng-deep span.pi.pi-heart-fill.p-chip-icon {
+    color: var(--white-color);
+}
+
+:host::ng-deep .score-chip {
+    background-color: var(--gray-color);
+    border: 2px solid var(--blue-color);
 }
 
 :host::ng-deep.p-button,

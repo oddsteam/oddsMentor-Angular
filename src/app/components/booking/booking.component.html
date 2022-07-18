@@ -84,28 +84,6 @@
                     [stepMinute]="15"
                     [defaultDate]="defaultDate"
                 ></p-calendar>
-                <!-- <p-dropdown
-                    id="timeDropdown"
-                    [options]="timesArray"
-                    [(ngModel)]="selectedTime"
-                    optionLabel="value"
-                    [filter]="true"
-                    filterBy="value"
-                    placeholder="&nbsp;"
-                    [showClear]="true"
-                    [ngModelOptions]="{ standalone: true }"
-                >
-                    <ng-template pTemplate="selectedItem">
-                        <div class="country-item country-item-value" *ngIf="selectedTime">
-                            <div>{{ selectedTime.value }}</div>
-                        </div>
-                    </ng-template>
-                    <ng-template let-time pTemplate="item">
-                        <div class="country-item">
-                            <div>{{ time.value }}</div>
-                        </div>
-                    </ng-template>
-                </p-dropdown> -->
                 <label for="timeDropdown">Time</label>
             </span>
             <span class="p-float-label p-fluid input-mt">
@@ -114,7 +92,6 @@
                     placeholder="&nbsp;"
                     [options]="duration"
                     formControlName="sessionDuration"
-                    [showClear]="true"
                 ></p-dropdown>
                 <label for="durationDropdown">Duration</label>
             </span>

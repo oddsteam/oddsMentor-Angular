@@ -1,3 +1,13 @@
+* {
+    --blue-color: #1498d5;
+    --black-color: #000000;
+    --gray-color: #39485b;
+    --white-color: #ffffff;
+    --green-color: #28a745;
+    --yellow-color: #ffc107;
+    --smoke-color: #f9f9f9;
+}
+
 .navbar {
     line-height: 2;
     flex-direction: column;
