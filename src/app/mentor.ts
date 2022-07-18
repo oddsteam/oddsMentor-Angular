@@ -18,7 +18,7 @@ export interface Expertise {
     endorsed: number
 }
 
-export interface BookingDetail {
+export interface BookingForm {
     userId: string
     userFullName: string
     userEmail: string
@@ -31,7 +31,7 @@ export interface BookingDetail {
     sessionDuration: string
 }
 
-export interface BookingForm {
+export interface BookingRequest {
     userId: string
     userFullName: string
     userEmail: string
@@ -43,7 +43,7 @@ export interface BookingForm {
     sessionDuration: number
 }
 
-export interface BookingRes {
+export interface BookingResponse {
     id: string
     userId: string
     userFullName: string

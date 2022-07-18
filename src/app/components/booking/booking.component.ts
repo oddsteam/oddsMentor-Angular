@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Location } from '@angular/common'
 import { BookingsService } from 'src/app/services/bookings.service'
 import { MentorsService } from 'src/app/services/mentors.service'
-import { BookingDetail, Expertise, MentorDetail } from 'src/app/mentor'
+import { BookingForm, Expertise, MentorDetail } from 'src/app/mentor'
 import * as dayjs from 'dayjs'
 
 interface Time {
@@ -108,7 +108,7 @@ export class BookingComponent implements OnInit {
     }
 
     onSubmit() {
-        let booking: BookingDetail = this.bookingForm.value as unknown as BookingDetail
+        let booking: BookingForm = this.bookingForm.value as unknown as BookingForm
         this.bookingsService.saveBooking(booking)
         this.router.navigateByUrl('preview')
     }

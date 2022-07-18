@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router'
-import { BookingDetail, MentorDetail, BookingForm } from 'src/app/mentor'
+import { BookingForm, MentorDetail, BookingRequest } from 'src/app/mentor'
 import * as dayjs from 'dayjs'
 import { BookingsService } from 'src/app/services/bookings.service'
 import { HttpClient } from '@angular/common/http'
@@ -15,7 +15,7 @@ import { environment } from 'src/environments/environment'
     styleUrls: ['./booking-preview.component.css', '../../styles/colors.css'],
 })
 export class BookingPreviewComponent implements OnInit {
-    bookingDetail!: BookingDetail
+    bookingDetail!: BookingForm
     mentorSelected!: MentorDetail
     expertise: string = ''
     dateTime: string = ''
@@ -67,7 +67,7 @@ export class BookingPreviewComponent implements OnInit {
     async on_submit() {
         let date = this.dateTime
         this.bookingDetail.sessionDate = dayjs(date).format('YYYY-MM-DDTHH:mm')
-        let bookingForm: BookingForm = {
+        let bookingForm: BookingRequest = {
             userId: this.bookingDetail.userId,
             userFullName: this.bookingDetail.userFullName,
             userEmail: this.bookingDetail.userEmail,
@@ -90,7 +90,7 @@ export class BookingPreviewComponent implements OnInit {
         this.router.navigateByUrl('home')
     }
 
-    send2Discord(booking: BookingForm) {
+    send2Discord(booking: BookingRequest) {
         let body1 = {
             content: null,
             embeds: [
