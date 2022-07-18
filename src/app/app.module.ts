@@ -39,7 +39,7 @@ import { AllMentorComponent } from './components/all-mentor/all-mentor.component
         AllMentorComponent,
     ],
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({ appId: 'serverApp' }),
         AppRoutingModule,
         AccordionModule,
         ButtonModule,
