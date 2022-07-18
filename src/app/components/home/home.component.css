@@ -1,6 +1,7 @@
 .container {
-    background: url("/assets/vectors/background.svg") top center / contain no-repeat white;
-    background-attachment: scroll;
+    /* background: url("/assets/vectors/background.svg") top center / contain no-repeat white;
+    background-attachment: scroll; */
+    background-color: white;
 }
 
 .landing {
@@ -15,6 +16,7 @@
 
 .landing-col {
     flex-direction: column;
+    background-color: #F9F9F9;
 }
 
 .landing-first {
@@ -106,4 +108,14 @@ footer {
 a {
     color: inherit;
     text-decoration: inherit;
+}
+
+.landing-first {
+    height: min-content;
+    padding: 0;
+}
+
+.landing-svg {
+    width: 100vw;
+    height: auto;
 }
