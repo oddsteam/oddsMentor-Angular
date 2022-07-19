@@ -112,18 +112,3 @@ a {
 .landing-2 {
     background-color: #f9f9f9;
 }
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    padding: 24px 0;
-    background-color: #39485b;
-}
-
-.footer-param {
-    margin: 0;
-    text-align: center;
-    color: white;
-}
