@@ -92,23 +92,23 @@ const routes: Routes = [
             },
         },
     },
-    {
-        path: 'mentor',
-        component: AllMentorComponent,
-        data: {
-            seo: {
-                title: ogTitle,
-                metaTags: [
-                    { name: 'description', content: ogDescription },
-                    { property: 'og:title', content: ogTitle },
-                    { proprety: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { property: 'og:url', content: `${ogUrl}/home` },
-                    { name: 'twitter:card', content: 'summary_large_image' },
-                ],
-            },
-        },
-    },
+    // {
+    //     path: 'mentor',
+    //     component: AllMentorComponent,
+    //     data: {
+    //         seo: {
+    //             title: ogTitle,
+    //             metaTags: [
+    //                 { name: 'description', content: ogDescription },
+    //                 { property: 'og:title', content: ogTitle },
+    //                 { proprety: 'og:description', content: ogDescription },
+    //                 { property: 'og:image', content: ogImage },
+    //                 { property: 'og:url', content: `${ogUrl}/home` },
+    //                 { name: 'twitter:card', content: 'summary_large_image' },
+    //             ],
+    //         },
+    //     },
+    // },
 ]
 
 @NgModule({

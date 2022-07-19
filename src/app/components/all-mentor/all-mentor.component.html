@@ -1,3 +1,29 @@
-<div class="allMentor">
-    <app-mentor-card *ngFor="let mentor of mentors" [mentorDetail]="mentor"></app-mentor-card>
+<div class="card">
+    <p-dataView
+        #dv
+        [value]="mentors"
+        [paginator]="true"
+        [rows]="8"
+        filterBy="fullNameEN,fullNameTH,nickname"
+        [paginator]="true"
+        layout="grid"
+    >
+        <ng-template pTemplate="header">
+            <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between p-fluid">
+                <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+                    <i class="pi pi-search"></i>
+                    <input
+                        #searchName
+                        type="search"
+                        pInputText
+                        placeholder="Search by Name or Nickname"
+                        (input)="dv.filter(searchName.value, 'startsWith')"
+                    />
+                </span>
+            </div>
+        </ng-template>
+        <ng-template let-mentors pTemplate="gridItem">
+            <app-mentor-card [mentorDetail]="mentors"> </app-mentor-card>
+        </ng-template>
+    </p-dataView>
 </div>

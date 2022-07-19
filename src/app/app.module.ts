@@ -25,6 +25,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
 import { HttpClientModule } from '@angular/common/http'
 import { CardModule } from 'primeng/card'
 import { AllMentorComponent } from './components/all-mentor/all-mentor.component'
+import { CarouselModule } from 'primeng/carousel'
+import { DataViewModule } from 'primeng/dataview'
 
 @NgModule({
     declarations: [
@@ -57,6 +59,8 @@ import { AllMentorComponent } from './components/all-mentor/all-mentor.component
         ReactiveFormsModule,
         HttpClientModule,
         CardModule,
+        CarouselModule,
+        DataViewModule,
     ],
     providers: [Meta],
     bootstrap: [AppComponent],

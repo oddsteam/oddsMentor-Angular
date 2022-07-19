@@ -6,10 +6,22 @@
     </div>
     <div class="landing-2 text-center pt-5">
         <h1 class="mb-4">Top Mentors</h1>
-        <div class="mentors-row">
+        <!-- <div class="mentors-row">
             <app-mentor-card *ngFor="let mentor of mentors.slice(0, 4)" [mentorDetail]="mentor">
             </app-mentor-card>
-        </div>
+        </div> -->
+        <p-carousel
+            [value]="mentors"
+            styleClass="custom-carousel"
+            [numVisible]="3"
+            [numScroll]="3"
+            [circular]="true"
+            [autoplayInterval]="3000"
+        >
+            <ng-template let-mentors pTemplate="item">
+                <app-mentor-card [mentorDetail]="mentors"> </app-mentor-card>
+            </ng-template>
+        </p-carousel>
     </div>
     <div class="landing-3 pt-5 px-5">
         <div class="row">
