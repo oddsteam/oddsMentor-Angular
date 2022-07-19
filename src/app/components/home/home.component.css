@@ -26,16 +26,6 @@
     padding: 60px 80px !important;
 }
 
-.mentors-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    overflow: hidden;
-    flex-wrap: wrap;
-}
-
 footer {
     display: flex;
     flex-direction: column;

@@ -13,7 +13,7 @@ export class AllMentorComponent implements OnInit {
     constructor(private mentorsService: MentorsService) {}
 
     ngOnInit(): void {
-        this.mentorsService.getMentorsJson().subscribe((res) => {
+        this.mentorsService.getMentorsList().subscribe((res) => {
             res.sort((a, b) => a.fullNameEN.localeCompare(b.fullNameEN))
             this.mentors = res
         })

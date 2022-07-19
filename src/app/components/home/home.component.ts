@@ -14,12 +14,12 @@ export class HomeComponent implements OnInit {
     constructor(private router: Router, private mentorsService: MentorsService) {}
 
     ngOnInit(): void {
-        this.mentorsService.getMentorsList().subscribe((res) => {
+        this.mentorsService.getTopMentors().subscribe((res) => {
             this.mentors = res.reverse()
         })
     }
 
     // handleClick() {
-    //     this.router.navigateByUrl('home#TopMentors')
+    //     this.router.navigateByUrl('mentor')
     // }
 }

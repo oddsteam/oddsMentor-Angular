@@ -29,9 +29,9 @@ export class MentorsService {
             .pipe(map((res) => res))
     }
 
-    getMentorsJson(): Observable<MentorDetail[]> {
+    getTopMentors(): Observable<MentorDetail[]> {
         return this.httpClient
-            .get<MentorDetail[]>(environment.jsonUrl, this.httpOption)
+            .get<MentorDetail[]>(this.mentorsUrl, this.httpOption)
             .pipe(map((res) => res))
     }
 
