@@ -7,6 +7,7 @@ a:focus {
 
 .footer {
     color: #999999;
+    z-index: -1;
 }
 
 .footer .container-fluid {
