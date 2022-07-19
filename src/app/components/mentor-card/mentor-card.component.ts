@@ -22,7 +22,7 @@ export class MentorCardComponent implements OnInit {
             for (let index = 0; index < 3; index++) {
                 this.skills.push(expertise[index].skill)
             }
-            this.skills.push(`+${expertise.length - 3}`)
+            this.skills.push(`+${expertise.length - 3} more`)
         } else {
             expertise.forEach((expertise) => {
                 this.skills.push(expertise.skill)

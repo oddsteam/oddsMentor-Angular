@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
     ngOnInit(): void {
         this.mentorsService.getMentorsList().subscribe((res) => {
-            this.mentors = res
+            this.mentors = res.reverse()
         })
     }
 

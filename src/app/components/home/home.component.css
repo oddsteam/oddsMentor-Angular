@@ -1,14 +1,4 @@
-/* * {
-    --blue-color: #1498d5;
-    --black-color: #000000;
-    --gray-color: #39485b;
-    --white-color: #ffffff;
-    --green-color: #28a745;
-    --yellow-color: #ffc107;
-    --smoke-color: #f9f9f9;
-}
-
-.container {
+/* .container {
     background: url("/assets/vectors/background.svg") top center / contain no-repeat white;
     background-attachment: scroll;
     background-color: var(--smoke-color);
@@ -124,8 +114,8 @@ a {
     padding: 0;
 }*/
 
-.landing-svg {
-    width: 100vw;
+.landing-1 img {
+    width: 100%;
     height: auto;
 }
 
