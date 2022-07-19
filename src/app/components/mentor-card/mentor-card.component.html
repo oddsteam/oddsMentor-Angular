@@ -2,8 +2,31 @@
     <ng-template pTemplate="content">
         <div class="container">
             <div class="row">
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <div class="card" routerLink="/detail">
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 my-3">
+                    <div class="card">
+                        <div class="card-endorsement">
+                            <span class="badge bg-endorsement text-dark">
+                                <i class="fa-solid fa-heart"></i>
+                                {{ mentorDetail.totalEndorsed }}
+                            </span>
+                        </div>
+                        <img
+                            class="card-img"
+                            src="{{ mentorDetail.profileImageUrl }}"
+                            alt="{{ mentorDetail.fullNameEN }}'s Image"
+                        />
+                        <div class="card-body text-start ps-3 pt-2 pb-3">
+                            <p class="card-name">{{ mentorDetail.fullNameEN }}</p>
+                            <p class="card-position">{{ mentorDetail.position }}</p>
+                            <p class="card-type">{{ mentorDetail.type }}</p>
+                            <div class="card-expertise">
+                                <span class="badge bg-expertise" *ngFor="let skill of skills"
+                                    >{{ skill }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="card" routerLink="/detail">
                         <img
                             class="card-img"
                             src="{{ mentorDetail.profileImageUrl }}"
@@ -19,7 +42,7 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

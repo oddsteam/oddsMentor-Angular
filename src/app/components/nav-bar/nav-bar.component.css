@@ -1,7 +1,10 @@
 .navbar {
     line-height: 2;
     flex-direction: column;
-    box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
+    box-shadow:  0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
+    -moz-box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
+    -webkit-box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
+    -o-box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .navbar-toggler,
