@@ -6,7 +6,7 @@ import { MentorsService } from 'src/app/services/mentors.service'
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css', '../../styles/colors.css'],
+    styleUrls: ['./home.component.css', '../../../styles/colors.css'],
 })
 export class HomeComponent implements OnInit {
     mentors: MentorDetail[] = []
