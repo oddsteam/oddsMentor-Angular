@@ -76,13 +76,13 @@ export class BookingPreviewComponent implements OnInit {
             expertise: this.bookingDetail.expertise,
             reason: this.bookingDetail.reason,
             sessionDate: this.bookingDetail.sessionDate,
-            sessionDuration: parseInt(this.bookingDetail.sessionDuration.split(' ')[0]),
+            sessionDuration: parseInt(this.bookingDetail.sessionDuration),
         }
         this.bookingsService.addBooking(bookingForm).subscribe((data) => {
             this.bookingsService.clearCurrentBooking()
             this.mentorsService.clearCurrentMentor()
         })
-        this.send2Discord(bookingForm)
+        // this.send2Discord(bookingForm)
         await Swal.fire({
             icon: 'success',
             title: 'Thank you for your booking!',

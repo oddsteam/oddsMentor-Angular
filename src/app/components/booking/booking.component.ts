@@ -6,9 +6,9 @@ import { BookingsService } from 'src/app/services/bookings.service'
 import { MentorsService } from 'src/app/services/mentors.service'
 import { BookingForm, Expertise, MentorDetail } from 'src/app/mentor'
 import * as dayjs from 'dayjs'
-import { map } from 'rxjs'
 
-interface Time {
+interface Duration {
+    label: string,
     value: string
 }
 
@@ -18,9 +18,10 @@ interface Time {
     styleUrls: ['./booking.component.css', '../../styles/colors.css'],
 })
 export class BookingComponent implements OnInit {
+    mentorSelected!: MentorDetail
+
     expertises: Expertise[] = []
-    duration: string[] = ['15 mins', '30 mins', '45 mins', '1 hour']
-    timesArray: Time[] = []
+    duration: Duration[] = this.onDurationLoad(15, 60, 15)
     defaultDate: Date = this.onTimeLoad()
     minDate: Date = dayjs().add(1, 'week').toDate()
 
@@ -40,8 +41,6 @@ export class BookingComponent implements OnInit {
         Validators.required
     )
 
-    mentorSelected!: MentorDetail
-
     constructor(
         private router: Router,
         private bookingsService: BookingsService,
@@ -52,78 +51,8 @@ export class BookingComponent implements OnInit {
     ngOnInit(): void {
         // get mentor data
         const serviceData = this.mentorsService.getCurrentMentor()
-        // if (!serviceData) this.router.navigateByUrl('')
-        // this.mentorSelected = this.mentorsService.getCurrentMentor()!
-        this.mentorSelected = {
-            id: '62d62e8375580f72fd2b1450',
-            fullNameEN: 'Phanuwat Phoowichai',
-            fullNameTH: 'ภานุวัฒน์ ภูวิชัย',
-            nickname: 'Taliw',
-            type: 'Cooperative Education 2022',
-            biography:
-                "Hello, I'm Phanuwat Phoowichai. I'm a Software Developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
-            team: 'Mola Mola',
-            position: 'Software Developer',
-            profileImageUrl: 'https://phanx.ga/asset/taliw.jpg',
-            totalEndorsed: 0,
-            expertise: [
-                {
-                    id: '62d62e3b75580f72fd2b1428',
-                    skill: 'HTML',
-                    endorsed: 0,
-                },
-                {
-                    id: '62d62e3b75580f72fd2b1429',
-                    skill: 'CSS',
-                    endorsed: 0,
-                },
-                {
-                    id: '62d62e3c75580f72fd2b142a',
-                    skill: 'JavaScript',
-                    endorsed: 0,
-                },
-                {
-                    id: '62d62e3c75580f72fd2b142b',
-                    skill: 'Java',
-                    endorsed: 0,
-                },
-                {
-                    id: '62d62e3d75580f72fd2b142c',
-                    skill: 'Python',
-                    endorsed: 0,
-                },
-                {
-                    id: '62d62e3d75580f72fd2b142d',
-                    skill: 'Assembly',
-                    endorsed: 0,
-                },
-                {
-                    id: '62d62e3e75580f72fd2b142e',
-                    skill: 'Dart',
-                    endorsed: 0,
-                },
-                {
-                    id: '62d62e3e75580f72fd2b142f',
-                    skill: 'Flutter',
-                    endorsed: 0,
-                },
-                {
-                    id: '62d62e3f75580f72fd2b1430',
-                    skill: 'Tailwind CSS',
-                    endorsed: 0,
-                },
-                {
-                    id: '62d62e3f75580f72fd2b1431',
-                    skill: 'Bootstrap',
-                    endorsed: 0,
-                },
-                {
-                    id: '62d62e3f75580f72fd2b1432',
-                    skill: 'Figma',
-                    endorsed: 0,
-                },
-            ],
-        }
+        if (!serviceData) this.router.navigateByUrl('')
+        this.mentorSelected = this.mentorsService.getCurrentMentor()!
 
         this.expertises = this.mentorSelected.expertise.slice()
         this.expertises.sort((a, b) => a.skill.localeCompare(b.skill))
@@ -143,21 +72,6 @@ export class BookingComponent implements OnInit {
                 sessionDuration: currentBooking.sessionDuration,
             })
         } else {
-            // Data Mockup
-            // this.bookingForm.setValue({
-            //     userId: '62c70dedf9c68f9f4d00cf40',
-            //     userFullName: 'Phanuwat Phoowichai',
-            //     userEmail: 'taliw_phanxz@odds.team',
-            //     mentorId: this.mentorSelected.id,
-            //     mentorFullName: this.mentorSelected.fullNameEN,
-            //     expertise: null,
-            //     reason: null,
-            //     sessionDate: null,
-            //     sessionTime: null,
-            //     sessionDuration: null,
-            // })
-
-            // Default Data
             this.bookingForm.setValue({
                 userId: '62c70dedf9c68f9f4d00cf40',
                 userFullName: null,
@@ -171,11 +85,6 @@ export class BookingComponent implements OnInit {
                 sessionDuration: null,
             })
         }
-
-        this.bookingForm
-            .get('reason')
-            ?.valueChanges.pipe(map((v) => v!.trimStart()))
-            .subscribe((v) => this.bookingForm.get('reason')?.setValue(v, { emitEvent: false }))
     }
 
     handleBack() {
@@ -187,6 +96,17 @@ export class BookingComponent implements OnInit {
         let booking: BookingForm = this.bookingForm.value as unknown as BookingForm
         this.bookingsService.saveBooking(booking)
         this.router.navigateByUrl('preview')
+    }
+
+    onDurationLoad(startMin: number, endMin:number, stepMin: number): Duration[] {
+        let durationSlot: Duration[] = []
+        for (let i = startMin; i <= endMin; i += stepMin) {
+            durationSlot.push({
+                label: `${i} mins`,
+                value: `${i}`
+            })
+        }
+        return durationSlot
     }
 
     onTimeLoad(): Date {
