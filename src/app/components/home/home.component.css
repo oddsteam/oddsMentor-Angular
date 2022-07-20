@@ -104,9 +104,11 @@ a {
     padding: 0;
 }*/
 
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* .container {
     margin-top: -62px;
-}
+} */
 
 .landing-1 img {
     width: 100%;
@@ -115,4 +117,30 @@ a {
 
 .landing-2 {
     background-color: #f9f9f9;
+}
+
+.header-mentor {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.top-mentor {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-mentor .top-mentor-title {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+/* .top-mentor .top-mentor-row {
+    display: flex;
+} */
+
+.btn-primary-gradient {
+    background: linear-gradient(89.94deg, #0E98D5 0.06%, #0158A8 99.96%);
 }

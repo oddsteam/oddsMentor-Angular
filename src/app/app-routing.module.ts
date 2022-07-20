@@ -4,6 +4,7 @@ import { AllMentorComponent } from './components/all-mentor/all-mentor.component
 import { BookingPreviewComponent } from './components/booking-preview/booking-preview.component'
 import { BookingComponent } from './components/booking/booking.component'
 import { HomeComponent } from './components/home/home.component'
+import { MentorCardComponent } from './components/mentor-card/mentor-card.component'
 import { PersonalComponent } from './components/personal/personal.component'
 import { SignInComponent } from './components/sign-in/sign-in.component'
 
@@ -14,6 +15,7 @@ const ogUrl: string = 'http://159.138.240.167:8089'
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'card', component: MentorCardComponent},
     {
         path: 'home',
         component: HomeComponent,

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 a,
 a:hover,
 a:focus {
@@ -7,14 +9,16 @@ a:focus {
 .navbar {
     line-height: 2;
     flex-direction: column;
-    box-shadow:  0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
+    background-color: transparent;
+    /* box-shadow:  0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
     -moz-box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
     -webkit-box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
-    -o-box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
+    -o-box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important; */
 }
 
-.navbar-color {
-    background-color: transparent;
+.navbar-sticky {
+    background-color: #ffffff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
 .navbar-toggler,
@@ -60,9 +64,10 @@ nav .btn {
 }
 
 .navbar .navbar-nav .nav-link {
-    font-size: 1.25rem !important;
+    font-size: 1rem !important;
+    font-weight: 500;
     padding: 10px;
-    color: var(--primary-text);
+    color: #646464;
     outline: none;
 }
 
@@ -106,7 +111,7 @@ nav .btn {
     }
 
     .navbar .navbar-nav {
-        border-top: 1px solid red;
+        border-top: 1px solid #EEEEEE;
     }
 }
 
