@@ -6,6 +6,7 @@ import { BookingsService } from 'src/app/services/bookings.service'
 import { MentorsService } from 'src/app/services/mentors.service'
 import { BookingForm, Expertise, MentorDetail } from 'src/app/mentor'
 import * as dayjs from 'dayjs'
+import { map } from 'rxjs'
 
 interface Time {
     value: string
@@ -51,8 +52,78 @@ export class BookingComponent implements OnInit {
     ngOnInit(): void {
         // get mentor data
         const serviceData = this.mentorsService.getCurrentMentor()
-        if (!serviceData) this.router.navigateByUrl('')
-        this.mentorSelected = this.mentorsService.getCurrentMentor()!
+        // if (!serviceData) this.router.navigateByUrl('')
+        // this.mentorSelected = this.mentorsService.getCurrentMentor()!
+        this.mentorSelected = {
+            id: '62d62e8375580f72fd2b1450',
+            fullNameEN: 'Phanuwat Phoowichai',
+            fullNameTH: 'ภานุวัฒน์ ภูวิชัย',
+            nickname: 'Taliw',
+            type: 'Cooperative Education 2022',
+            biography:
+                "Hello, I'm Phanuwat Phoowichai. I'm a Software Developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
+            team: 'Mola Mola',
+            position: 'Software Developer',
+            profileImageUrl: 'https://phanx.ga/asset/taliw.jpg',
+            totalEndorsed: 0,
+            expertise: [
+                {
+                    id: '62d62e3b75580f72fd2b1428',
+                    skill: 'HTML',
+                    endorsed: 0,
+                },
+                {
+                    id: '62d62e3b75580f72fd2b1429',
+                    skill: 'CSS',
+                    endorsed: 0,
+                },
+                {
+                    id: '62d62e3c75580f72fd2b142a',
+                    skill: 'JavaScript',
+                    endorsed: 0,
+                },
+                {
+                    id: '62d62e3c75580f72fd2b142b',
+                    skill: 'Java',
+                    endorsed: 0,
+                },
+                {
+                    id: '62d62e3d75580f72fd2b142c',
+                    skill: 'Python',
+                    endorsed: 0,
+                },
+                {
+                    id: '62d62e3d75580f72fd2b142d',
+                    skill: 'Assembly',
+                    endorsed: 0,
+                },
+                {
+                    id: '62d62e3e75580f72fd2b142e',
+                    skill: 'Dart',
+                    endorsed: 0,
+                },
+                {
+                    id: '62d62e3e75580f72fd2b142f',
+                    skill: 'Flutter',
+                    endorsed: 0,
+                },
+                {
+                    id: '62d62e3f75580f72fd2b1430',
+                    skill: 'Tailwind CSS',
+                    endorsed: 0,
+                },
+                {
+                    id: '62d62e3f75580f72fd2b1431',
+                    skill: 'Bootstrap',
+                    endorsed: 0,
+                },
+                {
+                    id: '62d62e3f75580f72fd2b1432',
+                    skill: 'Figma',
+                    endorsed: 0,
+                },
+            ],
+        }
 
         this.expertises = this.mentorSelected.expertise.slice()
         this.expertises.sort((a, b) => a.skill.localeCompare(b.skill))
@@ -80,7 +151,7 @@ export class BookingComponent implements OnInit {
             //     mentorId: this.mentorSelected.id,
             //     mentorFullName: this.mentorSelected.fullNameEN,
             //     expertise: null,
-            //     reason: 'Developing a new product',
+            //     reason: null,
             //     sessionDate: null,
             //     sessionTime: null,
             //     sessionDuration: null,
@@ -100,6 +171,11 @@ export class BookingComponent implements OnInit {
                 sessionDuration: null,
             })
         }
+
+        this.bookingForm
+            .get('reason')
+            ?.valueChanges.pipe(map((v) => v!.trimStart()))
+            .subscribe((v) => this.bookingForm.get('reason')?.setValue(v, { emitEvent: false }))
     }
 
     handleBack() {
@@ -112,10 +188,6 @@ export class BookingComponent implements OnInit {
         this.bookingsService.saveBooking(booking)
         this.router.navigateByUrl('preview')
     }
-
-    // log() {
-    //     console.log(this.bookingForm.value.expertise)
-    // }
 
     onTimeLoad(): Date {
         let currentDate = dayjs()

@@ -1,6 +1,4 @@
 .container-booking {
-    overflow-y: auto;
-    overflow-x: hidden;
     width: 100vw;
     display: flex;
     justify-content: center;
