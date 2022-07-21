@@ -154,20 +154,35 @@
 }
 
 .mentor-tag {
-    height: 56px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-end;
-    gap: 6px;
+    gap: 8px;
 }
 
-.badge {
+.mentor-expertise .control-label {
+    margin-bottom: 6px;
+}
+
+.mentor-expertise .badge {
     font-weight: 400;
     color: #1498d5;
     border: 1px solid #1498d5;
 }
 
-.bg-expertise {
+.mentor-expertise .bg-expertise {
     background-color: transparent !important;
+}
+
+.mentor-endorsement .badge {
+    font-size: 1rem;
+    font-weight: 300;
+    border-radius: 6px;
+    border: 1px solid #39485b;
+    padding: 4px 10px;
+}
+
+.mentor-endorsement .badge i {
+    color: #f93939;
 }

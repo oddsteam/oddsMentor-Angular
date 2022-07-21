@@ -68,7 +68,12 @@
                         </p>
                         <p class="name-th">{{ mentorDetail.fullNameTH }}</p>
                     </div>
-                    <div class="mentor-endorsement mb-4"></div>
+                    <div class="mentor-endorsement mb-4">
+                        <span class="badge bg-endorsement text-dark">
+                            <i class="fa-solid fa-heart"></i>
+                            {{ mentorDetail.totalEndorsed }}
+                        </span>
+                    </div>
                     <div class="mentor-position mb-4">
                         <p class="job-position">
                             {{ mentorDetail.position }} @ {{ mentorDetail.team }}
