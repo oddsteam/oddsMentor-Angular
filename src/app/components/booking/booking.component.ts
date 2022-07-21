@@ -23,7 +23,8 @@ export class BookingComponent implements OnInit {
     expertises: Expertise[] = []
     duration: Duration[] = this.onDurationLoad(15, 60, 15)
     defaultDate: Date = this.onTimeLoad()
-    minDate: Date = dayjs().add(1, 'week').toDate()
+    minDate: Date = dayjs().add(1, 'day').toDate()
+    maxDate: Date = dayjs().add(1, 'year').toDate()
     home: MenuItem = { icon: 'pi pi-home', routerLink: ['/home'] }
     items!: MenuItem[]
 
@@ -56,10 +57,10 @@ export class BookingComponent implements OnInit {
         if (!serviceData) this.router.navigateByUrl('')
         this.mentorSelected = this.mentorsService.getCurrentMentor()!
         // this.mentorSelected = {
-        //     id: '62d9048a19bd704a12fcea47',
-        //     fullNameEN: 'Phanuwat Ph.',
+        //     id: '62d62e8375580f72fd2b1450',
+        //     fullNameEN: 'Phanuwat Phoowichai',
         //     fullNameTH: 'ภานุวัฒน์ ภูวิชัย',
-        //     nickname: 'อลัน',
+        //     nickname: 'Taliw',
         //     type: 'Cooperative Education 2022',
         //     biography:
         //         "Hello, I'm Phanuwat Phoowichai. I'm a Software Developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
@@ -68,22 +69,20 @@ export class BookingComponent implements OnInit {
         //     profileImageUrl: 'https://phanx.ga/asset/taliw.jpg',
         //     totalEndorsed: 0,
         //     expertise: [
-        //         {
-        //             id: '62d62e3b75580f72fd2b1428',
-        //             skill: 'HTML',
-        //             endorsed: 0,
-        //         },
-        //         {
-        //             id: '62d62e3b75580f72fd2b1429',
-        //             skill: 'CSS',
-        //             endorsed: 0,
-        //         },
-        //         {
-        //             id: '62d62e3c75580f72fd2b142a',
-        //             skill: 'JavaScript',
-        //             endorsed: 0,
-        //         },
+        //         { id: '62d62e3b75580f72fd2b1428', skill: 'HTML', endorsed: 0 },
+        //         { id: '62d62e3b75580f72fd2b1429', skill: 'CSS', endorsed: 0 },
+        //         { id: '62d62e3c75580f72fd2b142a', skill: 'JavaScript', endorsed: 0 },
+        //         { id: '62d62e3c75580f72fd2b142b', skill: 'Java', endorsed: 0 },
+        //         { id: '62d62e3d75580f72fd2b142c', skill: 'Python', endorsed: 0 },
+        //         { id: '62d62e3d75580f72fd2b142d', skill: 'Assembly', endorsed: 0 },
+        //         { id: '62d62e3e75580f72fd2b142e', skill: 'Dart', endorsed: 0 },
+        //         { id: '62d62e3e75580f72fd2b142f', skill: 'Flutter', endorsed: 0 },
+        //         { id: '62d62e3f75580f72fd2b1430', skill: 'Tailwind CSS', endorsed: 0 },
+        //         { id: '62d62e3f75580f72fd2b1431', skill: 'Bootstrap', endorsed: 0 },
+        //         { id: '62d62e3f75580f72fd2b1432', skill: 'Figma', endorsed: 0 },
         //     ],
+        //     createdAt: dayjs('2022-07-19T11:09:39.045').toDate(),
+        //     updatedAt: dayjs('2022-07-19T11:09:39.045').toDate(),
         // }
 
         this.expertises = this.mentorSelected.expertise.slice()

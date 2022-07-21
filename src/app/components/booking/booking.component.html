@@ -215,6 +215,8 @@
                             formControlName="sessionDate"
                             dateFormat="d MM yy"
                             [minDate]="minDate"
+                            [maxDate]="maxDate"
+                            [readonlyInput]="true"
                         ></p-calendar>
                         <label for="dateCalerdar">Date</label>
                     </span>
@@ -228,6 +230,7 @@
                                 [timeOnly]="true"
                                 [stepMinute]="15"
                                 [defaultDate]="defaultDate"
+                                [readonlyInput]="true"
                             ></p-calendar>
                             <label for="timeDropdown">Time</label>
                         </span>
