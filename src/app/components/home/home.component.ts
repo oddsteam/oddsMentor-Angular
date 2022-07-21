@@ -23,10 +23,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        // let numOfTopMentor = window.document.getElementById('topMentporRow')!.offsetWidth / 304
-        // this.mentorsService.getTopMentors(Math.floor(numOfTopMentor)).subscribe((res) => {
-        //     this.mentors = res
-        // })
+        let numOfTopMentor = window.document.getElementById('topMentporRow')!.offsetWidth / 304
+        this.mentorsService.getTopMentors(Math.floor(numOfTopMentor)).subscribe((res) => {
+            this.mentors = res
+        })
     }
 
     onExploreMentors() {

@@ -64,7 +64,8 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
         }
 
         this.skills = skillCal
-        this.skills.push(`+${this.dummyXpertise.length - skillCal.length} more`)
+        let moreSkill = this.dummyXpertise.length - skillCal.length
+        if (moreSkill > 0) this.skills.push(`+${moreSkill} more`)
         expertiseChip?.remove()
     }
 
