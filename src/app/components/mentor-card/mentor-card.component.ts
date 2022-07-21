@@ -46,19 +46,19 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
             let newChip = this.createSkillChip(x)
             expertiseChip?.appendChild(newChip)
             let chipWidth = newChip.offsetWidth
-            console.log(chipWidth);
+            // console.log(chipWidth);
             if (chipWidth < lineWidth - 6) {
                 skillCal.push(newChip.innerText)
                 lineWidth -= chipWidth + 6
-                console.log(`${x} width: ${chipWidth} => ${lineWidth}`);
+                // console.log(`${x} width: ${chipWidth} => ${lineWidth}`);
             } else if (haveNextLine) {
                 haveNextLine = false
-                console.log('Set haveNextLine to false');
+                // console.log('Set haveNextLine to false');
                 lineWidth = LINE_WIDTH
                 skillCal.push(newChip.innerText)
                 lineWidth -= chipWidth + 82
             } else {
-                console.log('OVERFLOW!')
+                // console.log('OVERFLOW!')
                 break
             }
         }
