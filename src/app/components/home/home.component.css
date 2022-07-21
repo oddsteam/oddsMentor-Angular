@@ -211,6 +211,7 @@ a {
 .top-mentor .top-mentor-row {
     display: flex;
     justify-content: space-between;
+    overflow-x: hidden;
 }
 
 .btn-primary-gradient {
