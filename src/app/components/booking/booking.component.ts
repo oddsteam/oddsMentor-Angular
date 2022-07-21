@@ -52,39 +52,39 @@ export class BookingComponent implements OnInit {
 
     ngOnInit(): void {
         // get mentor data
-        // const serviceData = this.mentorsService.getCurrentMentor()
-        // if (!serviceData) this.router.navigateByUrl('')
-        // this.mentorSelected = this.mentorsService.getCurrentMentor()!
-        this.mentorSelected = {
-            id: '62d9048a19bd704a12fcea47',
-            fullNameEN: 'Phanuwat Ph.',
-            fullNameTH: 'ภานุวัฒน์ ภูวิชัย',
-            nickname: 'อลัน',
-            type: 'Cooperative Education 2022',
-            biography:
-                "Hello, I'm Phanuwat Phoowichai. I'm a Software Developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
-            team: 'Mola Mola',
-            position: 'Software Developer',
-            profileImageUrl: 'https://phanx.ga/asset/taliw.jpg',
-            totalEndorsed: 0,
-            expertise: [
-                {
-                    id: '62d62e3b75580f72fd2b1428',
-                    skill: 'HTML',
-                    endorsed: 0,
-                },
-                {
-                    id: '62d62e3b75580f72fd2b1429',
-                    skill: 'CSS',
-                    endorsed: 0,
-                },
-                {
-                    id: '62d62e3c75580f72fd2b142a',
-                    skill: 'JavaScript',
-                    endorsed: 0,
-                },
-            ],
-        }
+        const serviceData = this.mentorsService.getCurrentMentor()
+        if (!serviceData) this.router.navigateByUrl('')
+        this.mentorSelected = this.mentorsService.getCurrentMentor()!
+        // this.mentorSelected = {
+        //     id: '62d9048a19bd704a12fcea47',
+        //     fullNameEN: 'Phanuwat Ph.',
+        //     fullNameTH: 'ภานุวัฒน์ ภูวิชัย',
+        //     nickname: 'อลัน',
+        //     type: 'Cooperative Education 2022',
+        //     biography:
+        //         "Hello, I'm Phanuwat Phoowichai. I'm a Software Developer. I'm currently working at Odd-e (Thailand) in Mola Mola team.",
+        //     team: 'Mola Mola',
+        //     position: 'Software Developer',
+        //     profileImageUrl: 'https://phanx.ga/asset/taliw.jpg',
+        //     totalEndorsed: 0,
+        //     expertise: [
+        //         {
+        //             id: '62d62e3b75580f72fd2b1428',
+        //             skill: 'HTML',
+        //             endorsed: 0,
+        //         },
+        //         {
+        //             id: '62d62e3b75580f72fd2b1429',
+        //             skill: 'CSS',
+        //             endorsed: 0,
+        //         },
+        //         {
+        //             id: '62d62e3c75580f72fd2b142a',
+        //             skill: 'JavaScript',
+        //             endorsed: 0,
+        //         },
+        //     ],
+        // }
 
         this.expertises = this.mentorSelected.expertise.slice()
         this.expertises.sort((a, b) => a.skill.localeCompare(b.skill))
