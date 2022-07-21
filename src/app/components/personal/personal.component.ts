@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { Meta } from '@angular/platform-browser'
-import { ActivatedRoute, Router } from '@angular/router'
+import { ActivatedRoute, Router, Scroll } from '@angular/router'
 import { MenuItem } from 'primeng/api'
+import { Scroller } from 'primeng/scroller'
 import { MentorDetail } from 'src/app/mentor'
 import { MentorsService } from 'src/app/services/mentors.service'
 import { UsersService } from 'src/app/services/users.service'
@@ -66,7 +67,7 @@ export class PersonalComponent implements OnInit {
                 this.router.navigateByUrl('home')
             }
         )
-
+        window.scroll(0,0) // Scrool to top
         this.items = [
             {
                 label: 'Mentors',
