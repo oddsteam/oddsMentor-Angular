@@ -10,6 +10,8 @@ export interface MentorDetail {
     position: string
     totalEndorsed: number
     expertise: Expertise[]
+    // createdAt: Date
+    // updatedAt: Date
 }
 
 export interface Expertise {
