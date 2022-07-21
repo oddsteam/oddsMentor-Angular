@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http'
 import { Location } from '@angular/common'
 import { MentorsService } from 'src/app/services/mentors.service'
 import { environment } from 'src/environments/environment'
+import { MenuItem } from 'primeng/api'
 
 @Component({
     selector: 'app-booking-preview',
@@ -19,6 +20,8 @@ export class BookingPreviewComponent implements OnInit {
     mentorSelected!: MentorDetail
     expertise: string = ''
     dateTime: string = ''
+    home: MenuItem = { icon: 'pi pi-home', routerLink: ['/home'] }
+    items!: MenuItem[]
 
     constructor(
         private router: Router,
@@ -30,6 +33,28 @@ export class BookingPreviewComponent implements OnInit {
 
     ngOnInit(): void {
         this.onLoading()
+
+        this.items = [
+            {
+                label: 'Mentors',
+                routerLink: ['/mentor'],
+                visible: true,
+            },
+            {
+                label: 'Personal',
+                command: () => {
+                    this.mentorsService.clearCurrentMentor()
+                    this.location.back()
+                },
+            },
+            {
+                label: 'Reserve',
+                routerLink: ['/booking'],
+            },
+            {
+                label: 'Confirmation',
+            }
+        ]
     }
 
     onLoading() {

@@ -22,7 +22,7 @@ a:focus {
     color: #999999;
     font-weight: normal;
     text-transform: capitalize;
-    transition: .3s;
+    transition: 0.3s;
     text-decoration: none;
 }
 
@@ -44,7 +44,7 @@ a:focus {
 .footer .copyright {
     padding: 25px 0;
     font-size: 15px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
+    border-top: 1px solid rgba(256, 256, 256, 0.1);
 }
 
 .footer .copyright a {

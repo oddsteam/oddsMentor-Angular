@@ -56,10 +56,10 @@
     color: #39485b;
 }
 
-.card-body-end .mentor-name p, 
-.card-body-end .mentor-endorsement p, 
-.card-body-end .mentor-position p, 
-.card-body-end .mentor-availabel-time p, 
+.card-body-end .mentor-name p,
+.card-body-end .mentor-endorsement p,
+.card-body-end .mentor-position p,
+.card-body-end .mentor-availabel-time p,
 .card-body-end .mentor-expertise p {
     margin-bottom: 0;
 }
@@ -90,7 +90,7 @@
     font-weight: 400;
 }
 .btn-primary-gradient {
-    background: linear-gradient(89deg, #0E98D5 0%, #0158A8 100%);
+    background: linear-gradient(89deg, #0e98d5 0%, #0158a8 100%);
     border: unset;
 }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { MentorDetail } from 'src/app/mentor'
 import { MentorsService } from 'src/app/services/mentors.service'
+import { MenuItem } from 'primeng/api'
 
 @Component({
     selector: 'app-all-mentor',
@@ -9,6 +10,8 @@ import { MentorsService } from 'src/app/services/mentors.service'
 })
 export class AllMentorComponent implements OnInit {
     mentors: MentorDetail[] = []
+    home: MenuItem = { icon: 'pi pi-home', routerLink: ['/home'] }
+    items!: MenuItem[]
 
     constructor(private mentorsService: MentorsService) {}
 
@@ -17,5 +20,11 @@ export class AllMentorComponent implements OnInit {
             res.sort((a, b) => a.fullNameEN.localeCompare(b.fullNameEN))
             this.mentors = res
         })
+
+        this.items = [
+            {
+                label: 'Mentors',
+            }
+        ]
     }
 }

@@ -1,3 +1,4 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
 <div class="card">
     <p-dataView
         #dv
@@ -8,20 +9,6 @@
         [paginator]="true"
         layout="grid"
     >
-        <!-- <ng-template pTemplate="header">
-            <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between p-fluid">
-                <span class="p-input-icon-left p-mb-2 p-mb-md-0">
-                    <i class="pi pi-search"></i>
-                    <input
-                        #searchName
-                        type="search"
-                        pInputText
-                        placeholder="Search by Name or Nickname"
-                        (input)="dv.filter(searchName.value, 'startsWith')"
-                    />
-                </span>
-            </div>
-        </ng-template> -->
         <ng-template pTemplate="header">
             <div class="header-box">
                 <div class="p-fluid">

@@ -3,7 +3,7 @@
     background-attachment: scroll;
     background-color: var(--smoke-color);
 } */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 /*** old-design ***/
 /* .old-design {
@@ -146,19 +146,18 @@ a {
     justify-content: space-between;
 } */
 
-
-
 /*** new-design ***/
 .landing-mentor-1 .landing-mentor-header {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    /* align-items: center; */
     justify-content: space-between;
 }
 
-.landing-mentor-1 .landing-mentor-header, 
+.landing-mentor-1 .landing-mentor-header,
 .top-mentor {
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
 }
 
 .landing-mentor-1 .landing-header-title {
@@ -215,11 +214,11 @@ a {
 }
 
 .btn-primary-gradient {
-    background: linear-gradient(89.94deg, #0E98D5 0.06%, #0158A8 99.96%);
+    background: linear-gradient(89.94deg, #0e98d5 0.06%, #0158a8 99.96%);
 }
 
-.landing-mentor-3, 
-.landing-mentor-4, 
+.landing-mentor-3,
+.landing-mentor-4,
 .landing-mentor-5 {
     display: flex;
     justify-content: space-between;

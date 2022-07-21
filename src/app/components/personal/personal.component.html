@@ -1,3 +1,4 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
 <div class="container py-5">
     <div class="card py-4">
         <h2 class="text-center">Personal Detail</h2>
@@ -38,13 +39,22 @@
                     <div class="mentor-expertise mb-4">
                         <label class="control-label">Expertise</label>
                         <div class="mentor-tag">
-                            <span class="badge bg-expertise" *ngFor="let expertise of mentorDetail.expertise">
+                            <span
+                                class="badge bg-expertise"
+                                *ngFor="let expertise of mentorDetail.expertise"
+                            >
                                 {{ expertise.skill }} | {{ expertise.endorsed }}
                             </span>
                         </div>
                     </div>
                     <div class="button-reserve">
-                        <button type="button" (click)="onBooking()" class="btn btn-primary-gradient text-white">Reserve Now!</button>
+                        <button
+                            type="button"
+                            (click)="onBooking()"
+                            class="btn btn-primary-gradient text-white"
+                        >
+                            Reserve Now!
+                        </button>
                     </div>
                 </div>
             </div>

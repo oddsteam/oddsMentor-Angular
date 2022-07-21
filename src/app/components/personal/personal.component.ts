@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Meta } from '@angular/platform-browser'
 import { ActivatedRoute, Router } from '@angular/router'
+import { MenuItem } from 'primeng/api'
 import { MentorDetail } from 'src/app/mentor'
 import { MentorsService } from 'src/app/services/mentors.service'
 import { UsersService } from 'src/app/services/users.service'
@@ -12,7 +13,9 @@ import { UsersService } from 'src/app/services/users.service'
 })
 export class PersonalComponent implements OnInit {
     mentorDetail!: MentorDetail
-
+    home: MenuItem = { icon: 'pi pi-home', routerLink: ['/home'] }
+    items!: MenuItem[]
+    
     constructor(
         private route: ActivatedRoute,
         private router: Router,
@@ -63,6 +66,17 @@ export class PersonalComponent implements OnInit {
                 this.router.navigateByUrl('home')
             }
         )
+
+        this.items = [
+            {
+                label: 'Mentors',
+                routerLink: ['/mentor'],
+                visible: true,
+            },
+            {
+                label: 'Personal',
+            }
+        ]
     }
 
     onBooking() {

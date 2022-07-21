@@ -26,8 +26,9 @@ import { HttpClientModule } from '@angular/common/http'
 import { CardModule } from 'primeng/card'
 import { AllMentorComponent } from './components/all-mentor/all-mentor.component'
 import { CarouselModule } from 'primeng/carousel'
-import { DataViewModule } from 'primeng/dataview';
+import { DataViewModule } from 'primeng/dataview'
 import { FooterComponent } from './components/footer/footer.component'
+import { BreadcrumbModule } from 'primeng/breadcrumb'
 
 @NgModule({
     declarations: [
@@ -63,6 +64,7 @@ import { FooterComponent } from './components/footer/footer.component'
         CardModule,
         CarouselModule,
         DataViewModule,
+        BreadcrumbModule,
     ],
     providers: [Meta],
     bootstrap: [AppComponent],
