@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, AfterViewInit } from '@angular/core'
+import { Component, Input, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core'
 import { flush } from '@angular/core/testing'
 import { Router } from '@angular/router'
 import { MentorDetail } from 'src/app/mentor'
@@ -15,7 +15,11 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
     skills: string[] = []
     dummyXpertise: string[] = []
 
-    constructor(private router: Router, private mentorsService: MentorsService) {}
+    constructor(
+        private router: Router,
+        private mentorsService: MentorsService,
+        private changeDetectorRef: ChangeDetectorRef
+    ) {}
 
     ngOnInit(): void {
         let expertise = this.mentorDetail.expertise
@@ -37,7 +41,7 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit() {
         let LINE_WIDTH = 248
-        let expertiseChip = window.document.getElementById(`dummyChip-${ this.mentorDetail.id }`)
+        let expertiseChip = window.document.getElementById(`dummyChip-${this.mentorDetail.id}`)
         let haveNextLine = true
         let lineWidth = LINE_WIDTH
         let skillCal: string[] = []
@@ -46,14 +50,14 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
             let newChip = this.createSkillChip(x)
             expertiseChip?.appendChild(newChip)
             let chipWidth = newChip.offsetWidth
-            // console.log(chipWidth);
+            // console.log(chipWidth)
             if (chipWidth < lineWidth - 6) {
                 skillCal.push(newChip.innerText)
                 lineWidth -= chipWidth + 6
-                // console.log(`${x} width: ${chipWidth} => ${lineWidth}`);
+                // console.log(`${x} width: ${chipWidth} => ${lineWidth}`)
             } else if (haveNextLine) {
                 haveNextLine = false
-                // console.log('Set haveNextLine to false');
+                // console.log('Set haveNextLine to false')
                 lineWidth = LINE_WIDTH
                 skillCal.push(newChip.innerText)
                 lineWidth -= chipWidth + 82
@@ -67,6 +71,7 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
         let moreSkill = this.dummyXpertise.length - skillCal.length
         if (moreSkill > 0) this.skills.push(`+${moreSkill} more`)
         expertiseChip?.remove()
+        this.changeDetectorRef.detectChanges()
     }
 
     createSkillChip(skillName: string): HTMLElement {

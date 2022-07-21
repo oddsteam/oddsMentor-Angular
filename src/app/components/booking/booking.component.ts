@@ -137,6 +137,7 @@ export class BookingComponent implements OnInit {
 
     handleBack() {
         this.mentorsService.clearCurrentMentor()
+        this.bookingsService.clearCurrentBooking()
         this.location.back()
     }
 
