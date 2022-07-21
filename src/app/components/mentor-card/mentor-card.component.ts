@@ -35,9 +35,9 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
         // }
     }
 
-    ngAfterViewInit(): void {
+    ngAfterViewInit() {
         let LINE_WIDTH = 248
-        let expertiseChip = window.document.getElementById(`dummyChip-{{ mentorDetail.id }}`)
+        let expertiseChip = window.document.getElementById(`dummyChip-${ this.mentorDetail.id }`)
         let haveNextLine = true
         let lineWidth = LINE_WIDTH
         let skillCal: string[] = []
@@ -46,26 +46,26 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
             let newChip = this.createSkillChip(x)
             expertiseChip?.appendChild(newChip)
             let chipWidth = newChip.offsetWidth
-            // console.log(chipWidth);
+            console.log(chipWidth);
             if (chipWidth < lineWidth - 6) {
                 skillCal.push(newChip.innerText)
                 lineWidth -= chipWidth + 6
-                // console.log(`${x} width: ${chipWidth} => ${lineWidth}`);
+                console.log(`${x} width: ${chipWidth} => ${lineWidth}`);
             } else if (haveNextLine) {
                 haveNextLine = false
-                // console.log('Set haveNextLine to false');
+                console.log('Set haveNextLine to false');
                 lineWidth = LINE_WIDTH
                 skillCal.push(newChip.innerText)
                 lineWidth -= chipWidth + 82
             } else {
-                // console.log('OVERFLOW!')
+                console.log('OVERFLOW!')
                 break
             }
         }
 
         this.skills = skillCal
         this.skills.push(`+${this.dummyXpertise.length - skillCal.length} more`)
-        expertiseChip?.setAttribute('hidden', '')
+        expertiseChip?.remove()
     }
 
     createSkillChip(skillName: string): HTMLElement {
