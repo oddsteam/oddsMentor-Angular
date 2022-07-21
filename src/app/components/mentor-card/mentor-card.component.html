@@ -19,7 +19,9 @@
                             <p class="card-name">{{ mentorDetail.fullNameEN }}</p>
                             <p class="card-position">{{ mentorDetail.position }}</p>
                             <p class="card-type">{{ mentorDetail.type }}</p>
-                            <div class="card-expertise">
+                            <div id="dummyChip-{{ mentorDetail.id }}" class="card-expertise">
+                            </div>
+                            <div id="expertiseChip-{{ mentorDetail.id }}" class="card-expertise">
                                 <span class="badge bg-expertise" *ngFor="let skill of skills"
                                     >{{ skill }}
                                 </span>
