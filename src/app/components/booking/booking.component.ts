@@ -151,7 +151,7 @@ export class BookingComponent implements OnInit {
         let durationSlot: Duration[] = []
         for (let i = startMin; i <= endMin; i += stepMin) {
             durationSlot.push({
-                label: `${i} mins`,
+                label: `${i} minutes`,
                 value: `${i}`,
             })
         }

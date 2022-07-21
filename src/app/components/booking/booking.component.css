@@ -1,4 +1,4 @@
-.container-booking {
+/* .container-booking {
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -110,4 +110,93 @@ p {
 
 .input-mt {
     margin-top: 4px;
+} */
+
+.control-label {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.text-success {
+    color: #198754 !important;
+    font-size: 18px;
+}
+
+.card {
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.125) !important;
+    border-radius: 12px !important;
+    box-shadow: unset !important;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.card-body {
+    width: 80%;
+}
+
+.mentor-card .card-body {
+    width: 100%;
+    padding: 0;
+}
+
+.mentor-card .card-body p {
+    margin-bottom: 0;
+}
+
+.mentor-card .card-body .mentor-img {
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+}
+
+.mentor-card .card-body .card-reserve-mentor {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 28px;
+}
+
+.mentor-card .card-body .card-body-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.card-body-end .mentor-name .name-en {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.card-body-end .mentor-name .name-th {
+    font-size: 20px;
+    font-weight: 300;
+    color: #39485b;
+}
+
+/* :host::ng-deep .p-float-label textarea ~ label {
+    padding: 12px;
+} */
+
+:host::ng-deep .p-float-label input:focus ~ label,
+.p-float-label input.p-filled ~ label,
+.p-float-label textarea:focus ~ label,
+.p-float-label textarea.p-filled ~ label,
+.p-float-label .p-inputwrapper-focus ~ label,
+.p-float-label .p-inputwrapper-filled ~ label {
+    top: -0.55rem;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    vertical-align: -4px;
 }

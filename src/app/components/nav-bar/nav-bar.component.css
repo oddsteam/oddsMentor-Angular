@@ -10,6 +10,7 @@ a:focus {
     line-height: 2;
     flex-direction: column;
     background-color: transparent;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
     /* box-shadow:  0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
     -moz-box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
     -webkit-box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;

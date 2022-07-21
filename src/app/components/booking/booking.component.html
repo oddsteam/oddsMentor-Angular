@@ -1,5 +1,5 @@
 <!-- <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb> -->
-<div class="container-booking">
+<!-- <div class="container-booking">
     <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="container-card">
         <p>User Information</p>
         <span class="p-float-label p-fluid input-mt">
@@ -105,12 +105,12 @@
                 styleClass="button-cancel"
                 (onClick)="handleBack()"
             ></p-button>
-            <!-- <p-button
+            <p-button
                 label="LOG"
                 icon="pi pi-exclamation-circle"
                 iconPos="left"
                 (onClick)="log()"
-            ></p-button> -->
+            ></p-button>
             <p-button
                 label="NEXT"
                 icon="pi pi-angle-right"
@@ -119,6 +119,144 @@
                 type="submit"
                 [disabled]="bookingForm.invalid"
             ></p-button>
+        </div>
+    </form>
+</div> -->
+
+<div class="container py-5">
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+        <div class="card py-4">
+            <!-- <h2 class="text-center">Reserve Mentor</h2> -->
+            <div class="card-body">
+                <p class="card-title mb-4">User Information</p>
+                <div class="row mb-4">
+                    <div class="col-sm-12 col-md-6">
+                        <span class="p-float-label p-fluid input-mt">
+                            <input
+                                id="userFullNameInput"
+                                type="text"
+                                pInputText
+                                formControlName="userFullName"
+                            />
+                            <label for="userFullNameInput">Name</label>
+                        </span>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <span class="p-float-label p-fluid input-mt">
+                            <input
+                                id="userEmailInput"
+                                type="text"
+                                pInputText
+                                formControlName="userEmail"
+                            />
+                            <label for="userEmailInput">Email</label>
+                        </span>
+                    </div>
+                </div>
+                <p class="card-title mb-3">Reserve Information</p>
+                <div class="mentor-card card mb-4">
+                    <div class="card-body">
+                        <div class="card-reserve-mentor">
+                            <div class="card-body-start">
+                                <img
+                                    class="mentor-img"
+                                    src="{{ mentorSelected.profileImageUrl }}"
+                                />
+                            </div>
+                            <div class="card-body-end">
+                                <div class="mentor-name">
+                                    <p class="name-en">
+                                        {{ mentorSelected.fullNameEN }} ({{
+                                            mentorSelected.nickname
+                                        }})
+                                    </p>
+                                    <p class="name-th">{{ mentorSelected.fullNameTH }}</p>
+                                </div>
+                                <div class="mentor-availabel-time">
+                                    <label class="control-label">Available Time</label>
+                                    <p class="text-success">10.00 - 11.00, Monday - Friday</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <span class="p-float-label p-fluid input-mt">
+                        <p-multiSelect
+                            id="expertiseMultiSelect"
+                            [options]="expertises"
+                            optionLabel="skill"
+                            optionValue="skill"
+                            formControlName="expertise"
+                            [selectionLimit]="3"
+                            display="chip"
+                        >
+                        </p-multiSelect>
+                        <label for="expertiseMultiSelect">Expertise</label>
+                    </span>
+                </div>
+                <div class="mb-4">
+                    <span class="p-float-label p-fluid input-mt">
+                        <textarea
+                            id="reasonTextarea"
+                            rows="2"
+                            cols="30"
+                            pInputTextarea
+                            [autoResize]="true"
+                            formControlName="reason"
+                        ></textarea>
+                        <label for="reasonTextarea">Reason</label>
+                    </span>
+                </div>
+                <div class="mb-4">
+                    <span class="p-float-label p-fluid input-mt">
+                        <p-calendar
+                            id="dateCalerdar"
+                            formControlName="sessionDate"
+                            dateFormat="d MM yy"
+                            [minDate]="minDate"
+                        ></p-calendar>
+                        <label for="dateCalerdar">Date</label>
+                    </span>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-sm-12 col-md-6">
+                        <span class="p-float-label p-fluid input-mt">
+                            <p-calendar
+                                id="timeDropdown"
+                                formControlName="sessionTime"
+                                [timeOnly]="true"
+                                [stepMinute]="15"
+                                [defaultDate]="defaultDate"
+                            ></p-calendar>
+                            <label for="timeDropdown">Time</label>
+                        </span>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <span class="p-float-label p-fluid input-mt">
+                            <p-dropdown
+                                id="durationDropdown"
+                                placeholder="&nbsp;"
+                                [options]="duration"
+                                formControlName="sessionDuration"
+                            ></p-dropdown>
+                            <label for="durationDropdown">Duration</label>
+                        </span>
+                    </div>
+                </div>
+                <div class="button-row">
+                    <button type="button" (click)="handleBack()" class="btn btn-secondary">
+                        <span style="font-size: 18px; font-weight: 300;">
+                            <i class="bi bi-x-lg"></i> cancel
+                        </span>
+                    </button>
+                    <button type="submit" class="btn btn-success" [disabled]="bookingForm.invalid">
+                        <span style="font-size: 18px; font-weight: 300;">next 
+                            <i class="bi bi-chevron-right"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
         </div>
     </form>
 </div>

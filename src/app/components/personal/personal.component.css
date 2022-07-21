@@ -17,14 +17,14 @@
     border-radius: 12px;
 }
 
-.card {
+/* .card {
     border: unset;
     border-radius: 12px;
     box-shadow:  0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
     -moz-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
     -webkit-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
     -o-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
-}
+} */
 
 .card h2 {
     margin-bottom: 24px;

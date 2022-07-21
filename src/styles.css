@@ -16,6 +16,7 @@ body {
     font-family: "Kanit", sans-serif !important;
     font-size: 1rem !important;
     font-weight: 300 !important;
+    margin: 0;
 }
 
 body {
@@ -38,4 +39,47 @@ body {
 
 .swal2-styled.swal2-confirm:focus {
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5) !important;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #218838 !important;
+    border-color: #1e7e34 !important;
+}
+
+.btn-success:focus, .btn-success.focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5) !important;
+}
+
+.btn-success.disabled, .btn-success:disabled {
+    color: #fff;
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
+.show > .btn-success.dropdown-toggle {
+    color: #fff;
+    background-color: #1e7e34 !important;
+    border-color: #1c7430 !important;
+}
+
+.btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
+.show > .btn-success.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5) !important;
+}
+
+.card {
+    border: unset !important;
+    border-radius: 12px !important;
+    box-shadow:  0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
+    -moz-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
+    -webkit-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
+    -o-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
 }
