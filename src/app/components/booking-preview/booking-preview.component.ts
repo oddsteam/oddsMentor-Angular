@@ -107,7 +107,7 @@ export class BookingPreviewComponent implements OnInit {
             this.bookingsService.clearCurrentBooking()
             this.mentorsService.clearCurrentMentor()
         })
-        // this.send2Discord(bookingForm)
+        this.send2Discord(bookingForm)
         await Swal.fire({
             icon: 'success',
             title: 'Thank you for your booking!',
