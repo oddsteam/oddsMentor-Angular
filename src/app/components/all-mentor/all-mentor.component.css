@@ -5,7 +5,6 @@
     justify-content: center;
     gap: 18px;
     padding: 48px 0;
-    background-color: var(--smoke-color);
 }
 
 :host::ng-deep.p-grid.p-nogutter.grid.grid-nogutter {
@@ -16,4 +15,36 @@
     align-items: flex-start;
     align-content: flex-start;
     /* max-width: 1200px; */
+}
+
+:host::ng-deep.p-dataview-header,
+:host::ng-deep.p-dataview-content,
+:host::ng-deep.p-paginator-bottom,
+:host::ng-deep.p-dataview .p-component .p-dataview-grid,
+p-dataview,
+.card {
+    background-color: transparent !important;
+}
+
+:host::ng-deep.p-dataview .p-dataview-header,
+.card {
+    border: 0 solid transparent;
+}
+
+.title {
+    font-size: 28px;
+    margin: 0;
+}
+
+.header-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.searchInput {
+    width: min(400px, 90vw);
+    overflow: hidden;
 }
