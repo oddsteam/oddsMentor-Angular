@@ -1,89 +1,86 @@
-<!-- <div class="container-fluid p-0" style="margin-top: -60px;">
+<!-- <div class="container-fluid p-0 old-design">
     <div class="landing-1 text-center pt-0">
         <a href="./mentor">
-            <img src="../../../assets/vectors/Landing.svg" alt="landing" class="landing-svg" />
+            <img src="../../../assets/demo/demo-landing-1.png" alt="landing" class="landing-svg" />
         </a>
     </div>
-    <div class="landing-2 text-center pt-5">
-        <h1 class="mb-4">Top Mentors</h1>
-        <div class="mentors-row">
-            <app-mentor-card *ngFor="let mentor of mentors.slice(0, 4)" [mentorDetail]="mentor">
-            </app-mentor-card>
-        </div>
-        <p-carousel
-            [value]="mentors"
-            styleClass="custom-carousel"
-            [numVisible]="3"
-            [numScroll]="3"
-            [circular]="true"
-            [autoplayInterval]="3000"
-        >
-            <ng-template let-mentors pTemplate="item">
-                <app-mentor-card [mentorDetail]="mentors"> </app-mentor-card>
-            </ng-template>
-        </p-carousel>
-    </div>
-    <div class="landing-3 pt-5 px-5">
-        <div class="row">
-            <div class="col-6">
-                <h2>พบกับผู้เชี่ยวชาญเพื่อคลายข้อสงสัย..</h2>
-                <p>
-                    จะดีกว่าไหม? ถ้าข้อสงสัยของคุณ สามารถถูกแก้ไขได้ด้วยผู้ที่เชี่ยวชาญในเรื่องนั้น
-                    ๆ
+    <div class="container-fluid p-0 pt-5">
+        <div class="container">
+            <div class="top-mentor">
+                <p class="top-mentor-title">
+                    <span class="part-1">Discover our </span>
+                    <span class="part-2">Top Mentors</span>
                 </p>
-            </div>
-            <div class="col-6">
-                <img src="/assets/vectors/consulting-rafiki.svg" alt="consulting-rafiki" />
+                <div class="top-mentor-row">
+                    <app-mentor-card
+                        *ngFor="let mentor of mentors.slice(0, 4)"
+                        [mentorDetail]="mentor"
+                    >
+                    </app-mentor-card>
+                </div>
             </div>
         </div>
     </div>
-    <div class="landing-4 pt-5 px-5">
-        <div class="row">
-            <div class="col-6">
-                <img src="/assets/images/rectangle-14.png" alt="consulting-rafiki" />
-            </div>
-            <div class="col-6">
-                <h2>สอบถามได้ทุกที่ ไม่ว่าคุณจะอยู่ที่ไหน</h2>
-                <p>
-                    ODDS Mentor จะช่วยให้คุณสามารถนัดหมายเวลากับคนที่คุณต้องการปรึกษา
-                    พูดคุยเพื่อคลายปัญหา ข้อสงสัยต่างๆของคุณได้ ทุกที่
-                </p>
+    <div class="container p-0">
+        <div class="container">
+            <div class="landing-mentor-3">
+                <div class="text-landing-mentor">
+                    <p class="landing-title">พบกับผู้เชี่ยวชาญเพื่อคลาย ข้อสงสัย..</p>
+                    <p class="landing-content">จะดีกว่าไหม? ถ้าข้อสงสัยของคุณ สามารถถูกแก้ไขได้ด้วยผู้ที่เชี่ยวชาญในเรื่องนั้นๆ</p>
+                </div>
+                <div class="img-landing-mentor">
+                    <img src="../../../assets/vectors/Consulting-rafiki.svg" alt="">
+                </div>
             </div>
         </div>
     </div>
-    <div class="landing-5 py-5 px-5">
-        <div class="row">
-            <div class="col">
-                <h2>จองได้ง่าย ๆ เพียงปลายนิ้ว</h2>
-                <p>
-                    คุณสามารถนัดหมายเพื่อปรึกษากับผู้เชี่ยวชาญที่คุณต้องการได้ง่ายๆ
-                    เพียงเข้าสู่ระบบการจองของเราแล้วทำการบันทึกข้อมูล
-                </p>
+    <div class="container p-0">
+        <div class="container">
+            <div class="landing-mentor-4">
+                <div class="img-landing-mentor">
+                    <img src="../../../assets/vectors/Consulting-pana.svg" alt="">
+                </div>
+                <div class="text-landing-mentor">
+                    <p class="landing-title">พบกับผู้เชี่ยวชาญเพื่อคลาย ข้อสงสัย..</p>
+                    <p class="landing-content">จะดีกว่าไหม? ถ้าข้อสงสัยของคุณ สามารถถูกแก้ไขได้ด้วยผู้ที่เชี่ยวชาญในเรื่องนั้นๆ</p>
+                </div>
             </div>
-            <div class="col">
-                <img src="/assets/images/rectangle-15.png" alt="consulting-rafiki" />
+        </div>
+    </div>
+    <div class="container p-0 pb-5">
+        <div class="container">
+            <div class="landing-mentor-5">
+                <div class="text-landing-mentor">
+                    <p class="landing-title">พบกับผู้เชี่ยวชาญเพื่อคลาย ข้อสงสัย..</p>
+                    <p class="landing-content">จะดีกว่าไหม? ถ้าข้อสงสัยของคุณ สามารถถูกแก้ไขได้ด้วยผู้ที่เชี่ยวชาญในเรื่องนั้นๆ</p>
+                </div>
+                <div class="img-landing-mentor">
+                    <img src="../../../assets/vectors/Mobile inbox-pana.svg" alt="">
+                </div>
             </div>
         </div>
     </div>
 </div> -->
-<div style="font-family: 'Quicksand', sans-serif;;" class="container-fluid p-0">
+<div class="container-fluid p-0 new-design">
     <div class="container-fluid p-0">
         <div class="container">
-            <div class="header-mentor">
-                <div class="header-mentor-text pt-5" style="color: #646464;">
-                    <p style="font-size: 24px; font-weight: 600;">What to know something?</p>
-                    <p style="font-size: 42px; font-weight: 800;">
-                        <span style="color: #0e98d5;">ODDS</span>
-                        <span style="color: #000000;"> always have answer</span>
-                    </p>
-                    <p style="font-weight: 500;">
-                        Ask us a question privately. <br />
-                        For ODDS members only
-                    </p>
-                    <button style="font-size: 24px; font-weight: 500; padding: 6px 22px;" class="btn btn-primary-gradient rounded-pill text-white">Explore Mentors</button>
-                </div>
-                <div class="header-mentor-img">
-                    <img src="../../../assets/vectors/Lesson-amico.svg" alt="">
+            <div class="landing-mentor-1">
+                <div class="landing-mentor-header pt-5">
+                    <div class="landing-mentor-start">
+                        <p class="landing-header-title">What to know something?</p>
+                        <p class="landing-header-title">
+                            <span class="part-1">ODDS</span>
+                            <span class="part-2"> always have answer</span>
+                        </p>
+                        <p class="landing-header-subtitle">
+                            Ask us a question privately. <br />
+                            For ODDS members only
+                        </p>
+                        <button class="btn btn-primary-gradient rounded-pill text-white">Explore Mentors</button>
+                    </div>
+                    <div class="landing-mentor-end">
+                        <img src="../../../assets/vectors/Lesson-amico.svg" alt="" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,12 +89,54 @@
         <div class="container">
             <div class="top-mentor">
                 <p class="top-mentor-title">
-                    <span style="color: #39485B;">Discover our </span>
-                    <span style="color: #0e98d5;">Top Mentors</span>
+                    <span class="part-1">Discover our </span>
+                    <span class="part-2">Top Mentors</span>
                 </p>
                 <div class="top-mentor-row">
-                    <app-mentor-card *ngFor="let mentor of mentors.slice(0, 4)" [mentorDetail]="mentor">
+                    <app-mentor-card
+                        *ngFor="let mentor of mentors.slice(0, 4)"
+                        [mentorDetail]="mentor"
+                    >
                     </app-mentor-card>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container p-0">
+        <div class="container">
+            <div class="landing-mentor-3">
+                <div class="text-landing-mentor">
+                    <p class="landing-title">พบกับผู้เชี่ยวชาญเพื่อคลาย ข้อสงสัย..</p>
+                    <p class="landing-content">จะดีกว่าไหม? ถ้าข้อสงสัยของคุณ สามารถถูกแก้ไขได้ด้วยผู้ที่เชี่ยวชาญในเรื่องนั้นๆ</p>
+                </div>
+                <div class="img-landing-mentor">
+                    <img src="../../../assets/vectors/Consulting-rafiki.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container p-0">
+        <div class="container">
+            <div class="landing-mentor-4">
+                <div class="img-landing-mentor">
+                    <img src="../../../assets/vectors/Consulting-pana.svg" alt="">
+                </div>
+                <div class="text-landing-mentor">
+                    <p class="landing-title">พบกับผู้เชี่ยวชาญเพื่อคลาย ข้อสงสัย..</p>
+                    <p class="landing-content">จะดีกว่าไหม? ถ้าข้อสงสัยของคุณ สามารถถูกแก้ไขได้ด้วยผู้ที่เชี่ยวชาญในเรื่องนั้นๆ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container p-0">
+        <div class="container">
+            <div class="landing-mentor-5">
+                <div class="text-landing-mentor">
+                    <p class="landing-title">พบกับผู้เชี่ยวชาญเพื่อคลาย ข้อสงสัย..</p>
+                    <p class="landing-content">จะดีกว่าไหม? ถ้าข้อสงสัยของคุณ สามารถถูกแก้ไขได้ด้วยผู้ที่เชี่ยวชาญในเรื่องนั้นๆ</p>
+                </div>
+                <div class="img-landing-mentor">
+                    <img src="../../../assets/vectors/Mobile inbox-pana.svg" alt="">
                 </div>
             </div>
         </div>

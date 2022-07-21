@@ -3,7 +3,7 @@
         #dv
         [value]="mentors"
         [paginator]="true"
-        [rows]="8"
+        [rows]="12"
         filterBy="fullNameEN,fullNameTH,nickname"
         [paginator]="true"
         layout="grid"
@@ -22,8 +22,8 @@
                 </span>
             </div>
         </ng-template>
-        <ng-template let-mentors pTemplate="gridItem">
-            <app-mentor-card [mentorDetail]="mentors"> </app-mentor-card>
+        <ng-template class="container" let-mentor pTemplate="gridItem">
+            <app-mentor-card [mentorDetail]="mentor"> </app-mentor-card>
         </ng-template>
     </p-dataView>
 </div>

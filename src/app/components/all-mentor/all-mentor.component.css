@@ -7,3 +7,13 @@
     padding: 48px 0;
     background-color: var(--smoke-color);
 }
+
+:host::ng-deep.p-grid.p-nogutter.grid.grid-nogutter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: flex-start;
+    /* max-width: 1200px; */
+}
