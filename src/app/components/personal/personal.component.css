@@ -1,4 +1,4 @@
-.container {
+/* .container {
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -65,4 +65,109 @@
 
 :host::ng-deep .button-personal:hover {
     background-color: #0c78aa !important;
+} */
+.row > * {
+    padding-right: calc(var(--bs-gutter-x) * 1.5);
+    padding-left: calc(var(--bs-gutter-x) * 1.5);
+    margin-top: var(--bs-gutter-y);
+}
+
+.control-label {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.profile-image {
+    object-fit: cover;
+    object-position: top;
+    width: 350px;
+    height: 350px;
+    border-radius: 12px;
+}
+
+.card h2 {
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.card-body {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+.card-body-start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-body-start .mentor-img {
+    text-align: left;
+}
+
+.card-body-start .mentor-bio {
+    width: 350px;
+}
+
+.card-body-start .mentor-bio .mentor-desc {
+    text-indent: 28px;
+    color: #39485b;
+}
+
+.card-body-end .mentor-name p, 
+.card-body-end .mentor-endorsement p, 
+.card-body-end .mentor-position p, 
+.card-body-end .mentor-availabel-time p, 
+.card-body-end .mentor-expertise p {
+    margin-bottom: 0;
+}
+
+.card-body-end .mentor-name .name-en {
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.card-body-end .mentor-name .name-th {
+    font-size: 20px;
+    font-weight: 300;
+    color: #39485b;
+}
+
+.card-body-end .mentor-position .job-position {
+    font-size: 20px;
+    color: #000000;
+}
+
+.card-body-end .mentor-position .mentor-type {
+    font-size: 16px;
+    color: #39485b;
+}
+
+.card-body-end .button-reserve button {
+    font-size: 20px;
+    font-weight: 400;
+}
+.btn-primary-gradient {
+    background: linear-gradient(89deg, #0E98D5 0%, #0158A8 100%);
+    border: unset;
+}
+
+.mentor-tag {
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    gap: 6px;
+}
+
+.badge {
+    font-weight: 400;
+    color: #1498d5;
+    border: 1px solid #1498d5;
+}
+
+.bg-expertise {
+    background-color: transparent !important;
 }

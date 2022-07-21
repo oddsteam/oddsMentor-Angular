@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="box">
         <div class="profile-box">
             <img src="{{ mentorDetail.profileImageUrl }}" class="profile-image" />
@@ -43,6 +43,55 @@
                 label="Book A Session"
                 (onClick)="onBooking()"
             ></p-button>
+        </div>
+    </div>
+</div> -->
+
+<div class="container py-5">
+    <div class="card py-4">
+        <h2 class="text-center">Personal Detail</h2>
+        <div class="card-body">
+            <div class="row">
+                <div class="card-body-start col-md-12 col-lg-6">
+                    <div class="mentor-img mb-3">
+                        <img class="profile-image" src="{{ mentorDetail.profileImageUrl }}" />
+                    </div>
+                    <div class="mentor-bio">
+                        <label class="control-label">About Me</label>
+                        <p class="mentor-desc">{{ mentorDetail.biography }}</p>
+                    </div>
+                </div>
+                <div class="card-body-end col-md-12 col-lg-6">
+                    <div class="mentor-name mb-4">
+                        <p class="name-en">
+                            {{ mentorDetail.fullNameEN }} ({{ mentorDetail.nickname }})
+                        </p>
+                        <p class="name-th">{{ mentorDetail.fullNameTH }}</p>
+                    </div>
+                    <div class="mentor-endorsement mb-4"></div>
+                    <div class="mentor-position mb-4">
+                        <p class="job-position">
+                            {{ mentorDetail.position }} @ {{ mentorDetail.team }}
+                        </p>
+                        <p class="mentor-type">{{ mentorDetail.type }}</p>
+                    </div>
+                    <div class="mentor-availabel-time mb-4">
+                        <label class="control-label">Available Time</label>
+                        <p class="text-success">10.00 - 11.00, Monday - Friday</p>
+                    </div>
+                    <div class="mentor-expertise mb-4">
+                        <label class="control-label">Expertise</label>
+                        <div class="mentor-tag">
+                            <span class="badge bg-expertise" *ngFor="let expertise of mentorDetail.expertise">
+                                {{ expertise.skill }} | {{ expertise.endorsed }}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="button-reserve">
+                        <button type="button" (click)="onBooking()" class="btn btn-primary-gradient text-white">Reserve Now!</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
