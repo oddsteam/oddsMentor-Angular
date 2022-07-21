@@ -6,7 +6,7 @@ import { MentorsService } from 'src/app/services/mentors.service'
 @Component({
     selector: 'app-mentor-card',
     templateUrl: './mentor-card.component.html',
-    styleUrls: ['./mentor-card.component.css', '../../../styles/colors.css'],
+    styleUrls: ['./mentor-card.component.css'],
 })
 export class MentorCardComponent implements OnInit {
     @Input()

@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment'
 @Component({
     selector: 'app-booking-preview',
     templateUrl: './booking-preview.component.html',
-    styleUrls: ['./booking-preview.component.css', '../../../styles/colors.css'],
+    styleUrls: ['./booking-preview.component.css'],
 })
 export class BookingPreviewComponent implements OnInit {
     bookingDetail!: BookingForm

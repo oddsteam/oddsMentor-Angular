@@ -15,7 +15,7 @@ interface Duration {
 @Component({
     selector: 'app-booking',
     templateUrl: './booking.component.html',
-    styleUrls: ['./booking.component.css', '../../../styles/colors.css'],
+    styleUrls: ['./booking.component.css'],
 })
 export class BookingComponent implements OnInit {
     mentorSelected!: MentorDetail

@@ -8,7 +8,7 @@ import { UsersService } from 'src/app/services/users.service'
 @Component({
     selector: 'app-personal',
     templateUrl: './personal.component.html',
-    styleUrls: ['./personal.component.css', '../../../styles/colors.css'],
+    styleUrls: ['./personal.component.css'],
 })
 export class PersonalComponent implements OnInit {
     mentorDetail!: MentorDetail
