@@ -11,9 +11,9 @@
                     <span class="part-1">Discover our </span>
                     <span class="part-2">Top Mentors</span>
                 </p>
-                <div class="top-mentor-row">
+                <div #topMentporRow class="top-mentor-row">
                     <app-mentor-card
-                        *ngFor="let mentor of mentors.slice(0, 4)"
+                        *ngFor="let mentor of mentors"
                         [mentorDetail]="mentor"
                     >
                     </app-mentor-card>

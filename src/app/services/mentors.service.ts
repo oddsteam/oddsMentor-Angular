@@ -29,9 +29,9 @@ export class MentorsService {
             .pipe(map((res) => res))
     }
 
-    getTopMentors(): Observable<MentorDetail[]> {
+    getTopMentors(numOfTop: number): Observable<MentorDetail[]> {
         return this.httpClient
-            .get<MentorDetail[]>(this.mentorsUrl, this.httpOption)
+            .get<MentorDetail[]>(`${this.mentorsUrl}/top?limit=${numOfTop}`, this.httpOption)
             .pipe(map((res) => res))
     }
 

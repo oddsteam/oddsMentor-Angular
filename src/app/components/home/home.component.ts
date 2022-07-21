@@ -17,8 +17,8 @@ export class HomeComponent implements OnInit {
     constructor(private router: Router, private mentorsService: MentorsService) {}
 
     ngOnInit(): void {
-        this.mentorsService.getTopMentors().subscribe((res) => {
-            this.mentors = res.reverse()
+        this.mentorsService.getTopMentors(4).subscribe((res) => {
+            this.mentors = res
         })
     }
 

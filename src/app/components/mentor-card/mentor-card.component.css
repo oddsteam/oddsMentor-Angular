@@ -25,15 +25,16 @@
 .card .card-endorsement {
     position: absolute;
     top: 0;
+    right: 0;
     z-index: 99;
-    width: 100%;
+    /* width: 100%; */
     text-align: end;
 }
 
 .card-endorsement .badge {
     font-size: 1rem;
     font-weight: 400;
-    width: 64px;
+    /* width: 64px; */
     border-radius: unset;
     border-bottom-left-radius: 12px;
 }
