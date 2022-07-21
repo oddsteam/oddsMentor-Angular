@@ -233,3 +233,7 @@ a {
 .landing-content {
     color: #7a7a7a;
 }
+
+.landing-svg {
+    width: 100vw;
+}

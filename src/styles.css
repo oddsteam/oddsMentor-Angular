@@ -19,12 +19,13 @@ body {
 }
 
 body {
-    background: linear-gradient(
+    background-color: var(--smoke-color);
+    /* background: linear-gradient(
         90deg,
         rgba(20, 152, 213, 0.08) 0%,
         rgba(255, 255, 255, 0) 50%,
         rgba(20, 152, 213, 0.08) 100%
-    );
+    ); */
 }
 
 .swal2-title {
