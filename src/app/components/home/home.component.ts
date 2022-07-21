@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
         })
     }
 
-    // handleClick() {
-    //     this.router.navigateByUrl('mentor')
-    // }
+    onExploreMentors() {
+        this.router.navigateByUrl('mentor')
+    }
 }
