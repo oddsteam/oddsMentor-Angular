@@ -179,6 +179,10 @@ p {
     color: #39485b;
 }
 
+.btn {
+    text-transform: capitalize;
+}
+
 /* :host::ng-deep .p-float-label textarea ~ label {
     padding: 12px;
 } */
