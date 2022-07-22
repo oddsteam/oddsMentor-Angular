@@ -36,11 +36,6 @@
     color: var(--text-color);
 }
 
-/* .user-info,
-.reserve-info {
-    color: #7a7a7a;
-} */
-
 .user-info .d-flex {
     gap: 6rem;
 }

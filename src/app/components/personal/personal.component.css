@@ -99,10 +99,10 @@
     border: unset;
 }
 
-.btn-primary-gradient:hover {
+/* .btn-primary-gradient:hover {
     background: linear-gradient(256deg, #0e98d5 0%, #0158a8 100%);
     border: unset;
-}
+} */
 
 .mentor-tag {
     display: flex;
