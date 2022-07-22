@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { MentorDetail } from '../mentor'
+import { MentorDetail } from '../../types/mentor'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { map, Observable } from 'rxjs'
 import { environment } from 'src/environments/environment'

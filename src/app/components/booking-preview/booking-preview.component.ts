@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core'
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router'
-import { BookingForm, MentorDetail, BookingRequest } from 'src/app/mentor'
+import { BookingRequest } from '../../types/booking'
+import { MentorDetail } from '../../types/mentor'
 import * as dayjs from 'dayjs'
-import { BookingsService } from 'src/app/services/bookings.service'
+import { BookingsService } from 'src/app/services/bookings/bookings.service'
 import { HttpClient } from '@angular/common/http'
 import { Location } from '@angular/common'
-import { MentorsService } from 'src/app/services/mentors.service'
+import { MentorsService } from 'src/app/services/mentors/mentors.service'
 import { environment } from 'src/environments/environment'
 import { MenuItem } from 'primeng/api'
 
@@ -16,7 +17,7 @@ import { MenuItem } from 'primeng/api'
     styleUrls: ['./booking-preview.component.css'],
 })
 export class BookingPreviewComponent implements OnInit {
-    bookingDetail!: BookingForm
+    bookingDetail!: BookingRequest
     mentorSelected!: MentorDetail
     expertise: string = ''
     dateTime: string = ''
@@ -53,7 +54,7 @@ export class BookingPreviewComponent implements OnInit {
             },
             {
                 label: 'Confirmation',
-            }
+            },
         ]
     }
 
@@ -79,9 +80,7 @@ export class BookingPreviewComponent implements OnInit {
 
     onLoadDateTime() {
         let sessionDateTime = dayjs(this.bookingDetail.sessionDate)
-            .set('hour', dayjs(this.bookingDetail.sessionTime).hour())
-            .set('minute', dayjs(this.bookingDetail.sessionTime).minute())
-        this.dateTime = dayjs(sessionDateTime).format('D MMMM YYYY H:mm')
+        this.dateTime = `${dayjs(sessionDateTime).format('D MMMM YYYY')} ${this.bookingDetail.sessionTime}`
     }
 
     onReturn() {
@@ -90,24 +89,12 @@ export class BookingPreviewComponent implements OnInit {
 
     //alert
     async on_submit() {
-        let date = this.dateTime
-        this.bookingDetail.sessionDate = dayjs(date).format('YYYY-MM-DDTHH:mm')
-        let bookingForm: BookingRequest = {
-            userId: this.bookingDetail.userId,
-            userFullName: this.bookingDetail.userFullName,
-            userEmail: this.bookingDetail.userEmail,
-            mentorId: this.bookingDetail.mentorId,
-            mentorFullName: this.bookingDetail.mentorFullName,
-            expertise: this.bookingDetail.expertise,
-            reason: this.bookingDetail.reason,
-            sessionDate: this.bookingDetail.sessionDate,
-            sessionDuration: parseInt(this.bookingDetail.sessionDuration),
-        }
-        this.bookingsService.addBooking(bookingForm).subscribe((data) => {
+        this.bookingDetail.sessionDate = dayjs(this.dateTime).toDate()
+        this.bookingsService.addBooking(this.bookingDetail).subscribe((data) => {
             this.bookingsService.clearCurrentBooking()
             this.mentorsService.clearCurrentMentor()
         })
-        this.send2Discord(bookingForm)
+        this.send2Discord(this.bookingDetail)
         await Swal.fire({
             icon: 'success',
             title: 'Thank you for your booking!',
@@ -115,7 +102,7 @@ export class BookingPreviewComponent implements OnInit {
         this.router.navigateByUrl('home')
     }
 
-    send2Discord(booking: BookingRequest) {
+    send2Discord(booking: Omit<BookingRequest, 'sessionTime'>) {
         let body1 = {
             content: null,
             embeds: [

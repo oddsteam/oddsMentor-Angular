@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core'
-import { Meta } from '@angular/platform-browser'
+import { MetaDefinition } from '@angular/platform-browser'
 import { ActivatedRoute, Router, Scroll } from '@angular/router'
 import { MenuItem } from 'primeng/api'
-import { Scroller } from 'primeng/scroller'
-import { MentorDetail } from 'src/app/mentor'
-import { MentorsService } from 'src/app/services/mentors.service'
-import { UsersService } from 'src/app/services/users.service'
+import { MentorDetail } from '../../types/mentor'
+import { MentorsService } from 'src/app/services/mentors/mentors.service'
+import { SeoService } from 'src/app/services/seo/seo.service'
+import { UsersService } from 'src/app/services/users/users.service'
 
 @Component({
     selector: 'app-personal',
@@ -22,7 +22,7 @@ export class PersonalComponent implements OnInit {
         private router: Router,
         private usersService: UsersService,
         private mentorsService: MentorsService,
-        private meta: Meta
+        private seoService: SeoService
     ) {}
 
     ngOnInit(): void {
@@ -32,36 +32,32 @@ export class PersonalComponent implements OnInit {
             (res) => {
                 this.mentorDetail = res
 
-                this.meta.updateTag({
-                    name: 'description',
-                    content: this.mentorDetail.biography,
-                })
-                this.meta.updateTag({
-                    property: 'og:title',
-                    content: `ODDS Mentor - ${this.mentorDetail.fullNameEN}`,
-                })
-                this.meta.updateTag({
-                    property: 'og:description',
-                    content: this.mentorDetail.biography,
-                })
-                this.meta.updateTag({
-                    property: 'og:image',
-                    content: `https://og-image-jade-nine.vercel.app/**${
-                        this.mentorDetail.fullNameEN.slice().split(' ')[0]
-                    }**%20${
-                        this.mentorDetail.fullNameEN.slice().split(' ')[1]
-                    }.png?theme=light&md=1&fontSize=100px&images=${
-                        this.mentorDetail.profileImageUrl
-                    }`,
-                })
-                this.meta.updateTag({
-                    property: 'og:url',
-                    content: `http://159.138.240.167:8089/personal/${this.mentorDetail.id}`,
-                })
-                this.meta.updateTag({
-                    name: 'twitter:card',
-                    content: 'summary_large_image',
-                })
+                let metaTags: MetaDefinition[] = [
+                    { name: 'description', content: this.mentorDetail.biography },
+                    {
+                        property: 'og:title',
+                        content: `ODDS Mentor - ${this.mentorDetail.fullNameEN}`,
+                    },
+                    { proprety: 'og:description', content: this.mentorDetail.biography },
+                    {
+                        property: 'og:image',
+                        content: `https://og-image-jade-nine.vercel.app/**${
+                            this.mentorDetail.fullNameEN.slice().split(' ')[0]
+                        }**%20${
+                            this.mentorDetail.fullNameEN.slice().split(' ')[1]
+                        }.png?theme=light&md=1&fontSize=100px&images=${
+                            this.mentorDetail.profileImageUrl
+                        }`,
+                    },
+                    {
+                        property: 'og:url',
+                        content: `http://159.138.240.167:8089/personal/${this.mentorDetail.id}`,
+                    },
+                    { name: 'twitter:card', content: 'summary_large_image' },
+                ]
+
+                this.seoService.updateTitle(`ODDS Mentor - ${this.mentorDetail.fullNameEN}`)
+                this.seoService.updateMetaTags(metaTags)
             },
             (err) => {
                 console.log(err)

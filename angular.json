@@ -22,10 +22,7 @@
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets"
-                        ],
+                        "assets": ["src/favicon.ico", "src/assets"],
                         "styles": [
                             "src/styles.css",
                             "node_modules/bootstrap/dist/css/bootstrap.css",
@@ -39,10 +36,7 @@
                             "node_modules/sweetalert2/dist/sweetalert2.js",
                             "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
                         ],
-                        "allowedCommonJsDependencies": [
-                            "dayjs",
-                            "sweetalert2"
-                        ]
+                        "allowedCommonJsDependencies": ["dayjs", "sweetalert2"]
                     },
                     "configurations": {
                         "production": {
@@ -119,13 +113,8 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.spec.json",
                         "karmaConfig": "karma.conf.js",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets"
-                        ],
-                        "styles": [
-                            "src/styles.css"
-                        ],
+                        "assets": ["src/favicon.ico", "src/assets"],
+                        "styles": ["src/styles.css"],
                         "scripts": []
                     }
                 },
@@ -171,9 +160,7 @@
                 "prerender": {
                     "builder": "@nguniversal/builders:prerender",
                     "options": {
-                        "routes": [
-                            "/"
-                        ]
+                        "routes": ["/"]
                     },
                     "configurations": {
                         "production": {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { SeoService } from './services/seo.service'
+import { SeoService } from './services/seo/seo.service'
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'
 import { filter, map, mergeMap, tap } from 'rxjs/operators'
 // import { PrimeNGConfig } from 'primeng/api';
@@ -15,12 +15,10 @@ export class AppComponent {
     constructor(
         private router: Router,
         private activatedRoute: ActivatedRoute,
-        private seoService: SeoService,
-        // private primengConfig: PrimeNGConfig,
+        private seoService: SeoService
     ) {}
 
     ngOnInit(): void {
-        // this.primengConfig.ripple = true;
         this.router.events
             .pipe(
                 filter((e) => e instanceof NavigationEnd),

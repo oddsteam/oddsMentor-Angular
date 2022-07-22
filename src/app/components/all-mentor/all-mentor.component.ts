@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { MentorDetail } from 'src/app/mentor'
-import { MentorsService } from 'src/app/services/mentors.service'
+import { MentorDetail } from '../../types/mentor'
+import { MentorsService } from 'src/app/services/mentors/mentors.service'
 import { MenuItem } from 'primeng/api'
 
 @Component({

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { BookingForm, BookingResponse, BookingRequest } from '../mentor'
+import { BookingResponse, BookingRequest } from '../../types/booking'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { map, Observable } from 'rxjs'
 import { environment } from 'src/environments/environment'
@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment'
 })
 export class BookingsService {
     private bookingUrl = `${environment.apiUrl}/odds-api/v1/bookings`
-    currentBooking?: BookingForm
+    currentBooking?: BookingRequest
 
     constructor(private httpClient: HttpClient) {}
 
@@ -17,17 +17,17 @@ export class BookingsService {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     }
 
-    addBooking(booking: BookingRequest): Observable<string> {
+    addBooking(booking: Omit<BookingRequest, "sessionTime">): Observable<string> {
         return this.httpClient
             .post<BookingResponse>(this.bookingUrl, booking, this.httpOption)
             .pipe(map((res) => res.id))
     }
 
-    saveBooking(booking: BookingForm) {
+    saveBooking(booking: BookingRequest) {
         this.currentBooking = booking
     }
 
-    getCurrentBooking(): BookingForm | undefined {
+    getCurrentBooking(): BookingRequest | undefined {
         return this.currentBooking
     }
 

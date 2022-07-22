@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core'
 import { Router } from '@angular/router'
-import { MentorDetail } from 'src/app/mentor'
-import { MentorsService } from 'src/app/services/mentors.service'
+import { MentorDetail } from '../../types/mentor'
+import { MentorsService } from 'src/app/services/mentors/mentors.service'
 
 @Component({
     selector: 'app-mentor-card',
