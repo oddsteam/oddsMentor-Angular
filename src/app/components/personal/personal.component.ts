@@ -13,7 +13,7 @@ import { UsersService } from 'src/app/services/users.service'
     styleUrls: ['./personal.component.css'],
 })
 export class PersonalComponent implements OnInit {
-    mentorDetail!: MentorDetail
+    mentorDetail?: MentorDetail
     home: MenuItem = { icon: 'pi pi-home', routerLink: ['/home'] }
     items!: MenuItem[]
 
@@ -27,7 +27,8 @@ export class PersonalComponent implements OnInit {
 
     ngOnInit(): void {
         const id = this.route.snapshot.paramMap.get('id')
-        this.usersService.getUser(id!).subscribe(
+        if (!id) return
+        this.usersService.getUser(id).subscribe(
             (res) => {
                 this.mentorDetail = res
 
@@ -81,6 +82,7 @@ export class PersonalComponent implements OnInit {
     }
 
     onBooking() {
+        if (!this.mentorDetail) return
         this.mentorsService.saveMentor(this.mentorDetail)
         this.router.navigateByUrl('booking')
     }

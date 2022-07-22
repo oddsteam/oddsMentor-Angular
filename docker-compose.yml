@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+    mentor-web:
+        build: .
+    nginx:
+        build: ./nginx
+        ports:
+            - "4000:80"

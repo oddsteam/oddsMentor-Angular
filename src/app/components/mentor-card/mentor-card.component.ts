@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core'
-import { flush } from '@angular/core/testing'
 import { Router } from '@angular/router'
 import { MentorDetail } from 'src/app/mentor'
 import { MentorsService } from 'src/app/services/mentors.service'
@@ -11,7 +10,7 @@ import { MentorsService } from 'src/app/services/mentors.service'
 })
 export class MentorCardComponent implements OnInit, AfterViewInit {
     @Input()
-    mentorDetail!: MentorDetail
+    mentorDetail?: MentorDetail
     skills: string[] = []
     dummyXpertise: string[] = []
 
@@ -22,6 +21,7 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
     ) {}
 
     ngOnInit(): void {
+        if (!this.mentorDetail) return
         let expertise = this.mentorDetail.expertise
         expertise.sort((first, second) => second.endorsed - first.endorsed)
         expertise.forEach((expertise) => {
@@ -40,6 +40,8 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
+        if (typeof window === 'undefined') return
+        if (!this.mentorDetail) return
         let LINE_WIDTH = 248
         let expertiseChip = window.document.getElementById(`dummyChip-${this.mentorDetail.id}`)
         let haveNextLine = true
@@ -83,6 +85,7 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
     }
 
     onMentor() {
+        if (!this.mentorDetail) return
         this.router.navigateByUrl('personal/' + this.mentorDetail.id)
     }
 }
