@@ -16,7 +16,7 @@ export class PersonalComponent implements OnInit {
     mentorDetail!: MentorDetail
     home: MenuItem = { icon: 'pi pi-home', routerLink: ['/home'] }
     items!: MenuItem[]
-    
+
     constructor(
         private route: ActivatedRoute,
         private router: Router,
@@ -67,7 +67,7 @@ export class PersonalComponent implements OnInit {
                 this.router.navigateByUrl('home')
             }
         )
-        window.scroll(0,0) // Scrool to top
+        if (typeof window !== 'undefined') window.scroll(0, 0)
         this.items = [
             {
                 label: 'Mentors',
@@ -76,7 +76,7 @@ export class PersonalComponent implements OnInit {
             },
             {
                 label: 'Personal',
-            }
+            },
         ]
     }
 

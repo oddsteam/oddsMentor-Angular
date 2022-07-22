@@ -22,7 +22,6 @@ export class BookingComponent implements OnInit {
     mentorSelected!: MentorDetail
     expertises: Expertise[] = []
     duration: Duration[] = this.onDurationLoad(15, 60, 15)
-    defaultDate: Date = this.onTimeLoad()
     minDate: Date = dayjs().add(1, 'day').toDate()
     maxDate: Date = dayjs().add(1, 'year').toDate()
     home: MenuItem = { icon: 'pi pi-home', routerLink: ['/home'] }
@@ -37,8 +36,8 @@ export class BookingComponent implements OnInit {
             mentorFullName: new FormControl('', [Validators.required]),
             expertise: new FormControl([''], [Validators.required]),
             reason: new FormControl('', [Validators.required]),
-            sessionDate: new FormControl('', [Validators.required]),
-            sessionTime: new FormControl('', [Validators.required]),
+            sessionDate: new FormControl(dayjs().add(1, 'day').toDate(), [Validators.required]),
+            sessionTime: new FormControl(dayjs(this.onTimeLoad()).format('hh:mm'), [Validators.required]),
             sessionDuration: new FormControl('', [Validators.required]),
         },
         Validators.required
@@ -98,7 +97,7 @@ export class BookingComponent implements OnInit {
                 mentorFullName: currentBooking.mentorFullName,
                 expertise: currentBooking.expertise,
                 reason: currentBooking.reason,
-                sessionDate: currentBooking.sessionDate,
+                sessionDate: dayjs(currentBooking.sessionDate).toDate(),
                 sessionTime: currentBooking.sessionTime,
                 sessionDuration: currentBooking.sessionDuration,
             })
@@ -111,8 +110,8 @@ export class BookingComponent implements OnInit {
                 mentorFullName: this.mentorSelected.fullNameEN,
                 expertise: null,
                 reason: null,
-                sessionDate: null,
-                sessionTime: null,
+                sessionDate: dayjs().add(1, 'day').toDate(),
+                sessionTime: dayjs(this.onTimeLoad()).format('hh:mm'),
                 sessionDuration: null,
             })
         }
