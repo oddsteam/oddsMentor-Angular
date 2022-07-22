@@ -167,9 +167,9 @@ export class BookingComponent implements OnInit {
         let timeDefault =
             minute === 60
                 ? dayjs(currentDate)
-                      .hour(dayjs(currentDate).get('hour') + 1)
-                      .minute(0)
-                      .toDate()
+                    .hour(dayjs(currentDate).get('hour') + 1)
+                    .minute(0)
+                    .toDate()
                 : dayjs(currentDate).minute(minute).toDate()
         return timeDefault
     }

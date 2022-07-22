@@ -89,8 +89,18 @@
     font-size: 20px;
     font-weight: 400;
 }
+
+.button-reserve button {
+    border-radius: 8px;
+}
+
 .btn-primary-gradient {
     background: linear-gradient(89deg, #0e98d5 0%, #0158a8 100%);
+    border: unset;
+}
+
+.btn-primary-gradient:hover {
+    background: linear-gradient(256deg, #0e98d5 0%, #0158a8 100%);
     border: unset;
 }
 

@@ -112,7 +112,7 @@ p {
     margin-top: 4px;
 } */
 
-.control-label {
+/* .control-label {
     font-size: 20px;
     font-weight: 400;
 }
@@ -122,11 +122,14 @@ p {
     font-size: 18px;
 }
 
-.card {
-    align-items: center;
+.mentor-card.card {
     border: 1px solid rgba(0, 0, 0, 0.125) !important;
     border-radius: 12px !important;
     box-shadow: unset !important;
+}
+
+.reserve-mentor-card.card {
+    align-items: center !important;
 }
 
 .card-title {
@@ -148,6 +151,8 @@ p {
 }
 
 .mentor-card .card-body .mentor-img {
+    object-fit: cover;
+    object-position: top;
     width: 200px;
     height: 200px;
     border-top-left-radius: 11px;
@@ -179,28 +184,83 @@ p {
     color: #39485b;
 }
 
-.btn {
-    text-transform: capitalize;
-}
-
-/* :host::ng-deep .p-float-label textarea ~ label {
+:host::ng-deep .p-float-label textarea ~ label {
     padding: 12px;
 } */
 
-:host::ng-deep .p-float-label input:focus ~ label,
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+    vertical-align: -4px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card-container {
+    width: min(100%, 768px);
+}
+
+.card-body {
+    padding: 1rem 6rem;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.card-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: #212529;
+}
+
+.mentor-card .card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 28px;
+    width: 100%;
+    padding: 0;
+    border: 1px solid #ced4da;
+    border-radius: 12px;
+}
+
+.mentor-card .card-body p {
+    margin-bottom: 0;
+}
+
+.mentor-card .card-body .mentor-img {
+    object-fit: cover;
+    object-position: top;
+    width: 150px;
+    height: 150px;
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+}
+
+.mentor-card .card-body-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+:host::ng-deep.p-float-label input:focus ~ label,
 .p-float-label input.p-filled ~ label,
 .p-float-label textarea:focus ~ label,
 .p-float-label textarea.p-filled ~ label,
 .p-float-label .p-inputwrapper-focus ~ label,
 .p-float-label .p-inputwrapper-filled ~ label {
-    top: -0.55rem;
+    top: -0.6rem;
+    left: 2px;
 }
 
-.button-row {
-    display: flex;
-    justify-content: space-between;
-}
-
-.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
-    vertical-align: -4px;
+.btn {
+    text-transform: capitalize;
 }

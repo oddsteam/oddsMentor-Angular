@@ -1,75 +1,59 @@
-<!-- <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb> -->
-<div class="container">
-    <div class="container-card">
-        <h3 style="text-align: center">Confirmation</h3>
-
-        <p class="header">User Information</p>
-
-        <div>
-            <p class="title">Name</p>
-            <p class="sub-title">
-                {{ bookingDetail.userFullName }}
-            </p>
+<div class="container py-5">
+    <div class="card-container py-4">
+        <div class="card-title">
+            <p class="text-center">Confirmation</p>
         </div>
-
-        <div>
-            <p class="title">Email</p>
-            <p class="sub-title">{{ bookingDetail.userEmail }}</p>
-        </div>
-
-        <p class="header">Booking Information</p>
-
-        <div style="display: flex; flex-direction: row; align-items: center">
-            <img
-                src="{{ mentorSelected.profileImageUrl }}"
-                alt="mentor image"
-                class="mentor-avatar"
-            />
-            <div>
-                <p class="title">Mentor name</p>
-                <p class="sub-title">
-                    {{ bookingDetail.mentorFullName }}
-                </p>
+        <div class="card-body">
+            <div class="user-info mb-3">
+                <div class="card-subtitle">
+                    <p class="text-start">User Information</p>
+                </div>
+                <div class="d-flex">
+                    <div class="name-label">
+                        <label class="control-label">Name</label>
+                        <p>{{ bookingDetail.userFullName }}</p>
+                    </div>
+                    <div class="email-label">
+                        <label class="control-label">Email</label>
+                        <p>{{ bookingDetail.userEmail }}</p>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div>
-            <p class="title">Expertise</p>
-            <p class="sub-title">{{ expertise }}</p>
-        </div>
-
-        <div>
-            <p class="title">Reason</p>
-            <p class="sub-title">{{ bookingDetail.reason }}</p>
-        </div>
-
-        <div>
-            <p class="title">Date and Time</p>
-            <p class="sub-title">
-                {{ dateTime }}
-            </p>
-        </div>
-
-        <div>
-            <p class="title">Duration</p>
-            <p class="sub-title">{{ bookingDetail.sessionDuration }} mins</p>
-        </div>
-
-        <div class="flex-row">
-            <p-button
-                label="RETURN"
-                icon="pi pi-angle-left"
-                iconPos="left"
-                styleClass="button-return"
-                (onClick)="onReturn()"
-            ></p-button>
-            <p-button
-                (onClick)="on_submit()"
-                label="SUBMIT"
-                icon="pi pi-check"
-                iconPos="right"
-                styleClass="button-submit"
-            ></p-button>
+            <div class="reserve-info mb-3">
+                <div class="card-subtitle">
+                    <p class="text-start">Reserve Information</p>
+                </div>
+                <div class="mentor-name-label">
+                    <label class="control-label">Mentor Name</label>
+                    <p>{{ bookingDetail.mentorFullName }}</p>
+                </div>
+                <div class="expertise-label">
+                    <label class="control-label">Expertise</label>
+                    <p>{{ expertise }}</p>
+                </div>
+                <div class="reason-label">
+                    <label class="control-label">Reason</label>
+                    <p>{{ bookingDetail.reason }}</p>
+                </div>
+                <div class="d-flex">
+                    <div class="date-time-label">
+                        <label class="control-label">Date & Time</label>
+                        <p>{{ dateTime }}</p>
+                    </div>
+                    <div class="duration-label">
+                        <label class="control-label">Duration</label>
+                        <p>{{ bookingDetail.sessionDuration }} minutes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-row">
+                <button type="button" (click)="onReturn()" class="btn btn-secondary">
+                    <span class="btn-back"> <i class="fa-solid fa-chevron-left"></i> back </span>
+                </button>
+                <button type="button" (click)="on_submit()" class="btn btn-success">
+                    <span class="btn-submit"> submit <i class="fa-solid fa-check"></i> </span>
+                </button>
+            </div>
         </div>
     </div>
 </div>

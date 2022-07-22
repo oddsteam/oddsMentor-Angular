@@ -1,79 +1,49 @@
 .container {
-    overflow-y: auto;
-    overflow-x: hidden;
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-.container-card {
-    margin: 50px 0;
-    width: min(660px, 90%);
-    height: auto;
-    box-shadow: 0px 0px 10px 0px rgba(204, 204, 204, 0.75);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 24px;
-    border-radius: 12px;
-    padding: 24px 64px;
-    background-color: var(--white-color);
+.card-container {
+    width: min(90%, 768px);
 }
 
-.flex-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+.card-body {
+    padding: 1rem 6rem;
 }
 
-p {
-    margin: 0px;
-    color: black;
-}
-
-.header {
-    color: #85888c;
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.title {
-    font-size: 16px;
+.card-title {
+    font-size: 24px;
     font-weight: 400;
+    margin-bottom: 0;
 }
 
-.sub-title {
-    font-size: 16px;
-    font-weight: 600;
+.card-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: #212529;
 }
 
-:host::ng-deep .button-return {
-    background-color: #ffc107;
-    color: white;
-    border: transparent;
+.control-label {
+    font-size: 18px;
+    font-weight: 400;
+    color: #181818;
 }
 
-:host::ng-deep .button-submit {
-    background-color: #28a745;
-    color: white;
-    border: transparent;
+.user-info,
+.reserve-info {
+    color: #7a7a7a;
 }
 
-:host::ng-deep .button-return:hover {
-    background-color: #e0a800 !important;
+.user-info .d-flex {
+    gap: 6rem;
 }
 
-:host::ng-deep .button-submit:hover {
-    background-color: #218838 !important;
+.reserve-info .d-flex {
+    gap: 6rem;
 }
 
-.mentor-avatar {
-    margin-right: 12px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
+.button-row .btn-back,
+.button-row .btn-submit {
+    font-size: 18px;
 }

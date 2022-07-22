@@ -123,40 +123,49 @@
     </form>
 </div> -->
 
+<!-- [disabled]="bookingForm.invalid" -->
 <div class="container py-5">
-    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
-        <div class="card py-4">
-            <!-- <h2 class="text-center">Reserve Mentor</h2> -->
+    <div class="card-container py-4">
+        <div class="card-title">
+            <p class="text-center">Reserve Mentor</p>
+        </div>
+        <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
             <div class="card-body">
-                <p class="card-title mb-4">User Information</p>
-                <div class="row mb-4">
-                    <div class="col-sm-12 col-md-6">
-                        <span class="p-float-label p-fluid input-mt">
-                            <input
-                                id="userFullNameInput"
-                                type="text"
-                                pInputText
-                                formControlName="userFullName"
-                            />
-                            <label for="userFullNameInput">Name</label>
-                        </span>
+                <div class="user-info mb-4">
+                    <div class="card-subtitle mb-4">
+                        <p class="text-start">User Information</p>
                     </div>
-                    <div class="col-sm-12 col-md-6">
-                        <span class="p-float-label p-fluid input-mt">
-                            <input
-                                id="userEmailInput"
-                                type="text"
-                                pInputText
-                                formControlName="userEmail"
-                            />
-                            <label for="userEmailInput">Email</label>
-                        </span>
+                    <div class="row">
+                        <div class="name-label col-sm-12 col-md-6">
+                            <span class="p-float-label p-fluid input-mt">
+                                <input
+                                    id="userFullNameInput"
+                                    type="text"
+                                    pInputText
+                                    formControlName="userFullName"
+                                />
+                                <label for="userFullNameInput">Name</label>
+                            </span>
+                        </div>
+                        <div class="email-label col-sm-12 col-md-6">
+                            <span class="p-float-label p-fluid input-mt">
+                                <input
+                                    id="userEmailInput"
+                                    type="text"
+                                    pInputText
+                                    formControlName="userEmail"
+                                />
+                                <label for="userEmailInput">Email</label>
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <p class="card-title mb-3">Reserve Information</p>
-                <div class="mentor-card card mb-4">
-                    <div class="card-body">
-                        <div class="card-reserve-mentor">
+                <div class="reserve-info mb-4">
+                    <div class="card-subtitle mb-4">
+                        <p class="text-start">Mentor Information</p>
+                    </div>
+                    <div class="mentor-card">
+                        <div class="card-body">
                             <div class="card-body-start">
                                 <img
                                     class="mentor-img"
@@ -172,7 +181,7 @@
                                     </p>
                                     <p class="name-th">{{ mentorSelected.fullNameTH }}</p>
                                 </div>
-                                <div class="mentor-availabel-time">
+                                <div class="mentor-available">
                                     <label class="control-label">Available Time</label>
                                     <p class="text-success">10.00 - 11.00, Monday - Friday</p>
                                 </div>
@@ -249,17 +258,17 @@
                 </div>
                 <div class="button-row">
                     <button type="button" (click)="handleBack()" class="btn btn-secondary">
-                        <span style="font-size: 18px; font-weight: 300;">
-                            <i class="bi bi-x-lg"></i> cancel
+                        <span class="btn-back">
+                            <i class="fa-solid fa-chevron-left"></i> cancel
                         </span>
                     </button>
-                    <button type="submit" class="btn btn-success" [disabled]="bookingForm.invalid">
-                        <span style="font-size: 18px; font-weight: 300;">next 
-                            <i class="bi bi-chevron-right"></i>
+                    <button type="submit" class="btn btn-success">
+                        <span class="btn-submit">
+                            next <i class="fa-solid fa-chevron-right"></i>
                         </span>
                     </button>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>

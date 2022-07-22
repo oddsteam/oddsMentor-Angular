@@ -8,7 +8,7 @@
     --white-color: #ffffff;
     --green-color: #28a745;
     --yellow-color: #ffc107;
-    --smoke-color: #f9f9f9;
+    --smoke-color: #f8f8f8;
 }
 
 html,
@@ -20,7 +20,7 @@ body {
 }
 
 body {
-    background-color: var(--smoke-color);
+    background-color: var(--smoke-color) !important;
     /* background: linear-gradient(
         90deg,
         rgba(20, 152, 213, 0.08) 0%,
@@ -38,7 +38,8 @@ body {
 }
 
 .swal2-styled.swal2-confirm:focus {
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5) !important;
+    /* box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5) !important; */
+    box-shadow: unset !important;
 }
 
 .btn-success {
@@ -53,24 +54,28 @@ body {
     border-color: #1e7e34 !important;
 }
 
-.btn-success:focus, .btn-success.focus {
+.btn-success:focus,
+.btn-success.focus {
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5) !important;
 }
 
-.btn-success.disabled, .btn-success:disabled {
+.btn-success.disabled,
+.btn-success:disabled {
     color: #fff;
     background-color: #28a745 !important;
     border-color: #28a745 !important;
 }
 
-.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
+.btn-success:not(:disabled):not(.disabled):active,
+.btn-success:not(:disabled):not(.disabled).active,
 .show > .btn-success.dropdown-toggle {
     color: #fff;
     background-color: #1e7e34 !important;
     border-color: #1c7430 !important;
 }
 
-.btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
+.btn-success:not(:disabled):not(.disabled):active:focus,
+.btn-success:not(:disabled):not(.disabled).active:focus,
 .show > .btn-success.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5) !important;
 }
@@ -78,8 +83,38 @@ body {
 .card {
     border: unset !important;
     border-radius: 12px !important;
-    box-shadow:  0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
+    box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
     -moz-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
     -webkit-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
     -o-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
+}
+
+.card-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: unset;
+    border-radius: 12px;
+    box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%);
+    -moz-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%);
+    -webkit-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%);
+    -o-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%);
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-row .btn {
+    border-radius: 8px;
+}
+
+.button-row .fa-solid,
+.fas {
+    font-size: 14px;
 }
