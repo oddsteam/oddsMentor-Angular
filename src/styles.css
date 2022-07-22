@@ -9,6 +9,10 @@
     --green-color: #28a745;
     --yellow-color: #ffc107;
     --smoke-color: #f8f8f8;
+    --title-color: #232323 !important;
+    --sub-title-color: #495057 !important;
+    --label-color: #3c3c3c !important;
+    --text-color: #232323 !important;
 }
 
 html,

@@ -123,7 +123,6 @@
     </form>
 </div> -->
 
-<!-- [disabled]="bookingForm.invalid" -->
 <div class="container py-5">
     <div class="card-container py-4">
         <div class="card-title">
@@ -261,7 +260,7 @@
                             <i class="fa-solid fa-chevron-left"></i> cancel
                         </span>
                     </button>
-                    <button type="submit" class="btn btn-success">
+                    <button type="submit" class="btn btn-success" [disabled]="bookingForm.invalid">
                         <span class="btn-submit">
                             next <i class="fa-solid fa-chevron-right"></i>
                         </span>

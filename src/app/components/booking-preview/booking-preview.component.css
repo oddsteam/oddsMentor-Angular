@@ -21,19 +21,25 @@
 .card-subtitle {
     font-size: 20px;
     font-weight: 400;
-    color: #212529;
+    color: var(--sub-title-color);
 }
 
 .control-label {
     font-size: 18px;
-    font-weight: 400;
-    color: #181818;
+    font-weight: 300;
+    color: var(--label-color);
 }
 
-.user-info,
+.control-text {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+/* .user-info,
 .reserve-info {
     color: #7a7a7a;
-}
+} */
 
 .user-info .d-flex {
     gap: 6rem;
