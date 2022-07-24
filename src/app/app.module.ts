@@ -30,6 +30,14 @@ import { DataViewModule } from 'primeng/dataview'
 import { FooterComponent } from './components/footer/footer.component'
 import { BreadcrumbModule } from 'primeng/breadcrumb'
 
+// Firebase Auth
+import { environment } from 'src/environments/environment'
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database'
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -65,6 +73,12 @@ import { BreadcrumbModule } from 'primeng/breadcrumb'
         CarouselModule,
         DataViewModule,
         BreadcrumbModule,
+
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule,
+        AngularFirestoreModule,
+        AngularFireStorageModule,
+        AngularFireDatabaseModule,
     ],
     providers: [Meta],
     bootstrap: [AppComponent],
