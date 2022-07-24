@@ -35,16 +35,15 @@
                         "scripts": [
                             "node_modules/sweetalert2/dist/sweetalert2.js",
                             "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-                        ],
-                        "allowedCommonJsDependencies": ["dayjs", "sweetalert2"]
+                        ]
                     },
                     "configurations": {
                         "production": {
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "1.7mb",
-                                    "maximumError": "2mb"
+                                    "maximumWarning": "1.5mb",
+                                    "maximumError": "6mb"
                                 },
                                 {
                                     "type": "anyComponentStyle",
@@ -58,35 +57,18 @@
                                     "with": "src/environments/environment.prod.ts"
                                 }
                             ],
-                            "optimization": {
-                                "scripts": true,
-                                "styles": {
-                                    "minify": true,
-                                    "inlineCritical": false
-                                },
-                                "fonts": true
-                            },
                             "outputHashing": "all"
                         },
                         "development": {
                             "buildOptimizer": false,
-                            "optimization": {
-                                "scripts": true,
-                                "styles": {
-                                    "minify": true,
-                                    "inlineCritical": false
-                                },
-                                "fonts": true
-                            },
-                            "outputHashing": "all",
-                            "sourceMap": false,
-                            "namedChunks": false,
-                            "aot": true,
-                            "extractLicenses": true,
-                            "vendorChunk": false
+                            "optimization": false,
+                            "vendorChunk": true,
+                            "extractLicenses": false,
+                            "sourceMap": true,
+                            "namedChunks": true
                         }
                     },
-                    "defaultConfiguration": "development"
+                    "defaultConfiguration": "production"
                 },
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
@@ -136,7 +118,7 @@
                             ]
                         },
                         "development": {
-                            "optimization": true,
+                            "optimization": false,
                             "sourceMap": true,
                             "extractLicenses": false
                         }

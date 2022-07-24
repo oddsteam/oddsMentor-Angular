@@ -7,25 +7,35 @@ a:focus {
 }
 
 .navbar {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 300;
+    padding: 0;
     line-height: 2;
     flex-direction: column;
-    background-color: transparent;
+    background-color: #ffffff;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-    /* box-shadow:  0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
-    -moz-box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
-    -webkit-box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important;
-    -o-box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15) !important; */
+    -moz-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    -o-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
 .navbar-sticky {
     background-color: #ffffff;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    -moz-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    -o-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.navbar.sticky-top {
+    top: -100px;
+    transition: 0.5s;
 }
 
 .navbar-toggler,
 .navbar-toggler:focus {
     line-height: 1;
-    padding: 20px 10px;
+    padding: 16px 10px;
     border: none;
     box-shadow: none;
 }
@@ -42,96 +52,88 @@ svg {
     vertical-align: unset;
 }
 
-.navbar.sticky-top {
-    top: -100px;
-    transition: 0.5s;
-}
-
-.navbar .container-fluid {
-    background-color: transparent;
-}
-
-nav .btn {
-    font-size: 1.5rem !important;
-    padding-top: 2px;
-    padding-right: 8px;
-    padding-bottom: 1px;
-    padding-left: 8px;
-}
-
 .navbar .navbar-nav li {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .navbar .navbar-nav .nav-link {
-    font-size: 1rem !important;
     font-weight: 500;
-    padding: 10px;
+    padding: 12px 10px;
     color: #495057;
     outline: none;
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link:focus,
-.navbar-light .navbar-nav .show > .nav-link,
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary);
+.navbar-nav-right .dropdown a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
-.dropdown-menu {
-    padding: 0 !important;
-    border-radius: unset;
+.navbar-nav-right .dropdown i:hover {
+    cursor: pointer;
 }
 
-.dropdown-menu .dropdown-item {
-    font-weight: unset;
-    font-size: 1.25rem;
-    line-height: 2.5rem;
-    color: var(--primary-text);
+.dropdown .fa-solid,
+.fas {
+    font-size: 28px;
 }
 
-.dropdown-menu .dropdown-item:focus,
-.dropdown-menu .dropdown-item.active {
-    background-color: var(--primary);
+.dropdown .dropdown-menu {
+    color: #495057;
+    margin-top: 2px;
+    border-radius: 2px;
+    border: unset;
+    padding: 0;
+    min-width: 72px;
 }
 
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
+.dropdown .dropdown-menu .dropdown-item {
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
 }
 
-@media only screen and (max-width: 767.98px) {
-    .navbar .navbar-nav .nav-link {
-        margin-left: 0;
-        padding: 10px 0;
-    }
+.dropdown-item:hover,
+.dropdown-item:focus {
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    background-color: #eaeaf1;
+}
 
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+
+.dropup .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 0.125rem;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+/* ถ้าปิดเมนูที่ 1 ให้ปิด css ตรงนี้ แล้วก็เปิดแบบที่ 2 */
+/* @media only screen and (max-width: 767.98px) {
     .navbar .navbar-nav {
         border-top: 1px solid #eeeeee;
     }
+} */
+
+/* ถ้าปิดเมนูที่ 2 ให้ปิด css ตรงนี้ แล้วก็เปิดแบบที่ 1 */
+.navbar-expand-md .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
 }
 
-@media only screen and (min-width: 1200px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        border: none;
-        margin-top: 0;
-        top: 150%;
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.5s;
-        left: unset !important;
-    }
+.navbar-nav .dropdown-menu {
+    position: absolute;
+}
 
-    .navbar .nav-item:hover .dropdown-menu {
-        top: 100%;
-        visibility: visible;
-        transition: 0.5s;
-        opacity: 1;
-    }
+.navbar-toggler {
+    display: none;
 }

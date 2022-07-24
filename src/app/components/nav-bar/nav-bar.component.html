@@ -1,8 +1,5 @@
-<nav
-    style="font-family: 'Quicksand', sans-serif !important"
-    id="navBar"
-    class="navbar navbar-expand-md sticky-top fixed-top py-0"
->
+<!-- เมนูที่ 1 แบบมี mentor, ย่อจอแล้วกดเมนูแฮมเบอร์เกอร์มาเลือกเมนูเพิ่มได้ ถ้าเปิดแบบนี้ให้ปิด css แบบที่ 2-->
+<!-- <nav id="navBar" class="navbar navbar-expand-md sticky-top fixed-top">
     <div class="container-fluid px-4">
         <a class="navbar-brand" routerLink="home">
             <img src="assets/vectors/logo/odds-mentor-new.svg" alt="ODDS Mentor Logo" height="22" />
@@ -16,21 +13,59 @@
             <span class="fa-solid fa-bars"></span>
         </a>
         <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-            <ul class="navbar-nav text-uppercase">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="home">Home</a>
-                </li>
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="mentor">Mentor</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="sign-in">
-                        <span>
-                            <i class="bi bi-person-circle"></i>
-                            Sign In
-                        </span>
-                    </a>
-                </li>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav navbar-nav-right">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-bs-toggle="dropdown">
+                                <i class="fa-solid fa-circle-user"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li class="nav-item">
+                                    <a class="dropdown-item">Sign In</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+<!-- เมนูที่ 2 แบบไม่มี mentor, มีแต่ไอคอนโปรไฟล์ ย่อจอแล้วไม่มีแฮมเบอร์เกอร์ กดได้แต่ไอคอนโปรไฟล์ ถ้าเปิดแบบนี้ให้ปิด css แบบที่ 1-->
+<nav id="navBar" class="navbar navbar-expand-md sticky-top fixed-top">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand" routerLink="home">
+            <img src="assets/vectors/logo/odds-mentor-new.svg" alt="ODDS Mentor Logo" height="22" />
+        </a>
+        <a
+            type="button"
+            class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+        >
+            <span class="fa-solid fa-bars"></span>
+        </a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav navbar-nav-right">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-bs-toggle="dropdown">
+                                <i class="fa-solid fa-circle-user"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li class="nav-item">
+                                    <a class="dropdown-item">Sign In</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </ul>
         </div>
     </div>
