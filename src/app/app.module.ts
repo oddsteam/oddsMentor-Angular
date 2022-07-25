@@ -73,7 +73,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database'
         CarouselModule,
         DataViewModule,
         BreadcrumbModule,
-
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireAuthModule,
         AngularFirestoreModule,

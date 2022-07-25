@@ -22,7 +22,10 @@
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
-                        "assets": ["src/favicon.ico", "src/assets"],
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets"
+                        ],
                         "styles": [
                             "src/styles.css",
                             "node_modules/bootstrap/dist/css/bootstrap.css",
@@ -35,6 +38,10 @@
                         "scripts": [
                             "node_modules/sweetalert2/dist/sweetalert2.js",
                             "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+                        ],
+                        "allowedCommonJsDependencies": [
+                            "dayjs",
+                            "sweetalert2"
                         ]
                     },
                     "configurations": {
@@ -42,8 +49,8 @@
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "1.5mb",
-                                    "maximumError": "6mb"
+                                    "maximumWarning": "1.7mb",
+                                    "maximumError": "2mb"
                                 },
                                 {
                                     "type": "anyComponentStyle",
@@ -57,6 +64,14 @@
                                     "with": "src/environments/environment.prod.ts"
                                 }
                             ],
+                            "optimization": {
+                                "scripts": true,
+                                "styles": {
+                                    "minify": true,
+                                    "inlineCritical": false
+                                },
+                                "fonts": true
+                            },
                             "outputHashing": "all"
                         },
                         "development": {
@@ -95,8 +110,13 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.spec.json",
                         "karmaConfig": "karma.conf.js",
-                        "assets": ["src/favicon.ico", "src/assets"],
-                        "styles": ["src/styles.css"],
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets"
+                        ],
+                        "styles": [
+                            "src/styles.css"
+                        ],
                         "scripts": []
                     }
                 },
@@ -118,7 +138,7 @@
                             ]
                         },
                         "development": {
-                            "optimization": false,
+                            "optimization": true,
                             "sourceMap": true,
                             "extractLicenses": false
                         }
@@ -142,7 +162,9 @@
                 "prerender": {
                     "builder": "@nguniversal/builders:prerender",
                     "options": {
-                        "routes": ["/"]
+                        "routes": [
+                            "/"
+                        ]
                     },
                     "configurations": {
                         "production": {
