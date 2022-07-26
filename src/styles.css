@@ -85,13 +85,52 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5) !important;
 }
 
-.card {
+/* .card {
     border: unset !important;
     border-radius: 12px !important;
     box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
     -moz-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
     -webkit-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
     -o-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
+} */
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-row .btn {
+    border-radius: 8px;
+}
+
+.button-row .fa-solid,
+.fas {
+    font-size: 14px;
+}
+
+/*** card ***/
+.card-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.card-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    /* color: var(--sub-title-color); */
+}
+
+.control-label {
+    font-size: 18px;
+    font-weight: 400;
+    /* color: var(--label-color); */
+}
+
+.control-text {
+    font-size: 18px;
+    font-weight: 400;
+    /* color: var(--text-color); */
 }
 
 .card-container {
@@ -110,16 +149,6 @@ body {
     -o-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%);
 }
 
-.button-row {
-    display: flex;
-    justify-content: space-between;
-}
-
-.button-row .btn {
-    border-radius: 8px;
-}
-
-.button-row .fa-solid,
-.fas {
-    font-size: 14px;
+.card-body {
+    padding: 20px 0 !important;
 }
