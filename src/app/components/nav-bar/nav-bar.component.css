@@ -65,7 +65,6 @@ svg {
 .navbar-nav-right .dropdown a {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
 }
 
 .navbar-nav-right .dropdown i:hover {
@@ -134,4 +133,13 @@ svg {
 
 .navbar-toggler {
     display: none;
+}
+
+.userImg {
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 2px solid var(--blue-color);
 }
