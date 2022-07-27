@@ -34,9 +34,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb'
 import { environment } from 'src/environments/environment'
 import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'
-import { AngularFireStorageModule } from '@angular/fire/compat/storage'
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database'
+import { AuthService } from './services/auth/auth.service'
 
 @NgModule({
     declarations: [
@@ -75,11 +73,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database'
         BreadcrumbModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireAuthModule,
-        AngularFirestoreModule,
-        AngularFireStorageModule,
-        AngularFireDatabaseModule,
     ],
-    providers: [Meta],
+    providers: [Meta, AuthService],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

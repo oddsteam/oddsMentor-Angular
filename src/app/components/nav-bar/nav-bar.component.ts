@@ -1,9 +1,11 @@
-import { Component, HostListener, OnInit } from '@angular/core'
+import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core'
+import { AuthService } from 'src/app/services/auth/auth.service'
 
 @Component({
     selector: 'app-nav-bar',
     templateUrl: './nav-bar.component.html',
     styleUrls: ['./nav-bar.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavBarComponent implements OnInit {
     @HostListener('window:scroll', ['$event'])
@@ -19,6 +21,8 @@ export class NavBarComponent implements OnInit {
         ref.setAttribute('style', 'top: -100px;')
     }
 
-    constructor() {}
-    ngOnInit(): void {}
+    constructor(public authService: AuthService) {}
+
+    ngOnInit(): void {
+    }
 }

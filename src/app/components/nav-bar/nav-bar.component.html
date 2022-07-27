@@ -59,8 +59,11 @@
                                 <i class="fa-solid fa-circle-user"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li class="nav-item">
+                                <li class="nav-item" *ngIf="!authService.isLoggedIn">
                                     <a class="dropdown-item" routerLink="sign-in">Sign In</a>
+                                </li>
+                                <li class="nav-item" *ngIf="authService.isLoggedIn">
+                                    <a class="dropdown-item" routerLink="sign-in">Sign Log</a>
                                 </li>
                             </ul>
                         </li>

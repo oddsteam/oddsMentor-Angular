@@ -40,13 +40,20 @@
                     <div class="expertise-label mb-4">
                         <label class="control-label">Expertise</label>
                         <div class="expertise-tag">
-                            <span class="badge bg-expertise" *ngFor="let expertise of mentorDetail?.expertise">
+                            <span
+                                class="badge bg-expertise"
+                                *ngFor="let expertise of mentorDetail?.expertise"
+                            >
                                 {{ expertise.skill }} | {{ expertise.endorsed }}
                             </span>
                         </div>
                     </div>
                     <div class="button-reserve">
-                        <button type="button" (click)="onBooking()" class="btn btn-primary-gradient text-white">
+                        <button
+                            type="button"
+                            (click)="onBooking()"
+                            class="btn btn-primary-gradient text-white"
+                        >
                             Reserve Now!
                         </button>
                     </div>
