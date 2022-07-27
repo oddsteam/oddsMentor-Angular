@@ -10,7 +10,7 @@ import { SystemConstants } from 'src/app/common/system.constants'
     providedIn: 'root',
 })
 export class AuthService {
-    userData: any // Save logged in user data
+    userData?: User // Save logged in user data
     constructor(
         public afs: AngularFirestore, // Inject Firestore service
         public afAuth: AngularFireAuth, // Inject Firebase auth service
@@ -21,7 +21,13 @@ export class AuthService {
     logged in and setting up null when logged out */
         this.afAuth.authState.subscribe((user) => {
             if (user) {
-                this.userData = user
+                this.userData = {
+                    uid: user.uid,
+                    email: user.email!,
+                    displayName: user.displayName!,
+                    photoURL: user.photoURL!,
+                    emailVerified: user.emailVerified,
+                }
                 localStorage.setItem(SystemConstants.CURRENT_USER, JSON.stringify(this.userData))
                 JSON.parse(localStorage.getItem(SystemConstants.CURRENT_USER)!)
             } else {

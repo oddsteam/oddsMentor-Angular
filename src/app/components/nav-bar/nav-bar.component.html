@@ -66,13 +66,22 @@
                         </li>
                         <li class="nav-item dropdown" *ngIf="authService.isLoggedIn">
                             <a class="nav-link" data-bs-toggle="dropdown">
-                                <img src="{{ authService.userData.photoURL }}" alt="User Image Profile" width="28" height="28" class="userImg">
+                                <img
+                                    src="{{
+                                        authService.userData?.photoURL ??
+                                            'https://phanx.ga/asset/user.jpg'
+                                    }}"
+                                    alt="User Image Profile"
+                                    width="28"
+                                    height="28"
+                                    class="userImg"
+                                />
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li class="nav-item">
                                     <a class="dropdown-item" routerLink="">Profile</a>
                                 </li>
-                                <hr>
+                                <hr />
                                 <li class="nav-item">
                                     <a class="dropdown-item" routerLink="sign-in">Sign Out</a>
                                 </li>
