@@ -6,6 +6,9 @@ import { MentorDetail } from '../../types/mentor'
 import { MentorsService } from 'src/app/services/mentors/mentors.service'
 import { SeoService } from 'src/app/services/seo/seo.service'
 import { UsersService } from 'src/app/services/users/users.service'
+import { AuthService } from 'src/app/services/auth/auth.service'
+import { async } from 'rxjs'
+import { SystemConstants } from 'src/app/common/system.constants'
 
 @Component({
     selector: 'app-personal',
@@ -16,13 +19,15 @@ export class PersonalComponent implements OnInit {
     mentorDetail?: MentorDetail
     home: MenuItem = { icon: 'pi pi-home', routerLink: ['/home'] }
     items!: MenuItem[]
+    displaySignin: boolean = false
 
     constructor(
         private route: ActivatedRoute,
         private router: Router,
         private usersService: UsersService,
         private mentorsService: MentorsService,
-        private seoService: SeoService
+        private seoService: SeoService,
+        private authService: AuthService
     ) {}
 
     ngOnInit(): void {
@@ -75,11 +80,20 @@ export class PersonalComponent implements OnInit {
                 label: 'Personal',
             },
         ]
+
+        console.log(this.mentorDetail)
+        console.log(this.authService.isLoggedIn)
+        console.log(this.route.snapshot)
     }
 
     onBooking() {
         if (!this.mentorDetail) return
-        this.mentorsService.saveMentor(this.mentorDetail)
-        this.router.navigateByUrl('booking')
+        if (!this.authService.isLoggedIn) {
+            localStorage.setItem(SystemConstants.REDIRECT_TO, `personal/${this.mentorDetail.id}`)
+            this.router.navigateByUrl('sign-in')
+        } else {
+            this.mentorsService.saveMentor(this.mentorDetail)
+            this.router.navigateByUrl('booking')
+        }
     }
 }

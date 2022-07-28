@@ -6,11 +6,12 @@ import { Router } from '@angular/router'
 import Swal from 'sweetalert2'
 import { User } from 'src/app/types/user'
 import { SystemConstants } from 'src/app/common/system.constants'
+import { NavBarComponent } from 'src/app/components/nav-bar/nav-bar.component'
 @Injectable({
     providedIn: 'root',
 })
 export class AuthService {
-    userData?: User // Save logged in user data
+    userData: User | undefined // Save logged in user data
     constructor(
         public afs: AngularFirestore, // Inject Firestore service
         public afAuth: AngularFireAuth, // Inject Firebase auth service
@@ -31,6 +32,7 @@ export class AuthService {
                 localStorage.setItem(SystemConstants.CURRENT_USER, JSON.stringify(this.userData))
                 JSON.parse(localStorage.getItem(SystemConstants.CURRENT_USER)!)
             } else {
+                this.userData = undefined
                 localStorage.setItem(SystemConstants.CURRENT_USER, 'null')
                 JSON.parse(localStorage.getItem(SystemConstants.CURRENT_USER)!)
             }
@@ -46,7 +48,6 @@ export class AuthService {
     // Sign in with Google
     async GoogleAuth() {
         const provider = new auth.GoogleAuthProvider()
-        provider.setCustomParameters({ hd: 'odds.team' })
         await this.AuthLogin(provider)
     }
 
@@ -61,6 +62,10 @@ export class AuthService {
                     icon: 'success',
                     title: 'Sign in successful',
                 })
+                let redirect = localStorage.getItem(SystemConstants.REDIRECT_TO)
+                if (redirect) {
+                    this.router.navigateByUrl(redirect)
+                }
             } else {
                 console.log('Sign in failed')
                 await Swal.fire({
@@ -87,12 +92,14 @@ export class AuthService {
         }
         this.userData = userData
         console.log('Set user data')
+        console.log(userData)
     }
 
     // Sign out
     async SignOut() {
         console.log('Sign out')
         await this.afAuth.signOut()
+        this.userData = undefined
         localStorage.removeItem(SystemConstants.CURRENT_USER)
         await Swal.fire({
             icon: 'success',
