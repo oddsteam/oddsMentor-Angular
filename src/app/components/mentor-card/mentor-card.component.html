@@ -12,10 +12,10 @@
                                 </span>
                             </div>
                             <img
-                                #profileImageInCard
                                 class="card-img"
                                 src="{{ mentorDetail?.profileImageUrl }}"
                                 alt="{{ mentorDetail?.fullNameEN }}'s Image"
+                                (load)="onLoadedImage()"
                             />
                             <div class="card-body text-start ps-3 pt-2 pb-3">
                                 <p class="card-name">{{ mentorDetail?.fullNameEN }}</p>
@@ -35,8 +35,8 @@
                                 </div>
                             </div>
                         </div>
-                        <section class="imgSkeleton">
-                            <p-skeleton width="280px" height="465px" *ngIf="!profileImageInCard.complete"></p-skeleton>
+                        <section class="imgSkeleton" *ngIf="!showImage">
+                            <p-skeleton width="280px" height="465px"></p-skeleton>
                         </section>
                     </section>
                     <!-- <div class="card" routerLink="/detail">

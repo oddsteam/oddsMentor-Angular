@@ -8,11 +8,13 @@ import { AuthService } from 'src/app/services/auth/auth.service'
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavBarComponent implements OnInit {
+    showImage: boolean = false
+
     @HostListener('window:scroll', ['$event'])
     track(_: any) {
         if (typeof window === 'undefined') return
         const ref = window.document.body.getElementsByClassName('sticky-top')[0]
-        if (window.pageYOffset > 100) {
+        if (window.pageYOffset > 52) {
             ref.classList.add('navbar-sticky')
             ref.setAttribute('style', 'top: 0px;')
             return
@@ -24,4 +26,8 @@ export class NavBarComponent implements OnInit {
     constructor(public authService: AuthService) {}
 
     ngOnInit(): void {}
+
+    onLoadedImage() {
+        this.showImage = true
+    }
 }

@@ -13,10 +13,10 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
     mentorDetail?: MentorDetail
     skills: string[] = []
     dummyXpertise: string[] = []
+    showImage: boolean = false
 
     constructor(
         private router: Router,
-        private mentorsService: MentorsService,
         private changeDetectorRef: ChangeDetectorRef
     ) {}
 
@@ -37,6 +37,10 @@ export class MentorCardComponent implements OnInit, AfterViewInit {
         //         this.skills.push(expertise.skill)
         //     })
         // }
+    }
+
+    onLoadedImage() {
+        this.showImage = true
     }
 
     ngAfterViewInit() {

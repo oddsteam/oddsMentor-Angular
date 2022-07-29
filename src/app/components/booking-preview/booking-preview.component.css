@@ -48,6 +48,6 @@
 
     .user-info .d-flex,
     .reserve-info .d-flex {
-    gap: 0;
+        gap: 0;
     }
 }

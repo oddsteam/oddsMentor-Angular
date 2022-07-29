@@ -146,6 +146,8 @@ svg {
 
 .userImgSection {
     position: relative;
+    width: 28px;
+    height: 28px;
 }
 
 .userImgSkeleton {

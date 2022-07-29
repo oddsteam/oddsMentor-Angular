@@ -7,6 +7,7 @@ import Swal from 'sweetalert2'
 import { User } from 'src/app/types/user'
 import { SystemConstants } from 'src/app/common/system.constants'
 import { NavBarComponent } from 'src/app/components/nav-bar/nav-bar.component'
+
 @Injectable({
     providedIn: 'root',
 })
@@ -23,22 +24,22 @@ export class AuthService {
         // logged in and setting up null when logged out
         this.afAuth.authState.subscribe((user) => {
             console.log('authState')
-            console.log(localStorage)
+            // console.log(localStorage)
             if (user) {
-                this.userData = JSON.parse(localStorage.getItem(SystemConstants.CURRENT_USER)!)
-                console.log(this.userData)
+                // this.userData = JSON.parse(localStorage.getItem(SystemConstants.CURRENT_USER)!)
+                console.log(user as User)
             } else {
                 this.userData = undefined
-                localStorage.removeItem(SystemConstants.CURRENT_USER)
-                JSON.parse(localStorage.getItem(SystemConstants.CURRENT_USER)!)
+                // localStorage.removeItem(SystemConstants.CURRENT_USER)
+                // JSON.parse(localStorage.getItem(SystemConstants.CURRENT_USER)!)
             }
         })
     }
 
     // Returns true when user is looged in and email is verified
     get isLoggedIn(): boolean {
-        const user = JSON.parse(localStorage.getItem(SystemConstants.CURRENT_USER)!)
-        return user !== null && user.emailVerified !== false
+        // const user = JSON.parse(localStorage.getItem(SystemConstants.CURRENT_USER)!)
+        return this.userData !== undefined && this.userData.emailVerified !== false
     }
 
     // Sign in with Google
@@ -58,9 +59,9 @@ export class AuthService {
                     icon: 'success',
                     title: 'Sign in successful',
                 })
-                if (localStorage.getItem(SystemConstants.REDIRECT_TO)) {
-                    this.router.navigateByUrl(localStorage.getItem(SystemConstants.REDIRECT_TO)!)
-                }
+                // if (localStorage.getItem(SystemConstants.REDIRECT_TO)) {
+                //     this.router.navigateByUrl(localStorage.getItem(SystemConstants.REDIRECT_TO)!)
+                // }
             } else {
                 console.log('Sign in failed')
                 await Swal.fire({
@@ -86,7 +87,7 @@ export class AuthService {
             emailVerified: user.emailVerified,
         }
         this.userData = userData
-        localStorage.setItem(SystemConstants.CURRENT_USER, JSON.stringify(userData))
+        // localStorage.setItem(SystemConstants.CURRENT_USER, JSON.stringify(userData))
         console.log('Set user data')
         console.log(userData)
     }
@@ -96,7 +97,7 @@ export class AuthService {
         console.log('Sign out')
         await this.afAuth.signOut()
         this.userData = undefined
-        localStorage.removeItem(SystemConstants.CURRENT_USER)
+        // localStorage.removeItem(SystemConstants.CURRENT_USER)
         await Swal.fire({
             icon: 'success',
             title: 'Sign out successful',

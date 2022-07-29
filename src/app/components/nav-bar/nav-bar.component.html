@@ -68,19 +68,15 @@
                             <a class="nav-link" data-bs-toggle="dropdown">
                                 <section class="userImgSection">
                                     <img
-                                        #profileImageInNav
                                         src="{{ authService.userData!.photoURL }}"
                                         alt=""
                                         width="28"
                                         height="28"
                                         class="userImg"
+                                        (load)="onLoadedImage()"
                                     />
-                                    <section class="userImgSkeleton">
-                                        <p-skeleton
-                                            shape="circle"
-                                            size="28px"
-                                            *ngIf="!profileImageInNav.complete"
-                                        ></p-skeleton>
+                                    <section class="userImgSkeleton" *ngIf="!showImage">
+                                        <p-skeleton shape="circle" size="28px"></p-skeleton>
                                     </section>
                                 </section>
                             </a>
