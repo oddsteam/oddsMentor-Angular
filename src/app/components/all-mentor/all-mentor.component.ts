@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { MentorDetail } from '../../types/mentor'
 import { MentorsService } from 'src/app/services/mentors/mentors.service'
 import { MenuItem } from 'primeng/api'
+import { SystemConstants } from '../../common/system.constants'
 
 @Component({
     selector: 'app-all-mentor',
@@ -9,7 +10,8 @@ import { MenuItem } from 'primeng/api'
     styleUrls: ['./all-mentor.component.css'],
 })
 export class AllMentorComponent implements OnInit {
-    mentors: MentorDetail[] = []
+    mentorPerPage: number = 12
+    mentors: MentorDetail[] = this.getDummyMentor(this.mentorPerPage)
     home: MenuItem = { icon: 'pi pi-home', routerLink: ['/home'] }
     items!: MenuItem[]
 
@@ -26,5 +28,9 @@ export class AllMentorComponent implements OnInit {
                 label: 'Mentors',
             }
         ]
+    }
+
+    getDummyMentor(n: number): MentorDetail[] {
+        return Array(n).fill(SystemConstants.MENTOR_DUMMY)
     }
 }

@@ -12,28 +12,24 @@ import { NavBarComponent } from 'src/app/components/nav-bar/nav-bar.component'
 })
 export class AuthService {
     userData: User | undefined // Save logged in user data
+
     constructor(
         public afs: AngularFirestore, // Inject Firestore service
         public afAuth: AngularFireAuth, // Inject Firebase auth service
         public router: Router,
         public ngZone: NgZone // NgZone service to remove outside scope warning
     ) {
-        /* Saving user data in localstorage when 
-    logged in and setting up null when logged out */
+        // Saving user data in localstorage when
+        // logged in and setting up null when logged out
         this.afAuth.authState.subscribe((user) => {
+            console.log('authState')
+            console.log(localStorage)
             if (user) {
-                this.userData = {
-                    uid: user.uid,
-                    email: user.email!,
-                    displayName: user.displayName!,
-                    photoURL: user.photoURL!,
-                    emailVerified: user.emailVerified,
-                }
-                localStorage.setItem(SystemConstants.CURRENT_USER, JSON.stringify(this.userData))
-                JSON.parse(localStorage.getItem(SystemConstants.CURRENT_USER)!)
+                this.userData = JSON.parse(localStorage.getItem(SystemConstants.CURRENT_USER)!)
+                console.log(this.userData)
             } else {
                 this.userData = undefined
-                localStorage.setItem(SystemConstants.CURRENT_USER, 'null')
+                localStorage.removeItem(SystemConstants.CURRENT_USER)
                 JSON.parse(localStorage.getItem(SystemConstants.CURRENT_USER)!)
             }
         })
@@ -62,9 +58,8 @@ export class AuthService {
                     icon: 'success',
                     title: 'Sign in successful',
                 })
-                let redirect = localStorage.getItem(SystemConstants.REDIRECT_TO)
-                if (redirect) {
-                    this.router.navigateByUrl(redirect)
+                if (localStorage.getItem(SystemConstants.REDIRECT_TO)) {
+                    this.router.navigateByUrl(localStorage.getItem(SystemConstants.REDIRECT_TO)!)
                 }
             } else {
                 console.log('Sign in failed')
@@ -79,9 +74,9 @@ export class AuthService {
         }
     }
 
-    /* Setting up user data when sign in with username/password, 
-  sign up with username/password and sign in with social auth  
-  provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
+    // Setting up user data when sign in with username/password,
+    // sign up with username/password and sign in with social auth
+    // provider in Firestore database using AngularFirestore + AngularFirestoreDocument service
     SetUserData(user: any) {
         const userData: User = {
             uid: user.uid,
@@ -91,6 +86,7 @@ export class AuthService {
             emailVerified: user.emailVerified,
         }
         this.userData = userData
+        localStorage.setItem(SystemConstants.CURRENT_USER, JSON.stringify(userData))
         console.log('Set user data')
         console.log(userData)
     }

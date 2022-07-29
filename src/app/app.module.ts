@@ -36,6 +36,7 @@ import { CarouselModule } from 'primeng/carousel'
 import { DataViewModule } from 'primeng/dataview'
 import { BreadcrumbModule } from 'primeng/breadcrumb'
 import { DialogModule } from 'primeng/dialog';
+import { SkeletonModule } from 'primeng/skeleton';
 
 // Firebase Auth
 import { environment } from 'src/environments/environment'
@@ -83,6 +84,7 @@ import { AuthService } from './services/auth/auth.service';
         DataViewModule,
         BreadcrumbModule,
         DialogModule,
+        SkeletonModule,
     ],
     providers: [Meta, AuthService],
     bootstrap: [AppComponent],
