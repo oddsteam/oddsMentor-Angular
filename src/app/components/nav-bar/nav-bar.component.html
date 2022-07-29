@@ -66,13 +66,23 @@
                         </li>
                         <li class="nav-item dropdown" *ngIf="authService.isLoggedIn">
                             <a class="nav-link" data-bs-toggle="dropdown">
-                                <img
-                                    src="{{ authService.userData?.photoURL }}"
-                                    alt="User Image Profile"
-                                    width="28"
-                                    height="28"
-                                    class="userImg"
-                                />
+                                <section class="userImgSection">
+                                    <img
+                                        #profileImageInNav
+                                        src="{{ authService.userData!.photoURL }}"
+                                        alt=""
+                                        width="28"
+                                        height="28"
+                                        class="userImg"
+                                    />
+                                    <section class="userImgSkeleton">
+                                        <p-skeleton
+                                            shape="circle"
+                                            size="28px"
+                                            *ngIf="!profileImageInNav.complete"
+                                        ></p-skeleton>
+                                    </section>
+                                </section>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li class="nav-item border-bottom">

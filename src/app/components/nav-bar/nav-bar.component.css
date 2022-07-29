@@ -143,3 +143,13 @@ svg {
     border-radius: 50%;
     border: 2px solid var(--blue-color);
 }
+
+.userImgSection {
+    position: relative;
+}
+
+.userImgSkeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

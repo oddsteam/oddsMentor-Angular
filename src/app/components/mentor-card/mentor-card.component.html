@@ -3,30 +3,42 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 my-3">
-                    <div class="card">
-                        <div class="card-endorsement">
-                            <span class="badge bg-endorsement text-dark">
-                                <i class="fa-solid fa-heart"></i>
-                                {{ mentorDetail?.totalEndorsed | number }}
-                            </span>
-                        </div>
-                        <img
-                            class="card-img"
-                            src="{{ mentorDetail?.profileImageUrl }}"
-                            alt="{{ mentorDetail?.fullNameEN }}'s Image"
-                        />
-                        <div class="card-body text-start ps-3 pt-2 pb-3">
-                            <p class="card-name">{{ mentorDetail?.fullNameEN }}</p>
-                            <p class="card-position">{{ mentorDetail?.position }}</p>
-                            <p class="card-type">{{ mentorDetail?.type }}</p>
-                            <div id="dummyChip-{{ mentorDetail?.id }}" class="card-expertise"></div>
-                            <div id="expertiseChip-{{ mentorDetail?.id }}" class="card-expertise">
-                                <span class="badge bg-expertise" *ngFor="let skill of skills"
-                                    >{{ skill }}
+                    <section class="imgSection">
+                        <div class="card">
+                            <div class="card-endorsement">
+                                <span class="badge bg-endorsement text-dark">
+                                    <i class="fa-solid fa-heart"></i>
+                                    {{ mentorDetail?.totalEndorsed | number }}
                                 </span>
                             </div>
+                            <img
+                                #profileImageInCard
+                                class="card-img"
+                                src="{{ mentorDetail?.profileImageUrl }}"
+                                alt="{{ mentorDetail?.fullNameEN }}'s Image"
+                            />
+                            <div class="card-body text-start ps-3 pt-2 pb-3">
+                                <p class="card-name">{{ mentorDetail?.fullNameEN }}</p>
+                                <p class="card-position">{{ mentorDetail?.position }}</p>
+                                <p class="card-type">{{ mentorDetail?.type }}</p>
+                                <div
+                                    id="dummyChip-{{ mentorDetail?.id }}"
+                                    class="card-expertise"
+                                ></div>
+                                <div
+                                    id="expertiseChip-{{ mentorDetail?.id }}"
+                                    class="card-expertise"
+                                >
+                                    <span class="badge bg-expertise" *ngFor="let skill of skills"
+                                        >{{ skill }}
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <section class="imgSkeleton">
+                            <p-skeleton width="280px" height="465px" *ngIf="!profileImageInCard.complete"></p-skeleton>
+                        </section>
+                    </section>
                     <!-- <div class="card" routerLink="/detail">
                         <img
                             class="card-img"

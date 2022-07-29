@@ -136,3 +136,14 @@
     border-radius: unset;
     box-shadow: unset;
 }
+
+.imgSection {
+    position: relative;
+}
+
+.imgSkeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 199;
+}
