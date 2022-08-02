@@ -31,7 +31,6 @@
 } */
 
 .landing-top-mentor {
-    font-family: "Quicksand", sans-serif;
     display: flex;
     flex-direction: column;
 }
@@ -44,7 +43,7 @@
 
 .landing-top-mentor .top-mentor-title {
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 400;
 }
 
 .top-mentor-title .part-1 {
@@ -63,11 +62,13 @@
 
 .landing-mentor .landing-title {
     font-size: 32px;
+    font-weight: 400;
     color: #1498d5;
 }
 
 .landing-mentor .landing-content {
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 300;
     color: #7a7a7a;
 }
 
