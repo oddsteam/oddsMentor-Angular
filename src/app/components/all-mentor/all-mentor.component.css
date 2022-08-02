@@ -56,4 +56,5 @@ p-dataview,
 :host::ng-deep .p-paginator {
     padding: 0;
     border: none;
+    padding-bottom: 32px;
 }
