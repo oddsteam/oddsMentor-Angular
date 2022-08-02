@@ -7,7 +7,7 @@
     margin-top: var(--bs-gutter-y);
 }
 
-.card {
+.card-container {
     width: 280px;
     position: relative;
     overflow: hidden;
@@ -22,7 +22,7 @@
     border-radius: unset !important;
 }
 
-.card .card-endorsement {
+.card-container .card-endorsement {
     position: absolute;
     top: 0;
     right: 0;

@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 my-3">
                     <section class="imgSection">
-                        <div class="card">
+                        <div class="card-container">
                             <div class="card-endorsement">
                                 <span class="badge bg-endorsement text-dark">
                                     <i class="fa-solid fa-heart"></i>
@@ -39,50 +39,8 @@
                             <p-skeleton width="280px" height="465px"></p-skeleton>
                         </section>
                     </section>
-                    <!-- <div class="card" routerLink="/detail">
-                        <img
-                            class="card-img"
-                            src="{{ mentorDetail.profileImageUrl }}"
-                            alt="{{ mentorDetail.fullNameEN }}'s Image"
-                        />
-                        <div class="on-img text-white text-start p-3">
-                            <p class="card-name">{{ mentorDetail.fullNameEN }}</p>
-                            <p class="card-position">{{ mentorDetail.position }}</p>
-                            <p class="card-type">{{ mentorDetail.type }}</p>
-                            <div class="card-expertise">
-                                <span class="badge bg-expertise mb-1" *ngFor="let skill of skills"
-                                    >{{ skill }}
-                                </span>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
-        <!-- <div class="card">
-            <img
-                src="{{ mentorDetail.profileImageUrl }}"
-                alt="{{ mentorDetail.fullNameEN }}'s Image"
-                class="card-img"
-            />
-            <div class="card-score">
-                <p-chip
-                    label="{{ mentorDetail.totalEndorsed }}"
-                    icon="pi pi-heart-fill"
-                    styleClass="score-chip"
-                ></p-chip>
-            </div>
-            <div class="card-body">
-                <p class="card-title">{{ mentorDetail.fullNameEN }}</p>
-                <p class="card-subtitle">{{ mentorDetail.position }}</p>
-                <div class="card-expertise">
-                    <p-chip
-                        *ngFor="let skill of skills"
-                        label="{{ skill }}"
-                        styleClass="home-chip"
-                    ></p-chip>
-                </div>
-            </div>
-        </div> -->
     </ng-template>
 </p-button>
