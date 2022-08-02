@@ -1,3 +1,7 @@
+::ng-deep app-footer {
+    display: block;
+}
+
 .allMentor {
     display: flex;
     flex-direction: row;
@@ -47,4 +51,10 @@ p-dataview,
 .searchInput {
     width: min(400px, 90vw);
     overflow: hidden;
+}
+
+:host::ng-deep .p-paginator {
+    padding: 0;
+    border: none;
+    padding-bottom: 16px;
 }
