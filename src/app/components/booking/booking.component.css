@@ -93,3 +93,29 @@
     font-size: 18px;
     font-weight: 300;
 }
+
+
+:host::ng-deep .p-component {
+    font-family: "Mitr", sans-serif !important;
+    font-weight: 300;
+}
+
+:host::ng-deep th {
+    font-weight: 400;
+    text-align: center;
+}
+
+:host::ng-deep .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month,
+:host::ng-deep .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year, .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+    font-family: "Mitr", sans-serif !important;
+    font-weight: 400;
+}
+
+:host::ng-deep .p-dropdown-item,
+:host::ng-deep .p-multiselect-item {
+    font-weight: 300;
+}
+
+:host::ng-deep .p-datepicker .p-timepicker span {
+    font-size: 1rem;
+}
