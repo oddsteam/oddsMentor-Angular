@@ -34,17 +34,18 @@
                         ],
                         "scripts": [
                             "node_modules/sweetalert2/dist/sweetalert2.js",
-                            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-                        ],
-                        "allowedCommonJsDependencies": ["dayjs", "sweetalert2"]
+                            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+                            "node_modules/jquery/dist/jquery.min.js",
+                            "src/js/sticky-navbar.js"
+                        ]
                     },
                     "configurations": {
                         "production": {
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "2.5mb",
-                                    "maximumError": "3mb"
+                                    "maximumWarning": "4mb",
+                                    "maximumError": "6mb"
                                 },
                                 {
                                     "type": "anyComponentStyle",
@@ -58,14 +59,6 @@
                                     "with": "src/environments/environment.prod.ts"
                                 }
                             ],
-                            "optimization": {
-                                "scripts": true,
-                                "styles": {
-                                    "minify": true,
-                                    "inlineCritical": false
-                                },
-                                "fonts": true
-                            },
                             "outputHashing": "all"
                         },
                         "development": {
@@ -127,7 +120,7 @@
                             ]
                         },
                         "development": {
-                            "optimization": true,
+                            "optimization": false,
                             "sourceMap": true,
                             "extractLicenses": false
                         }
@@ -168,6 +161,7 @@
             }
         }
     },
+    "defaultProject": "oddsMentor-Angular",
     "cli": {
         "analytics": false
     }
