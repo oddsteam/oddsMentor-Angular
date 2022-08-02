@@ -1,82 +1,8 @@
-/* .container {
-    overflow-y: auto;
-    overflow-x: hidden;
-    width: 100vw;
-    height: calc(100vh - 52px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-.container-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 48px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
-    border-radius: 12px;
-    background-color: var(--white-color);
-}
-
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 60px;
-}
-
-.partition {
-    border: 0 solid var(--gray-color);
-    border-top-width: 0px;
-    border-left-width: 2px;
-    height: 300px;
-    width: 2px;
-    margin: 60px 0;
-}
-
-h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin: 0 0 16px 0;
-}
-
-.mentor-logo {
-    width: 250px;
-    object-fit: contain;
-}
-
-@media only screen and (max-width: 830px) {
-    .container-card {
-        flex-direction: column;
-    }
-
-    .partition {
-        border-top-width: 2px;
-        border-left-width: 0;
-        width: 250px;
-        height: 2px;
-        margin: 0;
-    }
-
-    .mentor-logo {
-        width: 150px;
-    }
-
-    section {
-        padding: 40px;
-    }
-}
-
 ::ng-deep app-footer {
-    display: none !important;
+    display: none;
 }
 
 .container {
-    overflow-y: auto;
-    overflow-x: hidden;
-    width: 100vw;
     height: calc(100vh - 52px);
     display: flex;
     justify-content: center;
@@ -90,6 +16,17 @@ h1 {
 .row {
     margin-left: 0;
     margin-right: 0;
+    padding: 80px 0;
+}
+
+.mentor-logo {
+    width: min(100%, 200px);
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 16px;
 }
 
 .sign-in-img,
@@ -98,7 +35,30 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* width: 100%; */
-    padding: 60px;
+    padding: 30px 0;
+}
+
+.sign-in-content {
+    border-left: solid 2px var(--gray-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .card-container {
+        align-items: center;
+    }
+
+    .row {
+        padding: 30px;
+        width: 80%;
+    }
+
+    .mentor-logo {
+        width: min(100%, 180px);
+    }
+
+    .sign-in-content {
+        border-left: unset;
+        border-top: solid 2px var(--gray-color);
+    }
 }
 
