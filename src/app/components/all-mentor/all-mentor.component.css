@@ -52,3 +52,8 @@ p-dataview,
     width: min(400px, 90vw);
     overflow: hidden;
 }
+
+:host::ng-deep .p-paginator {
+    padding: 0;
+    border: none;
+}
