@@ -62,3 +62,13 @@ h1 {
     }
 }
 
+.btn {
+    padding: 12px;
+    border-width: 0;
+}
+
+.btn:hover,
+.btn:focus {
+    border: unset;
+    box-shadow: unset;
+}
