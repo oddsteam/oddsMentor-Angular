@@ -1,132 +1,89 @@
-.row > * {
-    padding-right: calc(var(--bs-gutter-x) * 1.5);
-    padding-left: calc(var(--bs-gutter-x) * 1.5);
-    margin-top: var(--bs-gutter-y);
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.control-label {
-    font-size: 20px;
+.card-container {
+    width: min(100%, 992px);
+}
+
+.row {
+    margin-left: unset;
+    margin-right: unset;
+}
+
+@media only screen and (min-width: 992px) {
+    .row > * {
+        padding-right: calc(var(--bs-gutter-x) * 1.25);
+        padding-left: calc(var(--bs-gutter-x) * 1.25);
+    }
+}
+
+.card-title {
+    font-size: 28px;
     font-weight: 400;
+    margin-bottom: 0;
 }
 
 .profile-image {
     object-fit: cover;
     object-position: top;
-    width: 350px;
-    height: 350px;
+    /* width: 350px;
+    height: 350px; */
+    width: min(100%, 350px);
+    height: min(350px);
     border-radius: 12px;
 }
 
-/* .card {
-    border: unset;
-    border-radius: 12px;
-    box-shadow:  0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
-    -moz-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
-    -webkit-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
-    -o-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
-} */
-
-.card h2 {
-    margin-bottom: 24px;
-    font-weight: 400;
-}
-
-.card-body {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-}
-
-.card-body-start {
+.personal-img {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 
-.card-body-start .mentor-img {
-    text-align: left;
+@media only screen and (max-width: 992px) {
+    .personal-img {
+        display: flex;
+        align-items: center;
+    }
 }
 
-.card-body-start .mentor-bio {
-    width: 350px;
+.mentor-img {
+    text-align: center;
+    margin-bottom: 18px;
 }
 
-.card-body-start .mentor-bio .mentor-desc {
-    text-indent: 28px;
+@media only screen and (min-width: 992px) {
+    .mentor-img,
+    .bio-label {
+        display: flex;
+        flex-direction: column;
+        width: min(100%, 350px);
+    }
+}
+
+.bio-label .mentor-desc {
     color: #39485b;
 }
 
-.card-body-end .mentor-name p,
-.card-body-end .mentor-endorsement p,
-.card-body-end .mentor-position p,
-.card-body-end .mentor-availabel-time p,
-.card-body-end .mentor-expertise p {
+.personal-content p {
     margin-bottom: 0;
 }
 
-.card-body-end .mentor-name .name-en {
+.name-label .name-en {
     font-size: 26px;
     font-weight: 400;
+    color: #323334;
 }
 
-.card-body-end .mentor-name .name-th {
+.name-label .name-th {
     font-size: 20px;
     font-weight: 300;
     color: #39485b;
 }
 
-.card-body-end .mentor-position .job-position {
-    font-size: 20px;
-    color: #000000;
-}
-
-.card-body-end .mentor-position .mentor-type {
-    font-size: 16px;
-    color: #39485b;
-}
-
-.card-body-end .button-reserve button {
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.button-reserve button {
-    border-radius: 8px;
-}
-
-.btn-primary-gradient {
-    background: linear-gradient(89deg, #0e98d5 0%, #0158a8 100%);
-    border: unset;
-}
-
-/* .btn-primary-gradient:hover {
-    background: linear-gradient(256deg, #0e98d5 0%, #0158a8 100%);
-    border: unset;
-} */
-
-.mentor-tag {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: flex-end;
-    gap: 8px;
-}
-
-.mentor-expertise .control-label {
-    margin-bottom: 6px;
-}
-
-.mentor-expertise .badge {
-    font-weight: 400;
-    color: #1498d5;
-    border: 1px solid #1498d5;
-}
-
-.mentor-expertise .bg-expertise {
-    background-color: transparent !important;
-}
-
-.mentor-endorsement .badge {
+.endorsement-label .badge {
     font-size: 1rem;
     font-weight: 300;
     border-radius: 6px;
@@ -134,6 +91,50 @@
     padding: 4px 10px;
 }
 
-.mentor-endorsement .badge i {
+.endorsement-label .badge i {
     color: #f93939;
+}
+
+.position-label .job-position {
+    font-size: 20px;
+    color: #000000;
+}
+
+.position-label .mentor-type {
+    font-size: 16px;
+    color: #39485b;
+}
+
+.expertise-tag {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    gap: 8px;
+}
+
+.expertise-label .control-label {
+    margin-bottom: 8px;
+}
+
+.expertise-label .badge {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1498d5;
+    border: 1px solid #1498d5;
+}
+
+.expertise-label .bg-expertise {
+    background-color: transparent !important;
+}
+
+.button-reserve button {
+    font-size: 20px;
+    font-weight: 300;
+    border-radius: 8px;
+}
+
+.btn-primary-gradient {
+    background: linear-gradient(89deg, #0e98d5 0%, #0158a8 100%);
+    border: unset;
 }

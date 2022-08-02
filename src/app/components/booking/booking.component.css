@@ -1,193 +1,3 @@
-/* .container-booking {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.container-card {
-    margin: 50px 0;
-    width: min(660px, 90%);
-    height: auto;
-    box-shadow: 0px 0px 10px 0px rgba(204, 204, 204, 0.75);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 24px;
-    border-radius: 12px;
-    padding: 24px 64px;
-    background-color: var(--white-color);
-}
-
-p {
-    margin: 0;
-    color: black;
-}
-
-.flex-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 36px;
-}
-
-.emailInput input {
-    width: 100%;
-}
-
-:host::ng-deep .p-card .p-card-body {
-    padding: 16px 20px;
-}
-
-:host::ng-deep .p-card .p-card-content {
-    padding: 0;
-}
-
-:host::ng-deep .p-dropdown {
-    width: 100% !important;
-}
-
-:host::ng-deep .button-next {
-    background-color: var(--blue-color);
-    color: var(--white-color);
-    border: transparent;
-}
-
-:host::ng-deep .button-next:hover {
-    background-color: #0c78aa !important;
-    border: transparent;
-}
-
-:host::ng-deep .button-cancel {
-    background-color: #85888c;
-    color: var(--white-color);
-    border: transparent;
-}
-
-:host::ng-deep .button-cancel:hover {
-    background-color: #6a6b6d !important;
-    border: transparent;
-}
-
-.mentor-card {
-    display: flex;
-    flex-direction: row;
-}
-
-.mentor-image {
-    width: 120px;
-    height: 120px;
-    margin-right: 20px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
-}
-
-.mentor-detail {
-    display: flex;
-    flex-direction: column;
-}
-
-.margin-text {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-.dateTime-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-}
-
-:host::ng-deep.p-float-label input:focus ~ label,
-.p-float-label input.p-filled ~ label,
-.p-float-label textarea:focus ~ label,
-.p-float-label textarea.p-filled ~ label,
-.p-float-label .p-inputwrapper-focus ~ label,
-.p-float-label .p-inputwrapper-filled ~ label {
-    top: -0.55rem;
-}
-
-.input-mt {
-    margin-top: 4px;
-} */
-
-/* .control-label {
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.text-success {
-    color: #198754 !important;
-    font-size: 18px;
-}
-
-.mentor-card.card {
-    border: 1px solid rgba(0, 0, 0, 0.125) !important;
-    border-radius: 12px !important;
-    box-shadow: unset !important;
-}
-
-.reserve-mentor-card.card {
-    align-items: center !important;
-}
-
-.card-title {
-    font-size: 24px;
-    font-weight: 400;
-}
-
-.card-body {
-    width: 80%;
-}
-
-.mentor-card .card-body {
-    width: 100%;
-    padding: 0;
-}
-
-.mentor-card .card-body p {
-    margin-bottom: 0;
-}
-
-.mentor-card .card-body .mentor-img {
-    object-fit: cover;
-    object-position: top;
-    width: 200px;
-    height: 200px;
-    border-top-left-radius: 11px;
-    border-bottom-left-radius: 11px;
-}
-
-.mentor-card .card-body .card-reserve-mentor {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 28px;
-}
-
-.mentor-card .card-body .card-body-end {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 16px;
-}
-
-.card-body-end .mentor-name .name-en {
-    font-size: 24px;
-    font-weight: 400;
-}
-
-.card-body-end .mentor-name .name-th {
-    font-size: 20px;
-    font-weight: 300;
-    color: #39485b;
-}
-
-:host::ng-deep .p-float-label textarea ~ label {
-    padding: 12px;
-} */
-
 .bi::before,
 [class^="bi-"]::before,
 [class*=" bi-"]::before {
@@ -205,7 +15,7 @@ p {
 }
 
 .card-body {
-    padding: 1rem 6rem;
+    padding: 2rem !important;
 }
 
 .card-title {
@@ -226,7 +36,7 @@ p {
     justify-content: flex-start;
     gap: 28px;
     width: 100%;
-    padding: 0;
+    padding: 0 !important;
     border: 1px solid #ced4da;
     border-radius: 12px;
 }
@@ -240,8 +50,7 @@ p {
     object-position: top;
     width: 150px;
     height: 150px;
-    border-top-left-radius: 11px;
-    border-bottom-left-radius: 11px;
+    border-radius: 11px;
 }
 
 .mentor-card .card-body-end {

@@ -1,50 +1,61 @@
 <div class="container py-5">
-    <div class="card py-4">
-        <h2 class="text-center">Personal Detail</h2>
+    <div class="card-container py-4">
+        <div class="card-title">
+            <p class="text-center">Personal Detail</p>
+        </div>
         <div class="card-body">
             <div class="row">
-                <div class="card-body-start col-md-12 col-lg-6">
-                    <div class="mentor-img mb-3">
-                        <img class="profile-image" src="{{ mentorDetail.profileImageUrl }}" />
+                <div class="personal-img col-md-12 col-lg-6">
+                    <div class="mentor-img">
+                        <img class="profile-image" src="{{ mentorDetail?.profileImageUrl }}" />
                     </div>
-                    <div class="mentor-bio">
+                    <div class="bio-label">
                         <label class="control-label">About Me</label>
-                        <p class="mentor-desc">{{ mentorDetail.biography }}</p>
+                        <p class="mentor-desc">{{ mentorDetail?.biography }}</p>
                     </div>
                 </div>
-                <div class="card-body-end col-md-12 col-lg-6">
-                    <div class="mentor-name mb-4">
+                <div class="personal-content col-md-12 col-lg-6">
+                    <div class="name-label mb-4">
                         <p class="name-en">
-                            {{ mentorDetail.fullNameEN }} ({{ mentorDetail.nickname }})
+                            {{ mentorDetail?.fullNameEN }} ({{ mentorDetail?.nickname }})
                         </p>
-                        <p class="name-th">{{ mentorDetail.fullNameTH }}</p>
+                        <p class="name-th">{{ mentorDetail?.fullNameTH }}</p>
                     </div>
-                    <div class="mentor-endorsement mb-4">
+                    <div class="endorsement-label mb-4">
                         <span class="badge bg-endorsement text-dark">
                             <i class="fa-solid fa-heart"></i>
-                            {{ mentorDetail.totalEndorsed }}
+                            {{ mentorDetail?.totalEndorsed }}
                         </span>
                     </div>
-                    <div class="mentor-position mb-4">
+                    <div class="position-label mb-4">
                         <p class="job-position">
-                            {{ mentorDetail.position }} @ {{ mentorDetail.team }}
+                            {{ mentorDetail?.position }} @ {{ mentorDetail?.team }}
                         </p>
-                        <p class="mentor-type">{{ mentorDetail.type }}</p>
+                        <p class="type-label">{{ mentorDetail?.type }}</p>
                     </div>
-                    <div class="mentor-availabel-time mb-4">
+                    <div class="availabel-label mb-4">
                         <label class="control-label">Available Time</label>
                         <p class="text-success">10.00 - 11.00, Monday - Friday</p>
                     </div>
-                    <div class="mentor-expertise mb-4">
+                    <div class="expertise-label mb-4">
                         <label class="control-label">Expertise</label>
-                        <div class="mentor-tag">
-                            <span class="badge bg-expertise" *ngFor="let expertise of mentorDetail.expertise">
+                        <div class="expertise-tag">
+                            <span
+                                class="badge bg-expertise"
+                                *ngFor="let expertise of mentorDetail?.expertise"
+                            >
                                 {{ expertise.skill }} | {{ expertise.endorsed }}
                             </span>
                         </div>
                     </div>
                     <div class="button-reserve">
-                        <button type="button" (click)="onBooking()" class="btn btn-primary-gradient text-white">Reserve Now!</button>
+                        <button
+                            type="button"
+                            (click)="onBooking()"
+                            class="btn btn-primary-gradient text-white"
+                        >
+                            Reserve Now!
+                        </button>
                     </div>
                 </div>
             </div>

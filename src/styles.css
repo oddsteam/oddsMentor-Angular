@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 /* @import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'); */
 
 :root {
@@ -25,12 +26,12 @@ body {
 
 body {
     background-color: var(--smoke-color) !important;
-    /* background: linear-gradient(
+    background: linear-gradient(
         90deg,
         rgba(20, 152, 213, 0.08) 0%,
         rgba(255, 255, 255, 0) 50%,
         rgba(20, 152, 213, 0.08) 100%
-    ); */
+    );
 }
 
 .swal2-title {
@@ -84,13 +85,52 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5) !important;
 }
 
-.card {
+/* .card {
     border: unset !important;
     border-radius: 12px !important;
     box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
     -moz-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
     -webkit-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
     -o-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%) !important;
+} */
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-row .btn {
+    border-radius: 8px;
+}
+
+.button-row .fa-solid,
+.fas {
+    font-size: 14px;
+}
+
+/*** card ***/
+.card-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.card-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    /* color: var(--sub-title-color); */
+}
+
+.control-label {
+    font-size: 18px;
+    font-weight: 400;
+    /* color: var(--label-color); */
+}
+
+.control-text {
+    font-size: 18px;
+    font-weight: 400;
+    /* color: var(--text-color); */
 }
 
 .card-container {
@@ -109,16 +149,6 @@ body {
     -o-box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 15%);
 }
 
-.button-row {
-    display: flex;
-    justify-content: space-between;
-}
-
-.button-row .btn {
-    border-radius: 8px;
-}
-
-.button-row .fa-solid,
-.fas {
-    font-size: 14px;
+.card-body {
+    padding: 20px 0 !important;
 }

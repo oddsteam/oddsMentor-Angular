@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Location } from '@angular/common'
-import { BookingsService } from 'src/app/services/bookings.service'
-import { MentorsService } from 'src/app/services/mentors.service'
-import { BookingForm, Expertise, MentorDetail } from 'src/app/mentor'
+import { BookingsService } from 'src/app/services/bookings/bookings.service'
+import { MentorsService } from 'src/app/services/mentors/mentors.service'
+import { Expertise, MentorDetail } from '../../types/mentor'
 import * as dayjs from 'dayjs'
 import { MenuItem } from 'primeng/api'
+import { BookingRequest } from 'src/app/types/booking'
 
 interface Duration {
     label: string
@@ -38,7 +39,7 @@ export class BookingComponent implements OnInit {
             reason: new FormControl('', [Validators.required]),
             sessionDate: new FormControl(dayjs().add(1, 'day').toDate(), [Validators.required]),
             sessionTime: new FormControl(dayjs(this.onTimeLoad()).format('hh:mm'), [Validators.required]),
-            sessionDuration: new FormControl('', [Validators.required]),
+            sessionDuration: new FormControl(0, [Validators.required]),
         },
         Validators.required
     )
@@ -113,8 +114,7 @@ export class BookingComponent implements OnInit {
     }
 
     onSubmit() {
-        let booking: BookingForm = this.bookingForm.value as unknown as BookingForm
-        this.bookingsService.saveBooking(booking)
+        this.bookingsService.saveBooking(this.bookingForm.value as BookingRequest)
         this.router.navigateByUrl('preview')
     }
 

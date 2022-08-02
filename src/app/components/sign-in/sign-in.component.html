@@ -2,7 +2,7 @@
     <div class="container-card">
         <section>
             <img
-                src="/assets/vectors/logo/odds-mentor-vertical.svg"
+                src="assets/vectors/logo/odds-mentor-vertical.svg"
                 alt="ODDS-Mentor vertical Logo"
                 class="mentor-logo"
             />
@@ -10,7 +10,13 @@
         <div class="partition"></div>
         <section>
             <h1>Sign In</h1>
-            <p-button pRipple label="with ODDS Team account"></p-button>
+            <p-button
+                (click)="signInWithOddsTeam()"
+                pRipple
+                label="with ODDS Team account"
+            ></p-button>
+            <!-- <br />
+            <p-button (click)="signOutWithOddsTeam()" pRipple label="Sign Out!"></p-button> -->
         </section>
     </div>
 </div>

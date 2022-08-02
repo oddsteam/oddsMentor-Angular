@@ -12,60 +12,37 @@ const ogTitle: string = 'ODDS Mentor'
 const ogDescription: string = 'Want to know something? Odds always have answer.'
 const ogImage: string = 'http://159.138.240.167:8089/assets/images/odds-mentor-banner.png'
 const ogUrl: string = 'http://159.138.240.167:8089'
+const seoData = (path: string) => {
+    return {
+        title: ogTitle,
+        metaTags: [
+            { name: 'description', content: ogDescription },
+            { property: 'og:title', content: ogTitle },
+            { proprety: 'og:description', content: ogDescription },
+            { property: 'og:image', content: ogImage },
+            { property: 'og:url', content: `${ogUrl}/${path}` },
+            { name: 'twitter:card', content: 'summary_large_image' },
+        ],
+    }
+}
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'card', component: MentorCardComponent},
+    { path: 'card', component: MentorCardComponent },
     {
         path: 'home',
         component: HomeComponent,
-        data: {
-            seo: {
-                title: ogTitle,
-                metaTags: [
-                    { name: 'description', content: ogDescription },
-                    { property: 'og:title', content: ogTitle },
-                    { proprety: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { property: 'og:url', content: `${ogUrl}/home` },
-                    { name: 'twitter:card', content: 'summary_large_image' },
-                ],
-            },
-        },
+        data: { seo: seoData('home') },
     },
     {
         path: 'booking',
         component: BookingComponent,
-        data: {
-            seo: {
-                title: ogTitle,
-                metaTags: [
-                    { name: 'description', content: ogDescription },
-                    { property: 'og:title', content: ogTitle },
-                    { proprety: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { property: 'og:url', content: `${ogUrl}/home` },
-                    { name: 'twitter:card', content: 'summary_large_image' },
-                ],
-            },
-        },
+        data: { seo: seoData('booking') },
     },
     {
         path: 'preview',
         component: BookingPreviewComponent,
-        data: {
-            seo: {
-                title: ogTitle,
-                metaTags: [
-                    { name: 'description', content: ogDescription },
-                    { property: 'og:title', content: ogTitle },
-                    { proprety: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { property: 'og:url', content: `${ogUrl}/home` },
-                    { name: 'twitter:card', content: 'summary_large_image' },
-                ],
-            },
-        },
+        data: { seo: seoData('preview') },
     },
     {
         path: 'personal/:id',
@@ -80,36 +57,12 @@ const routes: Routes = [
     {
         path: 'sign-in',
         component: SignInComponent,
-        data: {
-            seo: {
-                title: ogTitle,
-                metaTags: [
-                    { name: 'description', content: ogDescription },
-                    { property: 'og:title', content: ogTitle },
-                    { proprety: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { property: 'og:url', content: `${ogUrl}/home` },
-                    { name: 'twitter:card', content: 'summary_large_image' },
-                ],
-            },
-        },
+        data: { seo: seoData('sign-in') },
     },
     {
         path: 'mentor',
         component: AllMentorComponent,
-        data: {
-            seo: {
-                title: ogTitle,
-                metaTags: [
-                    { name: 'description', content: ogDescription },
-                    { property: 'og:title', content: ogTitle },
-                    { proprety: 'og:description', content: ogDescription },
-                    { property: 'og:image', content: ogImage },
-                    { property: 'og:url', content: `${ogUrl}/home` },
-                    { name: 'twitter:card', content: 'summary_large_image' },
-                ],
-            },
-        },
+        data: { seo: seoData('mentor') },
     },
 ]
 

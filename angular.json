@@ -34,18 +34,17 @@
                         ],
                         "scripts": [
                             "node_modules/sweetalert2/dist/sweetalert2.js",
-                            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-                            "node_modules/jquery/dist/jquery.min.js",
-                            "src/js/sticky-navbar.js"
-                        ]
+                            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+                        ],
+                        "allowedCommonJsDependencies": ["dayjs", "sweetalert2"]
                     },
                     "configurations": {
                         "production": {
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "1.5mb",
-                                    "maximumError": "6mb"
+                                    "maximumWarning": "1.7mb",
+                                    "maximumError": "2mb"
                                 },
                                 {
                                     "type": "anyComponentStyle",
@@ -59,6 +58,14 @@
                                     "with": "src/environments/environment.prod.ts"
                                 }
                             ],
+                            "optimization": {
+                                "scripts": true,
+                                "styles": {
+                                    "minify": true,
+                                    "inlineCritical": false
+                                },
+                                "fonts": true
+                            },
                             "outputHashing": "all"
                         },
                         "development": {
@@ -120,7 +127,7 @@
                             ]
                         },
                         "development": {
-                            "optimization": false,
+                            "optimization": true,
                             "sourceMap": true,
                             "extractLicenses": false
                         }
@@ -161,7 +168,6 @@
             }
         }
     },
-    "defaultProject": "oddsMentor-Angular",
     "cli": {
         "analytics": false
     }
