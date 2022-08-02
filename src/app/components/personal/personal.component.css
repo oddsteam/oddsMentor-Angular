@@ -69,6 +69,9 @@
 
 .bio-label .mentor-desc {
     color: #39485b;
+    text-align: justify;
+    text-indent: 32px;
+    cursor: default;
 }
 
 .personal-content p {
