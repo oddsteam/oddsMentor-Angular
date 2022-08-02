@@ -9,16 +9,23 @@ import { HttpClientModule } from '@angular/common/http'
 // Component
 import { AppComponent } from './app.component'
 import { HomeComponent } from './components/home/home.component'
-import { PersonalComponent } from './components/personal/personal.component'
 import { BookingComponent } from './components/booking/booking.component'
-import { NavBarComponent } from './components/nav-bar/nav-bar.component'
+import { PersonalComponent } from './components/personal/personal.component'
 import { BookingPreviewComponent } from './components/booking-preview/booking-preview.component'
 import { SignInComponent } from './components/sign-in/sign-in.component'
-import { MentorCardComponent } from './components/mentor-card/mentor-card.component'
-import { WhiteChipComponent } from './components/chip/white-chip/white-chip.component';
-import { BlueChipComponent } from './components/chip/blue-chip/blue-chip.component'
 import { AllMentorComponent } from './components/all-mentor/all-mentor.component'
+// PageComponent
+import { HomePageComponent } from './pages/home-page/home-page.component'
+import { MentorsPageComponent } from './pages/mentors-page/mentors-page.component'
+import { PersonalPageComponent } from './pages/personal-page/personal-page.component'
+import { ReservePageComponent } from './pages/reserve-page/reserve-page.component'
+import { ConfirmationPageComponent } from './pages/confirmation-page/confirmation-page.component'
+import { SignInPageComponent } from './pages/sign-in-page/sign-in-page.component'
+// 
+import { MentorDataViewComponent } from './components/mentors/mentor-data-view/mentor-data-view.component'
+import { NavBarComponent } from './components/nav-bar/nav-bar.component'
 import { FooterComponent } from './components/footer/footer.component'
+import { MentorCardComponent } from './components/mentor-card/mentor-card.component'
 
 // PrimeNG Module
 import { InputTextModule } from 'primeng/inputtext'
@@ -35,8 +42,8 @@ import { CardModule } from 'primeng/card'
 import { CarouselModule } from 'primeng/carousel'
 import { DataViewModule } from 'primeng/dataview'
 import { BreadcrumbModule } from 'primeng/breadcrumb'
-import { DialogModule } from 'primeng/dialog';
-import { SkeletonModule } from 'primeng/skeleton';
+import { DialogModule } from 'primeng/dialog'
+import { SkeletonModule } from 'primeng/skeleton'
 
 // Firebase Auth
 import { environment } from 'src/environments/environment'
@@ -48,16 +55,23 @@ import { AuthService } from './services/auth/auth.service';
     declarations: [
         AppComponent,
         HomeComponent,
-        PersonalComponent,
         BookingComponent,
-        NavBarComponent,
+        PersonalComponent,
         BookingPreviewComponent,
         SignInComponent,
-        MentorCardComponent,
         AllMentorComponent,
+        // PageComponents
+        HomePageComponent,
+        MentorsPageComponent,
+        PersonalPageComponent,
+        ReservePageComponent,
+        ConfirmationPageComponent,
+        SignInPageComponent,
+        // Components
+        MentorDataViewComponent,
+        NavBarComponent,
         FooterComponent,
-        WhiteChipComponent,
-        BlueChipComponent,
+        MentorCardComponent,
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'serverApp' }),

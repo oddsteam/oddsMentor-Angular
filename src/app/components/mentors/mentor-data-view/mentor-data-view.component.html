@@ -1,0 +1,31 @@
+<p-dataView
+    #dv
+    [value]="mentors"
+    [paginator]="true"
+    [rows]="mentorPerPage"
+    filterBy="fullNameEN,fullNameTH,nickname"
+    [paginator]="true"
+    layout="grid"
+>
+    <ng-template pTemplate="header">
+        <div class="header-box">
+            <div class="p-fluid">
+                <p class="title">Find Your Mentors</p>
+            </div>
+            <div class="p-input-icon-left p-fluid">
+                <i class="pi pi-search"></i>
+                <input
+                    #searchName
+                    type="search"
+                    pInputText
+                    placeholder="Search by Name"
+                    class="searchInput"
+                    (input)="dv.filter(searchName.value, 'startsWith')"
+                />
+            </div>
+        </div>
+    </ng-template>
+    <ng-template class="container" let-mentor pTemplate="gridItem">
+        <app-mentor-card [mentorDetail]="mentor"> </app-mentor-card>
+    </ng-template>
+</p-dataView>

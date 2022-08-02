@@ -1,0 +1,12 @@
+::ng-deep app-footer {
+    display: block;
+}
+
+.card {
+    background-color: transparent !important;
+}
+
+:host::ng-deep.p-dataview .p-dataview-header,
+.card {
+    border: 0 solid transparent;
+}

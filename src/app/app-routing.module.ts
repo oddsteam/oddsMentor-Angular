@@ -4,9 +4,17 @@ import { AllMentorComponent } from './components/all-mentor/all-mentor.component
 import { BookingPreviewComponent } from './components/booking-preview/booking-preview.component'
 import { BookingComponent } from './components/booking/booking.component'
 import { HomeComponent } from './components/home/home.component'
-import { MentorCardComponent } from './components/mentor-card/mentor-card.component'
 import { PersonalComponent } from './components/personal/personal.component'
 import { SignInComponent } from './components/sign-in/sign-in.component'
+
+// PageComponent
+import { HomePageComponent } from './pages/home-page/home-page.component'
+import { MentorsPageComponent } from './pages/mentors-page/mentors-page.component'
+import { PersonalPageComponent } from './pages/personal-page/personal-page.component'
+import { ReservePageComponent } from './pages/reserve-page/reserve-page.component'
+import { ConfirmationPageComponent } from './pages/confirmation-page/confirmation-page.component'
+import { SignInPageComponent } from './pages/sign-in-page/sign-in-page.component'
+const toPath: String = 'new/'
 
 const ogTitle: string = 'ODDS Mentor'
 const ogDescription: string = 'Want to know something? Odds always have answer.'
@@ -28,7 +36,7 @@ const seoData = (path: string) => {
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'card', component: MentorCardComponent },
+    { path: 'card', component: MentorsPageComponent },
     {
         path: 'home',
         component: HomeComponent,
@@ -62,6 +70,42 @@ const routes: Routes = [
     {
         path: 'mentor',
         component: AllMentorComponent,
+        data: { seo: seoData('mentor') },
+    },
+    // PageComponent
+    {
+        path: toPath + 'home',
+        component: HomePageComponent,
+        data: { seo: seoData('home') },
+    },
+    {
+        path: toPath + 'booking',
+        component: ReservePageComponent,
+        data: { seo: seoData('booking') },
+    },
+    {
+        path: toPath + 'preview',
+        component: ConfirmationPageComponent,
+        data: { seo: seoData('preview') },
+    },
+    {
+        path: toPath + 'personal/:id',
+        component: PersonalPageComponent,
+        data: {
+            seo: {
+                title: ogTitle,
+                metaTags: [],
+            },
+        },
+    },
+    {
+        path: toPath + 'sign-in',
+        component: SignInPageComponent,
+        data: { seo: seoData('sign-in') },
+    },
+    {
+        path: toPath + 'mentor',
+        component: MentorsPageComponent,
         data: { seo: seoData('mentor') },
     },
 ]
