@@ -16,13 +16,13 @@ pipeline{
         stage("install dependency") {
             steps{
                 sh "docker build --build-arg environment=${BRANCH_NAME} -t ${WEB_BUILD_TAG} --target base ."
-                sh "docker build --build-arg environment=${BRANCH_NAME} -t ${NGINX_BUILD_TAG} --target base ./nginx"
+                sh "docker build --build-arg environment=${BRANCH_NAME} -t ${NGINX_BUILD_TAG} --target base /nginx"
             }
         }
         stage("build image and test karma") {
             steps{
                 sh "docker build --rm --build-arg environment=${BRANCH_NAME} -t ${WEB_BUILD_TAG} ."
-                sh "docker build --rm --build-arg environment=${BRANCH_NAME} -t ${NGINX_BUILD_TAG} ./nginx"
+                sh "docker build --rm --build-arg environment=${BRANCH_NAME} -t ${NGINX_BUILD_TAG} /nginx"
                 
             }
         }
